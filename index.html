@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComeToMeSports - Find Sporting Events Near You</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 ComeToMeSports</h1>
+            <p class="subtitle">Find sporting events near your ZIP code</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <form id="searchForm" class="search-form">
+                    <div class="input-group">
+                        <label for="zipCode">Enter your ZIP code:</label>
+                        <input 
+                            type="text" 
+                            id="zipCode" 
+                            name="zipCode" 
+                            placeholder="e.g., 90210" 
+                            maxlength="5" 
+                            required
+                        >
+                        <button type="submit">Find Events</button>
+                    </div>
+                </form>
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+            </div>
+
+            <div id="loadingMessage" class="loading" style="display: none;">
+                <p>🔍 Searching for events...</p>
+            </div>
+
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <h2>Sporting Events Near You</h2>
+                <div id="eventsList" class="events-list"></div>
+            </div>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <h2>No Events Found</h2>
+                <p>Sorry, no sporting events were found near your ZIP code. Try a different area!</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 ComeToMeSports. Find your next game!</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
