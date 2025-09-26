@@ -1,398 +1,497 @@
 [
   {
     "title": "Women's Tennis",
-    "date": "Thu., Sep. 25TBA"
+    "date": "Thu., Sep. 25TBA",
+    "location": "San Diego, CA"
   },
   {
     "title": "Softball",
-    "date": "Thu., Sep. 251:00 PM MDT"
+    "date": "Thu., Sep. 251:00 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Men's Tennis",
-    "date": "Fri., Sep. 26TBA"
+    "date": "Fri., Sep. 26TBA",
+    "location": "Colorado Springs, Colorado"
   },
   {
     "title": "Men's Tennis",
-    "date": "Fri., Sep. 26TBA"
+    "date": "Fri., Sep. 26TBA",
+    "location": "Thousand Oaks, California"
   },
   {
     "title": "Women's Cross Country",
-    "date": "Fri., Sep. 267:15 AM MDT"
+    "date": "Fri., Sep. 267:15 AM MDT",
+    "location": "Stillwater, Oklahoma / Greiner Family OSU Cross Country Course"
   },
   {
     "title": "Men's Cross Country",
-    "date": "Fri., Sep. 267:15 AM MDT"
+    "date": "Fri., Sep. 267:15 AM MDT",
+    "location": "Columbia, Missouri / Gans Creek Course"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Sat., Sep. 2712:00 PM MDT"
+    "date": "Sat., Sep. 2712:00 PM MDT",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Women's Soccer",
-    "date": "Sat., Sep. 277:00 PM MDT"
+    "date": "Sat., Sep. 277:00 PM MDT",
+    "location": "Provo, Utah / South Field"
   },
   {
     "title": "Football",
-    "date": "Sat., Sep. 278:15 PM MDT"
+    "date": "Sat., Sep. 278:15 PM MDT",
+    "location": "Boulder, Colorado / Folsom Field"
   },
   {
     "title": "Men's Golf",
-    "date": "Mon., Sep. 298:00 AM MDT"
+    "date": "Mon., Sep. 298:00 AM MDT",
+    "location": "Fayetteville, AR / Blessings Golf Club"
   },
   {
     "title": "Women's Golf",
-    "date": "Mon., Sep. 298:00 AM MDT"
+    "date": "Mon., Sep. 298:00 AM MDT",
+    "location": "Fayetteville, AR / Blessings Golf Club"
   },
   {
     "title": "Softball",
-    "date": "Tue., Sep. 301:00 PM MDT"
+    "date": "Tue., Sep. 301:00 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Wed., Oct. 14:30 PM MDT"
+    "date": "Wed., Oct. 14:30 PM MDT",
+    "location": "Cincinnati, Ohio / Fifth Third Arena"
   },
   {
     "title": "Women's Soccer",
-    "date": "Thu., Oct. 26:00 PM MDT"
+    "date": "Thu., Oct. 26:00 PM MDT",
+    "location": "Houston, Texas / Carl Lewis International Complex"
   },
   {
     "title": "Softball",
-    "date": "Thu., Oct. 26:30 PM MDT"
+    "date": "Thu., Oct. 26:30 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Men's Swimming & Diving",
-    "date": "Fri., Oct. 34:00 PM MDT"
+    "date": "Fri., Oct. 34:00 PM MDT",
+    "location": "Grand Junction, Colorado / El Pomar Natatorium"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Fri., Oct. 34:00 PM MDT"
+    "date": "Fri., Oct. 34:00 PM MDT",
+    "location": "Morgantown, West Virginia / WVU Coliseum"
   },
   {
     "title": "Women's Swimming & Diving",
-    "date": "Fri., Oct. 34:00 PM MDT"
+    "date": "Fri., Oct. 34:00 PM MDT",
+    "location": "Grand Junction, Colorado / El Pomar Natatorium"
   },
   {
     "title": "Football",
-    "date": "Fri., Oct. 38:30 PM MDT"
+    "date": "Fri., Oct. 38:30 PM MDT",
+    "location": "Provo, Utah / LaVell Edwards Stadium"
   },
   {
     "title": "Women's Soccer",
-    "date": "Mon., Oct. 66:00 PM MDT"
+    "date": "Mon., Oct. 66:00 PM MDT",
+    "location": "Stillwater, Oklahoma / Neal Patterson Stadium"
   },
   {
     "title": "Women's Tennis",
-    "date": "Tue., Oct. 7TBA"
+    "date": "Tue., Oct. 7TBA",
+    "location": "Provo, UT"
   },
   {
     "title": "Softball",
-    "date": "Tue., Oct. 77:00 PM MDT"
+    "date": "Tue., Oct. 77:00 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Men's Tennis",
-    "date": "Thu., Oct. 9TBA"
+    "date": "Thu., Oct. 9TBA",
+    "location": "San Diego, California"
   },
   {
     "title": "Women's Soccer",
-    "date": "Fri., Oct. 106:00 PM MDT"
+    "date": "Fri., Oct. 106:00 PM MDT",
+    "location": "Waco, Texas / Betty Lou Mays Soccer Field"
   },
   {
     "title": "Softball",
-    "date": "Fri., Oct. 106:30 PM MDT"
+    "date": "Fri., Oct. 106:30 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Football",
-    "date": "Sat., Oct. 11TBA"
+    "date": "Sat., Oct. 11TBA",
+    "location": "Tucson, Arizona / Arizona Stadium"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Sat., Oct. 111:00 PM MDT"
+    "date": "Sat., Oct. 111:00 PM MDT",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Softball",
-    "date": "Sat., Oct. 114:00 PM MDT"
+    "date": "Sat., Oct. 114:00 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Men's Golf",
-    "date": "Mon., Oct. 138:00 AM MDT"
+    "date": "Mon., Oct. 138:00 AM MDT",
+    "location": "Charleston, SC / Daniel Island Club"
   },
   {
     "title": "Women's Golf",
-    "date": "Mon., Oct. 138:00 AM MDT"
+    "date": "Mon., Oct. 138:00 AM MDT",
+    "location": "Broken Arrow, OK / Golf Club of Oklahoma"
   },
   {
     "title": "Softball",
-    "date": "Tue., Oct. 141:00 PM MDT"
+    "date": "Tue., Oct. 141:00 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Men's Tennis",
-    "date": "Wed., Oct. 15TBA"
+    "date": "Wed., Oct. 15TBA",
+    "location": "Las Vegas, Nevada"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Thu., Oct. 166:00 PM MDT"
+    "date": "Thu., Oct. 166:00 PM MDT",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Women's Soccer",
-    "date": "Thu., Oct. 167:00 PM MDT"
+    "date": "Thu., Oct. 167:00 PM MDT",
+    "location": "Provo, Utah / South Field"
   },
   {
     "title": "Men's Cross Country",
-    "date": "Fri., Oct. 179:00 AM MDT"
+    "date": "Fri., Oct. 179:00 AM MDT",
+    "location": "Madison, Wisconsin / Zimmer Championship Course"
   },
   {
     "title": "Softball",
-    "date": "Fri., Oct. 175:00 PM MDT"
+    "date": "Fri., Oct. 175:00 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Men's Swimming & Diving",
-    "date": "Sat., Oct. 18TBA"
+    "date": "Sat., Oct. 18TBA",
+    "location": "Long Beach, California / Marine Stadium"
   },
   {
     "title": "Women's Cross Country",
-    "date": "Sat., Oct. 18TBA"
+    "date": "Sat., Oct. 18TBA",
+    "location": "Columbia, Missouri / Gans Creek Cross Country Course"
   },
   {
     "title": "Men's Basketball",
-    "date": "Sat., Oct. 1811:00 AM MDT"
+    "date": "Sat., Oct. 1811:00 AM MDT",
+    "location": "Lincoln, Nebraska / Pinnacle Bank Arena"
   },
   {
     "title": "Women's Swimming & Diving",
-    "date": "Sat., Oct. 18TBA"
+    "date": "Sat., Oct. 18TBA",
+    "location": "Long Beach, California / Marine Stadium"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Sat., Oct. 1812:00 PM MDT"
+    "date": "Sat., Oct. 1812:00 PM MDT",
+    "location": "Lubbock, Texas / United Supermarkets Arena"
   },
   {
     "title": "Football",
-    "date": "Sat., Oct. 18TBA"
+    "date": "Sat., Oct. 18TBA",
+    "location": "Provo, Utah / LaVell Edwards Stadium"
   },
   {
     "title": "Women's Golf",
-    "date": "Mon., Oct. 208:00 AM MDT"
+    "date": "Mon., Oct. 208:00 AM MDT",
+    "location": "Lihue, HI / Hokuala Golf Club"
   },
   {
     "title": "Women's Soccer",
-    "date": "Mon., Oct. 206:00 PM MDT"
+    "date": "Mon., Oct. 206:00 PM MDT",
+    "location": "Provo, Utah / South Field"
   },
   {
     "title": "Softball",
-    "date": "Wed., Oct. 226:30 PM MDT"
+    "date": "Wed., Oct. 226:30 PM MDT",
+    "location": "Provo, Utah / Gail Miller Field"
   },
   {
     "title": "Women's Tennis",
-    "date": "Thu., Oct. 23TBA"
+    "date": "Thu., Oct. 23TBA",
+    "location": "Fort Worth, TX"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Thu., Oct. 236:00 PM MDT"
+    "date": "Thu., Oct. 236:00 PM MDT",
+    "location": "Waco, Texas / Ferrell Center"
   },
   {
     "title": "Women's Soccer",
-    "date": "Thu., Oct. 237:00 PM MDT"
+    "date": "Thu., Oct. 237:00 PM MDT",
+    "location": "Provo, Utah / South Field"
   },
   {
     "title": "Men's Tennis",
-    "date": "Fri., Oct. 24TBA"
+    "date": "Fri., Oct. 24TBA",
+    "location": "Bozeman, Montana"
   },
   {
     "title": "Men's Basketball",
-    "date": "Fri., Oct. 247:00 PM MDT"
+    "date": "Fri., Oct. 247:00 PM MDT",
+    "location": "Salt Lake City, Utah / Delta Center"
   },
   {
     "title": "Softball",
-    "date": "Sat., Oct. 2511:00 AM MDT"
+    "date": "Sat., Oct. 2511:00 AM MDT",
+    "location": "St. George, Utah / Karl Brooks Field"
   },
   {
     "title": "Football",
-    "date": "Sat., Oct. 25TBA"
+    "date": "Sat., Oct. 25TBA",
+    "location": "Ames, Iowa / Jack Trice Stadium"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Sat., Oct. 2512:00 PM MDT"
+    "date": "Sat., Oct. 2512:00 PM MDT",
+    "location": "Fort Worth, Texas / Schollmaier Arena"
   },
   {
     "title": "Men's Golf",
-    "date": "Mon., Oct. 278:00 AM MDT"
+    "date": "Mon., Oct. 278:00 AM MDT",
+    "location": "Carmel, CA / Santa Lucia Preserve Golf Club"
   },
   {
     "title": "Women's Soccer",
-    "date": "Mon., Oct. 2711:00 AM MDT"
+    "date": "Mon., Oct. 2711:00 AM MDT",
+    "location": "Orlando, Florida / UCF Soccer and Track Complex"
   },
   {
     "title": "Women's Basketball",
-    "date": "Tue., Oct. 287:00 PM MDT"
+    "date": "Tue., Oct. 287:00 PM MDT",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Wed., Oct. 296:00 PM MDT"
+    "date": "Wed., Oct. 296:00 PM MDT",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Men's Tennis",
-    "date": "Thu., Oct. 30TBA"
+    "date": "Thu., Oct. 30TBA",
+    "location": "Dallas, Texas / Styslinger/Altec Tennis Complex"
   },
   {
     "title": "Women's Soccer",
-    "date": "Thu., Oct. 307:00 PM MDT"
+    "date": "Thu., Oct. 307:00 PM MDT",
+    "location": "Salt Lake City, Utah / Ute Field"
   },
   {
     "title": "Men's Cross Country",
-    "date": "Fri., Oct. 319:00 AM MDT"
+    "date": "Fri., Oct. 319:00 AM MDT",
+    "location": "Lawerence, Kansas / Rim Rock Farm"
   },
   {
     "title": "Women's Cross Country",
-    "date": "Fri., Oct. 31TBA"
+    "date": "Fri., Oct. 31TBA",
+    "location": "Lawrence, Kansas / Rim Rock Farm"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Fri., Oct. 316:00 PM MDT"
+    "date": "Fri., Oct. 316:00 PM MDT",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Women's Soccer",
-    "date": "Mon., Nov. 3TBA"
+    "date": "Mon., Nov. 3TBA",
+    "location": "Fort Worth, Texas / Garvey-Rosenthal Soccer Stadium"
   },
   {
     "title": "Men's Basketball",
-    "date": "Mon., Nov. 3TBA"
+    "date": "Mon., Nov. 3TBA",
+    "location": "Las Vegas, Nevada / T-Mobile Arena"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Wed., Nov. 56:00 PM MST"
+    "date": "Wed., Nov. 56:00 PM MST",
+    "location": "Tucson, Arizona / McKale Center"
   },
   {
     "title": "Women's Basketball",
-    "date": "Wed., Nov. 57:00 PM MST"
+    "date": "Wed., Nov. 57:00 PM MST",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Men's Tennis",
-    "date": "Thu., Nov. 6TBA"
+    "date": "Thu., Nov. 6TBA",
+    "location": "San Diego, California"
   },
   {
     "title": "Women's Tennis",
-    "date": "Thu., Nov. 6TBA"
+    "date": "Thu., Nov. 6TBA",
+    "location": "Seattle, WA"
   },
   {
     "title": "Women's Tennis",
-    "date": "Fri., Nov. 7TBA"
+    "date": "Fri., Nov. 7TBA",
+    "location": "Northridge, CA"
   },
   {
     "title": "Men's Swimming & Diving",
-    "date": "Fri., Nov. 74:00 PM MST"
+    "date": "Fri., Nov. 74:00 PM MST",
+    "location": "Las Vegas, Nevada / Buchanan Natatorium"
   },
   {
     "title": "Women's Swimming & Diving",
-    "date": "Fri., Nov. 74:00 PM MST"
+    "date": "Fri., Nov. 74:00 PM MST",
+    "location": "Las Vegas, Nevada / Buchanan Natatorium"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Fri., Nov. 77:00 PM MST"
+    "date": "Fri., Nov. 77:00 PM MST",
+    "location": "Tempe, Arizona / Desert Financial Arena"
   },
   {
     "title": "Football",
-    "date": "Sat., Nov. 8TBA"
+    "date": "Sat., Nov. 8TBA",
+    "location": "Lubbock, Texas / Jones AT&T Stadium"
   },
   {
     "title": "Men's Basketball",
-    "date": "Sat., Nov. 8TBA"
+    "date": "Sat., Nov. 8TBA",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Women's Basketball",
-    "date": "Sat., Nov. 82:00 PM MST"
+    "date": "Sat., Nov. 82:00 PM MST",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Men's Basketball",
-    "date": "Tue., Nov. 11TBA"
+    "date": "Tue., Nov. 11TBA",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Women's Basketball",
-    "date": "Thu., Nov. 137:00 PM MST"
+    "date": "Thu., Nov. 137:00 PM MST",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Women's Cross Country",
-    "date": "Fri., Nov. 14TBA"
+    "date": "Fri., Nov. 14TBA",
+    "location": "Salt Lake City, Utah / Regional Athletic Complex"
   },
   {
     "title": "Men's Cross Country",
-    "date": "Fri., Nov. 141:00 PM MST"
+    "date": "Fri., Nov. 141:00 PM MST",
+    "location": "Salt Lake City, Utah / Regional Athletic Complex"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Fri., Nov. 147:00 PM MST"
+    "date": "Fri., Nov. 147:00 PM MST",
+    "location": "Salt Lake City, Utah / Huntsman Center"
   },
   {
     "title": "Football",
-    "date": "Sat., Nov. 15TBA"
+    "date": "Sat., Nov. 15TBA",
+    "location": "Provo, Utah / LaVell Edwards Stadium"
   },
   {
     "title": "Women's Basketball",
-    "date": "Sat., Nov. 152:00 PM MST"
+    "date": "Sat., Nov. 152:00 PM MST",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Men's Basketball",
-    "date": "Sat., Nov. 15TBA"
+    "date": "Sat., Nov. 15TBA",
+    "location": "Boston, Massachusetts / TD Garden"
   },
   {
     "title": "Men's Tennis",
-    "date": "Tue., Nov. 18TBA"
+    "date": "Tue., Nov. 18TBA",
+    "location": "Orlando, Florida"
   },
   {
     "title": "Women's Tennis",
-    "date": "Wed., Nov. 19TBA"
+    "date": "Wed., Nov. 19TBA",
+    "location": "Waco, TX"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Wed., Nov. 196:00 PM MST"
+    "date": "Wed., Nov. 196:00 PM MST",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Women's Basketball",
-    "date": "Wed., Nov. 19TBA"
+    "date": "Wed., Nov. 19TBA",
+    "location": "Missoula, Montana / Dahlberg Arena"
   },
   {
     "title": "Men's Swimming & Diving",
-    "date": "Thu., Nov. 20TBA"
+    "date": "Thu., Nov. 20TBA",
+    "location": "Greensboro, North Carolina"
   },
   {
     "title": "Men's Swimming & Diving",
-    "date": "Thu., Nov. 20TBA"
+    "date": "Thu., Nov. 20TBA",
+    "location": "Los Angeles, California / Uytengsu Aquatics Center"
   },
   {
     "title": "Women's Swimming & Diving",
-    "date": "Thu., Nov. 20TBA"
+    "date": "Thu., Nov. 20TBA",
+    "location": "Greensboro, North Carolina"
   },
   {
     "title": "Women's Swimming & Diving",
-    "date": "Thu., Nov. 20TBA"
+    "date": "Thu., Nov. 20TBA",
+    "location": "Los Angeles, California / Uytengsu Aquatics Center"
   },
   {
     "title": "Men's Basketball",
-    "date": "Fri., Nov. 212:00 PM MST"
+    "date": "Fri., Nov. 212:00 PM MST",
+    "location": "Salt Lake City, Utah / Delta Center"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Fri., Nov. 216:00 PM MST"
+    "date": "Fri., Nov. 216:00 PM MST",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Men's Cross Country",
-    "date": "Sat., Nov. 229:10 AM MST"
+    "date": "Sat., Nov. 229:10 AM MST",
+    "location": "Columbia, Missouri / Gans Creek Championship Course"
   },
   {
     "title": "Football",
-    "date": "Sat., Nov. 22TBA"
+    "date": "Sat., Nov. 22TBA",
+    "location": "Cincinnati, Ohio / Nippert Stadium"
   },
   {
     "title": "Women's Basketball",
-    "date": "Sat., Nov. 222:00 PM MST"
+    "date": "Sat., Nov. 222:00 PM MST",
+    "location": "Provo, Utah / Marriott Center"
   },
   {
     "title": "Women's Volleyball",
-    "date": "Wed., Nov. 266:00 PM MST"
+    "date": "Wed., Nov. 266:00 PM MST",
+    "location": "Provo, Utah / Smith Fieldhouse"
   },
   {
     "title": "Men's Basketball",
-    "date": "Thu., Nov. 273:00 PM MST"
+    "date": "Thu., Nov. 273:00 PM MST",
+    "location": "Kissimmee, Florida / State Farm Field House"
   },
   {
     "title": "Women's Basketball",
-    "date": "Thu., Nov. 27TBA"
+    "date": "Thu., Nov. 27TBA",
+    "location": "St. Thomas, U.S. Virgin Islands / UVI Arena"
   }
 ]
