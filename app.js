@@ -122,33 +122,30 @@ const mockEvents = [
     }
 ];
 
-// ZIP code to coordinates mapping for distance calculation
-const zipToCoords = {
-    // California
-    "90210": { lat: 34.103, lng: -118.416 }, // Beverly Hills
-    "90015": { lat: 34.043, lng: -118.267 }, // Downtown LA
-    "90301": { lat: 33.953, lng: -118.338 }, // Inglewood
-    "90012": { lat: 34.073, lng: -118.240 }, // Downtown LA
-    "94158": { lat: 37.768, lng: -122.388 }, // San Francisco
-    "95054": { lat: 37.403, lng: -121.970 }, // Santa Clara
-    
-    // New York
-    "10001": { lat: 40.750, lng: -73.993 }, // Manhattan
-    "10451": { lat: 40.829, lng: -73.926 }, // Bronx
-    "07073": { lat: 40.813, lng: -74.074 }, // East Rutherford, NJ
-    
-    // Illinois
-    "60612": { lat: 41.881, lng: -87.674 }, // Chicago
-    "60605": { lat: 41.862, lng: -87.617 }, // Chicago
-    
-    // Common ZIP codes for testing
-    "10004": { lat: 40.688, lng: -74.044 }, // Financial District, NYC
-    "60601": { lat: 41.883, lng: -87.623 }, // Chicago Loop
-    "90401": { lat: 34.017, lng: -118.496 }, // Santa Monica
-    "02101": { lat: 42.358, lng: -71.063 }, // Boston
-    "75201": { lat: 32.776, lng: -96.796 }, // Dallas
-    "33101": { lat: 25.775, lng: -80.194 }  // Miami
-};
+
+// ZIP code to coordinates mapping loaded from CSV
+const path = require('path');
+const fs = require('fs');
+const parse = require('csv-parse/sync').parse;
+let zipToCoords = null;
+
+function loadZipCoords() {
+    if (zipToCoords) return zipToCoords;
+    const csvPath = path.join(__dirname, 'ZIPCodes', 'uszips.csv');
+    const csvData = fs.readFileSync(csvPath, 'utf8');
+    const records = parse(csvData, { columns: true, skip_empty_lines: true });
+    zipToCoords = {};
+    for (const row of records) {
+        // Remove quotes if present
+        const zip = row.zip.replace(/^"|"$/g, '');
+        const lat = parseFloat(row.lat);
+        const lng = parseFloat(row.lng);
+        if (!isNaN(lat) && !isNaN(lng)) {
+            zipToCoords[zip] = { lat, lng };
+        }
+    }
+    return zipToCoords;
+}
 
 // Calculate distance between two coordinates using Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -168,9 +165,16 @@ function isValidZipCode(zipCode) {
     return zipRegex.test(zipCode);
 }
 
-// Get coordinates for a ZIP code
+// Get coordinates for a ZIP code (loads from CSV on first call)
 function getCoordinatesForZip(zipCode) {
-    return zipToCoords[zipCode] || null;
+    const coords = loadZipCoords();
+    // Debug logging
+    if (!coords[zipCode]) {
+        console.log('[DEBUG] ZIP not found:', zipCode);
+        const sampleKeys = Object.keys(coords).slice(0, 10);
+        console.log('[DEBUG] Sample loaded ZIPs:', sampleKeys);
+    }
+    return coords[zipCode] || null;
 }
 
 // Find events near a ZIP code

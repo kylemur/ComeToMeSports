@@ -36,9 +36,10 @@ async function scrapeBYUEvents() {
     return items.map(el => {
       const title = el.querySelector('.schedule-event-links__sport-name')?.textContent.trim() || '';
       const date = el.querySelector('.schedule-event-date__time')?.textContent.trim() || '';
-      return { title, date };
+      const location = el.querySelector('.schedule-event-location')?.textContent.trim() || '';
+      return { title, date, location };
     });
-  });
+  }); 
 
   fs.writeFileSync(filePath, JSON.stringify(events, null, 2), 'utf8');
   console.log(`Events saved to sportsData/${fileName}`);
