@@ -123,29 +123,7 @@ const mockEvents = [
 ];
 
 
-// ZIP code to coordinates mapping loaded from CSV
-const path = require('path');
-const fs = require('fs');
-const parse = require('csv-parse/sync').parse;
-let zipToCoords = null;
-
-function loadZipCoords() {
-    if (zipToCoords) return zipToCoords;
-    const csvPath = path.join(__dirname, 'ZIPCodes', 'uszips.csv');
-    const csvData = fs.readFileSync(csvPath, 'utf8');
-    const records = parse(csvData, { columns: true, skip_empty_lines: true });
-    zipToCoords = {};
-    for (const row of records) {
-        // Remove quotes if present
-        const zip = row.zip.replace(/^"|"$/g, '');
-        const lat = parseFloat(row.lat);
-        const lng = parseFloat(row.lng);
-        if (!isNaN(lat) && !isNaN(lng)) {
-            zipToCoords[zip] = { lat, lng };
-        }
-    }
-    return zipToCoords;
-}
+// ZIP code to coordinates mapping is now loaded in zipCoords.js using PapaParse
 
 // Calculate distance between two coordinates using Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -165,17 +143,7 @@ function isValidZipCode(zipCode) {
     return zipRegex.test(zipCode);
 }
 
-// Get coordinates for a ZIP code (loads from CSV on first call)
-function getCoordinatesForZip(zipCode) {
-    const coords = loadZipCoords();
-    // Debug logging
-    if (!coords[zipCode]) {
-        console.log('[DEBUG] ZIP not found:', zipCode);
-        const sampleKeys = Object.keys(coords).slice(0, 10);
-        console.log('[DEBUG] Sample loaded ZIPs:', sampleKeys);
-    }
-    return coords[zipCode] || null;
-}
+// getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
 function findEventsNearZip(zipCode, maxDistance = 50) {
@@ -272,9 +240,28 @@ function hideLoading() {
 }
 
 // Handle form submission
+
+function doSearch(zipCode) {
+    // Check if we have coordinates for this ZIP code
+    if (!getCoordinatesForZip(zipCode)) {
+        showError('Sorry, we don\'t have location data for this ZIP code. Try: 90210, 10001, 60612, or other major city ZIP codes.');
+        return;
+    }
+
+    // Show loading state
+    showLoading();
+
+    // Simulate API delay for better UX
+    setTimeout(() => {
+        const events = findEventsNearZip(zipCode);
+        hideLoading();
+        displayEvents(events);
+    }, 1000);
+}
+
 function handleSearch(event) {
     event.preventDefault();
-    
+
     const zipCodeInput = document.getElementById('zipCode');
     const zipCode = zipCodeInput.value.trim();
 
@@ -295,21 +282,17 @@ function handleSearch(event) {
         return;
     }
 
-    // Check if we have coordinates for this ZIP code
-    if (!getCoordinatesForZip(zipCode)) {
-        showError('Sorry, we don\'t have location data for this ZIP code. Try: 90210, 10001, 60612, or other major city ZIP codes.');
+    // Wait for ZIP data to be loaded if not already
+    if (!window.zipCoordsLoaded) {
+        showLoading();
+        loadZipCoords(() => {
+            hideLoading();
+            doSearch(zipCode);
+        });
         return;
     }
 
-    // Show loading state
-    showLoading();
-
-    // Simulate API delay for better UX
-    setTimeout(() => {
-        const events = findEventsNearZip(zipCode);
-        hideLoading();
-        displayEvents(events);
-    }, 1000);
+    doSearch(zipCode);
 }
 
 // Initialize the application
