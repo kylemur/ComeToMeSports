@@ -8,6 +8,23 @@ const path = require('path');
 const url = 'https://byucougars.com/all-sports-schedule';
 
 async function scrapeBYUEvents() {
+  // Format date as YYYY-MM-DD
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const dirName = path.join(__dirname, 'sportsData');
+  if (!fs.existsSync(dirName)) {
+    fs.mkdirSync(dirName);
+  }
+  const fileName = `BYUSports${yyyy}-${mm}-${dd}.json`;
+  const filePath = path.join(dirName, fileName);
+
+  if (fs.existsSync(filePath)) {
+    console.log(`sportsData/${fileName} already exists. No new file created.`);
+    return;
+  }
+
   const browser = await chromium.launch();
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle' });
@@ -23,20 +40,8 @@ async function scrapeBYUEvents() {
     });
   });
 
-  // Format date as YYYY-MM-DD
-  const now = new Date();
-  const yyyy = now.getFullYear();
-  const mm = String(now.getMonth() + 1).padStart(2, '0');
-  const dd = String(now.getDate()).padStart(2, '0');
-  const fileName = `BYUSports${yyyy}-${mm}-${dd}.json`;
-  const filePath = path.join(__dirname, fileName);
-
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, JSON.stringify(events, null, 2), 'utf8');
-    console.log(`Events saved to ${fileName}`);
-  } else {
-    console.log(`${fileName} already exists. No new file created.`);
-  }
+  fs.writeFileSync(filePath, JSON.stringify(events, null, 2), 'utf8');
+  console.log(`Events saved to sportsData/${fileName}`);
   await browser.close();
 }
 
