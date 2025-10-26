@@ -3,6 +3,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+const { getCityCoords } = require('./cityCoords');
 
 // Target URL (BYU Athletics Calendar)
 const url = 'https://byucougars.com/all-sports-schedule';
@@ -41,7 +42,39 @@ async function scrapeBYUEvents() {
     });
   }); 
 
-  fs.writeFileSync(filePath, JSON.stringify(events, null, 2), 'utf8');
+  // Add coordinates to events
+  const eventsWithCoords = events.map(event => {
+    let latitude = null;
+    let longitude = null;
+    
+    if (event.location) {
+      // Parse location: "Provo, Utah / Gail Miller Field"
+      // Extract city and state from the first part before "/"
+      const locationParts = event.location.split('/')[0].trim();
+      const cityStateParts = locationParts.split(',');
+      
+      if (cityStateParts.length >= 2) {
+        const city = cityStateParts[0].trim();
+        const state = cityStateParts[1].trim();
+        
+        const coords = getCityCoords(city, state);
+        if (coords) {
+          latitude = coords.lat;
+          longitude = coords.lon;
+        }
+      }
+    }
+    
+    return {
+      title: event.title,
+      date: event.date,
+      location: event.location,
+      latitude,
+      longitude
+    };
+  }); 
+
+  fs.writeFileSync(filePath, JSON.stringify(eventsWithCoords, null, 2), 'utf8');
   console.log(`Events saved to sportsData/${fileName}`);
   await browser.close();
 }

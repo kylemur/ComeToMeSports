@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "title": "Lakers vs Warriors",
+        "sport": "Basketball",
+        "date": "2024-01-15",
+        "time": "7:30 PM",
+        "venue": "Crypto.com Arena",
+        "address": "1111 S Figueroa St, Los Angeles, CA",
+        "zipCode": "90015",
+        "latitude": 34.043,
+        "longitude": -118.267
+    },
+    {
+        "id": 2,
+        "title": "Rams vs 49ers",
+        "sport": "Football",
+        "date": "2024-01-20",
+        "time": "1:00 PM",
+        "venue": "SoFi Stadium",
+        "address": "1001 Stadium Dr, Inglewood, CA",
+        "zipCode": "90301",
+        "latitude": 33.953,
+        "longitude": -118.338
+    },
+    {
+        "id": 3,
+        "title": "Dodgers vs Giants",
+        "sport": "Baseball",
+        "date": "2024-04-10",
+        "time": "7:10 PM",
+        "venue": "Dodger Stadium",
+        "address": "1000 Vin Scully Ave, Los Angeles, CA",
+        "zipCode": "90012",
+        "latitude": 34.073,
+        "longitude": -118.240
+    },
+    {
+        "id": 4,
+        "title": "Yankees vs Red Sox",
+        "sport": "Baseball",
+        "date": "2024-04-15",
+        "time": "7:05 PM",
+        "venue": "Yankee Stadium",
+        "address": "1 E 161st St, Bronx, NY",
+        "zipCode": "10451",
+        "latitude": 40.829,
+        "longitude": -73.926
+    },
+    {
+        "id": 5,
+        "title": "Knicks vs Celtics",
+        "sport": "Basketball",
+        "date": "2024-02-01",
+        "time": "8:00 PM",
+        "venue": "Madison Square Garden",
+        "address": "4 Pennsylvania Plaza, New York, NY",
+        "zipCode": "10001",
+        "latitude": 40.750,
+        "longitude": -73.993
+    },
+    {
+        "id": 6,
+        "title": "Giants vs Cowboys",
+        "sport": "Football",
+        "date": "2024-01-25",
+        "time": "4:25 PM",
+        "venue": "MetLife Stadium",
+        "address": "1 MetLife Stadium Dr, East Rutherford, NJ",
+        "zipCode": "07073",
+        "latitude": 40.813,
+        "longitude": -74.074
+    },
+    {
+        "id": 7,
+        "title": "Bulls vs Heat",
+        "sport": "Basketball",
+        "date": "2024-02-10",
+        "time": "8:00 PM",
+        "venue": "United Center",
+        "address": "1901 W Madison St, Chicago, IL",
+        "zipCode": "60612",
+        "latitude": 41.881,
+        "longitude": -87.674
+    },
+    {
+        "id": 8,
+        "title": "Bears vs Packers",
+        "sport": "Football",
+        "date": "2024-01-30",
+        "time": "1:00 PM",
+        "venue": "Soldier Field",
+        "address": "1410 S Museum Campus Dr, Chicago, IL",
+        "zipCode": "60605",
+        "latitude": 41.862,
+        "longitude": -87.617
+    },
+    {
+        "id": 9,
+        "title": "Warriors vs Clippers",
+        "sport": "Basketball",
+        "date": "2024-02-05",
+        "time": "10:00 PM",
+        "venue": "Chase Center",
+        "address": "1 Warriors Way, San Francisco, CA",
+        "zipCode": "94158",
+        "latitude": 37.768,
+        "longitude": -122.388
+    },
+    {
+        "id": 10,
+        "title": "49ers vs Seahawks",
+        "sport": "Football",
+        "date": "2024-02-12",
+        "time": "4:05 PM",
+        "venue": "Levi's Stadium",
+        "address": "4900 Marie P DeBartolo Way, Santa Clara, CA",
+        "zipCode": "95054",
+        "latitude": 37.403,
+        "longitude": -121.970
+    }
+]

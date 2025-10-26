@@ -1,126 +1,4 @@
-// Mock sporting events data with ZIP codes and coordinates
-const mockEvents = [
-    {
-        id: 1,
-        title: "Lakers vs Warriors",
-        sport: "Basketball",
-        date: "2024-01-15",
-        time: "7:30 PM",
-        venue: "Crypto.com Arena",
-        address: "1111 S Figueroa St, Los Angeles, CA",
-        zipCode: "90015",
-        latitude: 34.043,
-        longitude: -118.267
-    },
-    {
-        id: 2,
-        title: "Rams vs 49ers",
-        sport: "Football",
-        date: "2024-01-20",
-        time: "1:00 PM",
-        venue: "SoFi Stadium",
-        address: "1001 Stadium Dr, Inglewood, CA",
-        zipCode: "90301",
-        latitude: 33.953,
-        longitude: -118.338
-    },
-    {
-        id: 3,
-        title: "Dodgers vs Giants",
-        sport: "Baseball",
-        date: "2024-04-10",
-        time: "7:10 PM",
-        venue: "Dodger Stadium",
-        address: "1000 Vin Scully Ave, Los Angeles, CA",
-        zipCode: "90012",
-        latitude: 34.073,
-        longitude: -118.240
-    },
-    {
-        id: 4,
-        title: "Yankees vs Red Sox",
-        sport: "Baseball",
-        date: "2024-04-15",
-        time: "7:05 PM",
-        venue: "Yankee Stadium",
-        address: "1 E 161st St, Bronx, NY",
-        zipCode: "10451",
-        latitude: 40.829,
-        longitude: -73.926
-    },
-    {
-        id: 5,
-        title: "Knicks vs Celtics",
-        sport: "Basketball",
-        date: "2024-02-01",
-        time: "8:00 PM",
-        venue: "Madison Square Garden",
-        address: "4 Pennsylvania Plaza, New York, NY",
-        zipCode: "10001",
-        latitude: 40.750,
-        longitude: -73.993
-    },
-    {
-        id: 6,
-        title: "Giants vs Cowboys",
-        sport: "Football",
-        date: "2024-01-25",
-        time: "4:25 PM",
-        venue: "MetLife Stadium",
-        address: "1 MetLife Stadium Dr, East Rutherford, NJ",
-        zipCode: "07073",
-        latitude: 40.813,
-        longitude: -74.074
-    },
-    {
-        id: 7,
-        title: "Bulls vs Heat",
-        sport: "Basketball",
-        date: "2024-02-10",
-        time: "8:00 PM",
-        venue: "United Center",
-        address: "1901 W Madison St, Chicago, IL",
-        zipCode: "60612",
-        latitude: 41.881,
-        longitude: -87.674
-    },
-    {
-        id: 8,
-        title: "Bears vs Packers",
-        sport: "Football",
-        date: "2024-01-30",
-        time: "1:00 PM",
-        venue: "Soldier Field",
-        address: "1410 S Museum Campus Dr, Chicago, IL",
-        zipCode: "60605",
-        latitude: 41.862,
-        longitude: -87.617
-    },
-    {
-        id: 9,
-        title: "Warriors vs Clippers",
-        sport: "Basketball",
-        date: "2024-02-05",
-        time: "10:00 PM",
-        venue: "Chase Center",
-        address: "1 Warriors Way, San Francisco, CA",
-        zipCode: "94158",
-        latitude: 37.768,
-        longitude: -122.388
-    },
-    {
-        id: 10,
-        title: "49ers vs Seahawks",
-        sport: "Football",
-        date: "2024-02-12",
-        time: "4:05 PM",
-        venue: "Levi's Stadium",
-        address: "4900 Marie P DeBartolo Way, Santa Clara, CA",
-        zipCode: "95054",
-        latitude: 37.403,
-        longitude: -121.970
-    }
-];
+// Mock events are now loaded from sportsData/mockEvents.json
 
 
 // ZIP code to coordinates mapping is now loaded in zipCoords.js using PapaParse
@@ -146,24 +24,32 @@ function isValidZipCode(zipCode) {
 // getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
-function findEventsNearZip(zipCode, maxDistance = 50) {
+async function findEventsNearZip(zipCode, maxDistance = 1500) {
     const userCoords = getCoordinatesForZip(zipCode);
     if (!userCoords) {
         return [];
     }
 
-    return mockEvents
-        .map(event => {
-            const distance = calculateDistance(
-                userCoords.lat,
-                userCoords.lng,
-                event.latitude,
-                event.longitude
-            );
-            return { ...event, distance };
-        })
-        .filter(event => event.distance <= maxDistance)
-        .sort((a, b) => a.distance - b.distance);
+    try {
+        // const response = await fetch('sportsData/mockEvents.json');
+        const response = await fetch('sportsData/BYUSports2025-10-25.json');
+        const mockEvents = await response.json();
+        return mockEvents
+            .map(event => {
+                const distance = calculateDistance(
+                    userCoords.lat,
+                    userCoords.lng,
+                    event.latitude,
+                    event.longitude
+                );
+                return { ...event, distance };
+            })
+            .filter(event => event.distance <= maxDistance)
+            .sort((a, b) => a.distance - b.distance);
+    } catch (error) {
+        console.error('Error loading events:', error);
+        return [];
+    }
 }
 
 // Format distance for display
@@ -241,7 +127,7 @@ function hideLoading() {
 
 // Handle form submission
 
-function doSearch(zipCode) {
+async function doSearch(zipCode) {
     // Check if we have coordinates for this ZIP code
     if (!getCoordinatesForZip(zipCode)) {
         showError('Sorry, we don\'t have location data for this ZIP code. Try: 90210, 10001, 60612, or other major city ZIP codes.');
@@ -251,12 +137,15 @@ function doSearch(zipCode) {
     // Show loading state
     showLoading();
 
-    // Simulate API delay for better UX
-    setTimeout(() => {
-        const events = findEventsNearZip(zipCode);
+    try {
+        const events = await findEventsNearZip(zipCode);
         hideLoading();
         displayEvents(events);
-    }, 1000);
+    } catch (error) {
+        hideLoading();
+        showError('Error loading events. Please try again.');
+        console.error('Error:', error);
+    }
 }
 
 function handleSearch(event) {
