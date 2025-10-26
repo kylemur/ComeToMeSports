@@ -29,6 +29,13 @@ header {
     color: white;
 }
 
+header img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
 header h1 {
     font-size: 3rem;
     font-weight: bold;
