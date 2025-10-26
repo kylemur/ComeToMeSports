@@ -33,8 +33,8 @@ async function findEventsNearZip(zipCode, maxDistance = 1500) {
     try {
         // const response = await fetch('sportsData/mockEvents.json');
         const response = await fetch('sportsData/BYUSports2025-10-25.json');
-        const mockEvents = await response.json();
-        return mockEvents
+        const sportsEvents = await response.json();
+        return sportsEvents
             .map(event => {
                 const distance = calculateDistance(
                     userCoords.lat,
@@ -61,23 +61,25 @@ function formatDistance(distance) {
 
 // Create event card HTML
 function createEventCard(event) {
-    const eventDate = new Date(event.date);
-    const formattedDate = eventDate.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
+    // const eventDate = new Date(event.date);
+    // const formattedDate = eventDate.toLocaleDateString('en-US', {
+    //     weekday: 'long',
+    //     year: 'numeric',
+    //     month: 'long',
+    //     day: 'numeric'
+    // });
+
+    // <strong>Date:</strong> ${formattedDate}<br> // This was used as part of return 
 
     return `
         <div class="event-card">
             <div class="event-title">${event.title}</div>
             <div class="event-sport">${event.sport}</div>
             <div class="event-details">
-                <strong>Date:</strong> ${formattedDate}<br>
+                <strong>Date:</strong> ${event.date}<br>
                 <strong>Time:</strong> ${event.time}<br>
                 <strong>Venue:</strong> ${event.venue}<br>
-                <strong>Address:</strong> ${event.address}<br>
+                <strong>Location:</strong> ${event.location}<br>
                 <strong>Distance:</strong> <span class="distance">${formatDistance(event.distance)} away</span>
             </div>
         </div>

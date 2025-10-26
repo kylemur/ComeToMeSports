@@ -1,0 +1,702 @@
+[
+  {
+    "title": "BYU atTCU",
+    "date": "Thu., Oct. 23TBA",
+    "location": "Fort Worth, TX",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "BYU atThe Preserve Golf Club Collegiate",
+    "date": "Mon., Oct. 278:00 AM MDT",
+    "location": "Carmel, CA / Santa Lucia Preserve Golf Club",
+    "latitude": 36.40394,
+    "longitude": -121.79867
+  },
+  {
+    "title": "BYU atUCF",
+    "date": "Mon., Oct. 2711:00 AM MDT",
+    "location": "Orlando, Florida / UCF Soccer and Track Complex",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs.Western Colorado",
+    "date": "Tue., Oct. 287:00 PM MDT",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.UCF",
+    "date": "Wed., Oct. 296:00 PM MDT",
+    "location": "Provo, Utah / Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU undefinedRahlston/Neufeld Coaches Challenge",
+    "date": "Thu., Oct. 30TBA",
+    "location": "Dallas, Texas / Styslinger/Altec Tennis Complex",
+    "latitude": 32.78826,
+    "longitude": -96.79953
+  },
+  {
+    "title": "BYU atUtah",
+    "date": "Thu., Oct. 307:00 PM MDT",
+    "location": "Salt Lake City, Utah / Ute Field",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU atBig 12 Championships",
+    "date": "Fri., Oct. 319:00 AM MDT",
+    "location": "Lawerence, Kansas / Rim Rock Farm",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU atBig 12 Championships",
+    "date": "Fri., Oct. 3110:00 AM MDT",
+    "location": "Lawrence, Kansas / Rim Rock Farm",
+    "latitude": 39.03187,
+    "longitude": -95.20991
+  },
+  {
+    "title": "BYU vs.Kansas State",
+    "date": "Fri., Oct. 316:00 PM MDT",
+    "location": "Provo, Utah / Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU undefinedundefined",
+    "date": "Mon., Nov. 3TBA",
+    "location": "Fort Worth, Texas / Garvey-Rosenthal Soccer Stadium",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "BYU vs.Villanova",
+    "date": "Mon., Nov. 37:30 PM MST",
+    "location": "Las Vegas, Nevada / T-Mobile Arena",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "BYU atArizona",
+    "date": "Wed., Nov. 56:00 PM MST",
+    "location": "Tucson, Arizona / McKale Center",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU vs.Coastal Carolina",
+    "date": "Wed., Nov. 57:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atITA Masters",
+    "date": "Thu., Nov. 6TBA",
+    "location": "San Diego, California",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "BYU vs.ITA",
+    "date": "Thu., Nov. 6TBA",
+    "location": "Seattle, WA",
+    "latitude": 47.61119,
+    "longitude": -122.33454
+  },
+  {
+    "title": "BYU atCSUN",
+    "date": "Fri., Nov. 7TBA",
+    "location": "Northridge, CA",
+    "latitude": 34.23855,
+    "longitude": -118.55015
+  },
+  {
+    "title": "BYU atUNLV",
+    "date": "Fri., Nov. 74:00 PM MST",
+    "location": "Las Vegas, Nevada / Buchanan Natatorium",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "BYU atUNLV",
+    "date": "Fri., Nov. 74:00 PM MST",
+    "location": "Las Vegas, Nevada / Buchanan Natatorium",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "BYU atNo. 6 Arizona State",
+    "date": "Fri., Nov. 77:00 PM MST",
+    "location": "Tempe, Arizona / Desert Financial Arena",
+    "latitude": 33.42805,
+    "longitude": -111.93157
+  },
+  {
+    "title": "BYU atTexas Tech",
+    "date": "Sat., Nov. 8TBA",
+    "location": "Lubbock, Texas / Jones AT&T Stadium",
+    "latitude": 33.58683,
+    "longitude": -101.85179
+  },
+  {
+    "title": "BYU vs.San Jose State",
+    "date": "Sat., Nov. 82:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Holy Cross",
+    "date": "Sat., Nov. 87:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Delaware",
+    "date": "Tue., Nov. 117:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.University of Nebraska Omaha",
+    "date": "Thu., Nov. 137:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atNCAA Mountain Regionals",
+    "date": "Fri., Nov. 14TBA",
+    "location": "Salt Lake City, Utah / Regional Athletic Complex",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU atNCAA Mountain Regional",
+    "date": "Fri., Nov. 141:00 PM MST",
+    "location": "Salt Lake City, Utah / Regional Athletic Complex",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU atUtah",
+    "date": "Fri., Nov. 147:00 PM MST",
+    "location": "Salt Lake City, Utah / Huntsman Center",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU vs.TCU",
+    "date": "Sat., Nov. 15TBA",
+    "location": "Provo, Utah / LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Fresno State",
+    "date": "Sat., Nov. 152:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.No. 4 UConn",
+    "date": "Sat., Nov. 155:00 PM MST",
+    "location": "Boston, Massachusetts / TD Garden",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "BYU atNCAA Individual Championships",
+    "date": "Tue., Nov. 18TBA",
+    "location": "Orlando, Florida",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs.NCAA",
+    "date": "Wed., Nov. 19TBA",
+    "location": "Orlando, FL",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs.Arizona",
+    "date": "Wed., Nov. 196:00 PM MST",
+    "location": "Provo, Utah / Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atMontana",
+    "date": "Wed., Nov. 197:00 PM MST",
+    "location": "Missoula, Montana / Dahlberg Arena",
+    "latitude": 46.85505,
+    "longitude": -114.01009
+  },
+  {
+    "title": "BYU atWolfpack Elite Invite (Swimming)",
+    "date": "Thu., Nov. 20TBA",
+    "location": "Greensboro, North Carolina / Greensboro Aquatic Center",
+    "latitude": 36.06995,
+    "longitude": -79.76724
+  },
+  {
+    "title": "BYU atUSC Invitational (Diving)",
+    "date": "Thu., Nov. 20TBA",
+    "location": "Los Angeles, California / Uytengsu Aquatics Center",
+    "latitude": 33.97365,
+    "longitude": -118.24904
+  },
+  {
+    "title": "BYU atWolfpack Elite Invite (Swimming)",
+    "date": "Thu., Nov. 20TBA",
+    "location": "Greensboro, North Carolina / Greensboro Aquatic Center",
+    "latitude": 36.06995,
+    "longitude": -79.76724
+  },
+  {
+    "title": "BYU atUSC Invitational (Diving)",
+    "date": "Thu., Nov. 20TBA",
+    "location": "Los Angeles, California / Uytengsu Aquatics Center",
+    "latitude": 33.97365,
+    "longitude": -118.24904
+  },
+  {
+    "title": "BYU vs.No. 24 Wisconsin",
+    "date": "Fri., Nov. 212:00 PM MST",
+    "location": "Salt Lake City, Utah / Delta Center",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU vs.No. 14 Kansas",
+    "date": "Fri., Nov. 216:00 PM MST",
+    "location": "Provo, Utah / Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atNCAA Championships",
+    "date": "Sat., Nov. 229:10 AM MST",
+    "location": "Columbia, Missouri / Gans Creek Championship Course",
+    "latitude": 38.89595,
+    "longitude": -92.24365
+  },
+  {
+    "title": "BYU atCincinnati",
+    "date": "Sat., Nov. 22TBA",
+    "location": "Cincinnati, Ohio / Nippert Stadium",
+    "latitude": 39.10885,
+    "longitude": -84.50243
+  },
+  {
+    "title": "BYU vs.Weber State",
+    "date": "Sat., Nov. 222:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Utah",
+    "date": "Wed., Nov. 266:00 PM MST",
+    "location": "Provo, Utah / Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Miami",
+    "date": "Thu., Nov. 273:00 PM MST",
+    "location": "Kissimmee, Florida / State Farm Field House",
+    "latitude": 28.30544,
+    "longitude": -81.42567
+  },
+  {
+    "title": "BYU vs.Virginia Tech",
+    "date": "Thu., Nov. 273:30 PM MST",
+    "location": "St. Thomas, U.S. Virgin Islands / UVI Arena",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs.Dayton/Georgetown",
+    "date": "Fri., Nov. 285/7:30 p.m. MST",
+    "location": "Kissimmee, Florida / State Farm Field House",
+    "latitude": 28.30544,
+    "longitude": -81.42567
+  },
+  {
+    "title": "BYU vs.UCF",
+    "date": "Sat., Nov. 29TBA",
+    "location": "Provo, Utah / LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atColorado",
+    "date": "Sat., Nov. 291:00 PM MST",
+    "location": "Boulder, Colorado / CU Events Center",
+    "latitude": 40.04795,
+    "longitude": -105.19876
+  },
+  {
+    "title": "BYU vs.Oregon State/Vanderbilt",
+    "date": "Sat., Nov. 29TBA",
+    "location": "St. Thomas, U.S. Virgin Islands / UVI Arena",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs.US Open",
+    "date": "Wed., Dec. 3TBA",
+    "location": "Austin, Texas / Lee and Joe Jamail Texas Swimming Center",
+    "latitude": 30.27022,
+    "longitude": -97.74248
+  },
+  {
+    "title": "BYU vs.U.S. Open",
+    "date": "Wed., Dec. 3TBA",
+    "location": "Austin, Texas / Lee and Joe Jamail Texas Swimming Center",
+    "latitude": 30.27022,
+    "longitude": -97.74248
+  },
+  {
+    "title": "BYU vs.Washington State",
+    "date": "Wed., Dec. 32:00 PM MST",
+    "location": "Salt Lake City, Utah / Delta Center",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU vs.Cal Baptist",
+    "date": "Wed., Dec. 37:00 PM MST",
+    "location": "Salt Lake City, Utah / Delta Center",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU atPortland",
+    "date": "Sat., Dec. 66:00 PM MST",
+    "location": "Portland, Oregon / Chiles Center",
+    "latitude": 45.50796,
+    "longitude": -122.68959
+  },
+  {
+    "title": "BYU vs.Clemson",
+    "date": "Tue., Dec. 94:30 PM MST",
+    "location": "New York City, New York / Madison Square Garden",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs.Idaho State",
+    "date": "Thu., Dec. 117:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.CSCAA Open Water Championship",
+    "date": "Sat., Dec. 13TBA",
+    "location": "Sarasota, Florida / Nathan Benderson Park",
+    "latitude": 27.26651,
+    "longitude": -82.51626
+  },
+  {
+    "title": "BYU vs.CSCAA Open Water Championship",
+    "date": "Sat., Dec. 13TBA",
+    "location": "Sarasota, Florida / Nathan Benderson Park",
+    "latitude": 27.26651,
+    "longitude": -82.51626
+  },
+  {
+    "title": "BYU vs.UTEP",
+    "date": "Sat., Dec. 131:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.UC Riverside",
+    "date": "Sat., Dec. 137:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Pacific",
+    "date": "Tue., Dec. 167:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Abilene Christian",
+    "date": "Fri., Dec. 197:30 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atUCF",
+    "date": "Sat., Dec. 2012:00 PM MST",
+    "location": "Orlando, Florida / Addition Financial Arena",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs.Eastern Washington",
+    "date": "Mon., Dec. 227:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.TCU",
+    "date": "Wed., Dec. 317:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atHawaii",
+    "date": "Sat., Jan. 3TBA",
+    "location": "Honolulu, Hawaii / Duke Kahanamoku Aquatic Complex",
+    "latitude": 21.31628,
+    "longitude": -157.84359
+  },
+  {
+    "title": "BYU atKansas State",
+    "date": "Sat., Jan. 311:30 AM MST",
+    "location": "Manhattan, Kansas / Bramlage Coliseum",
+    "latitude": 39.14146,
+    "longitude": -96.52906
+  },
+  {
+    "title": "BYU atHawaii",
+    "date": "Sat., Jan. 3TBA",
+    "location": "Honolulu, Hawaii / Duke Kahanamoku Aquatic Complex",
+    "latitude": 21.31628,
+    "longitude": -157.84359
+  },
+  {
+    "title": "BYU vs.Arizona State",
+    "date": "Sat., Jan. 32:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atArizona",
+    "date": "Tue., Jan. 66:00 PM MST",
+    "location": "Tucson, Arizona / McKale Center",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU vs.Arizona State",
+    "date": "Wed., Jan. 77:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Oregon State",
+    "date": "Fri., Jan. 97:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atDual at Denver",
+    "date": "Sat., Jan. 10TBA",
+    "location": "Denver, Colorado / El Pomar Natatorium",
+    "latitude": 39.75156,
+    "longitude": -104.99768
+  },
+  {
+    "title": "BYU atDual at Denver",
+    "date": "Sat., Jan. 10TBA",
+    "location": "Denver, Colorado / El Pomar Natatorium",
+    "latitude": 39.75156,
+    "longitude": -104.99768
+  },
+  {
+    "title": "BYU atHouston",
+    "date": "Sat., Jan. 101:00 PM MST",
+    "location": "Houston, Texas / Fertitta Center",
+    "latitude": 29.75635,
+    "longitude": -95.36538
+  },
+  {
+    "title": "BYU atUtah",
+    "date": "Sat., Jan. 108:00 PM MST",
+    "location": "Salt Lake City, Utah / Huntsman Center",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU vs.Utah State",
+    "date": "Mon., Jan. 127:00 PM MST",
+    "location": "West Valley City, Utah / Maverik Center",
+    "latitude": 40.70289,
+    "longitude": -111.94591
+  },
+  {
+    "title": "BYU vs.Utah",
+    "date": "Mon., Jan. 127:00 PM MST",
+    "location": "West Valley City, Utah / Maverik Center",
+    "latitude": 40.70289,
+    "longitude": -111.94591
+  },
+  {
+    "title": "BYU vs.Southern Utah",
+    "date": "Mon., Jan. 127:00 PM MST",
+    "location": "West Valley City, Utah / Maverik Center",
+    "latitude": 40.70289,
+    "longitude": -111.94591
+  },
+  {
+    "title": "BYU vs.TCU",
+    "date": "Wed., Jan. 149:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Big 12 - Duel in the West",
+    "date": "Fri., Jan. 16TBA",
+    "location": "Tempe, Arizona",
+    "latitude": 33.42805,
+    "longitude": -111.93157
+  },
+  {
+    "title": "BYU atBig 12 - Duel in the West",
+    "date": "Fri., Jan. 16TBA",
+    "location": "Tempe, Arizona",
+    "latitude": 33.42805,
+    "longitude": -111.93157
+  },
+  {
+    "title": "BYU vs.Boise State",
+    "date": "Fri., Jan. 167:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atUtah Tech",
+    "date": "Sat., Jan. 1710:00 AM MST",
+    "location": "St. George, UT",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs.Weber State",
+    "date": "Sat., Jan. 1712:00 PM MST",
+    "location": "Provo, Utah / Indoor Tennis Courts",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Baylor",
+    "date": "Sat., Jan. 172:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atUtah Tech",
+    "date": "Sat., Jan. 173:00 PM MST",
+    "location": "St. George, UT",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU atNo. 10 Texas Tech",
+    "date": "Sat., Jan. 176:00 PM MST",
+    "location": "Lubbock, Texas / United Supermarkets Arena",
+    "latitude": 33.58683,
+    "longitude": -101.85179
+  },
+  {
+    "title": "BYU vs.Texas Tech",
+    "date": "Wed., Jan. 217:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Air Force and CMU Double Dual",
+    "date": "Fri., Jan. 23TBA",
+    "location": "Provo, Utah / Richards Building Pool",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atSan Diego",
+    "date": "Fri., Jan. 23TBA",
+    "location": "San Diego, CA",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "BYU atArizona State",
+    "date": "Fri., Jan. 23TBA",
+    "location": "Tempe, Arizona / Mullett Arena",
+    "latitude": 33.42805,
+    "longitude": -111.93157
+  },
+  {
+    "title": "BYU vs.Air Force and CMU Double Dual",
+    "date": "Fri., Jan. 23TBA",
+    "location": "Provo, Utah / Richards Building Pool",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.Utah",
+    "date": "Sat., Jan. 243:30 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs.West Virginia",
+    "date": "Sat., Jan. 247:30 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atArizona N.I.T",
+    "date": "Mon., Jan. 268:00 AM MST",
+    "location": "Tucson, AZ / Omni Tucson National Resort",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU vs.No. 13 Arizona",
+    "date": "Mon., Jan. 267:00 PM MST",
+    "location": "Provo, Utah / Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU atAir Force Invite (Diving)",
+    "date": "Wed., Jan. 28TBA",
+    "location": "Colorado Springs, Colorado / Cadet Natatorium",
+    "latitude": 38.68683,
+    "longitude": -104.8127
+  }
+]

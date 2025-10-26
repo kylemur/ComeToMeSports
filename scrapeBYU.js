@@ -1,4 +1,13 @@
+/* Scrape BYU Athletics events and save to JSON with coordinates 
 
+Edge cases to handle:
+- NCAA Championships - Individual (see sticky note)
+- Big 12 Championships   XII vs. XII (see sticky note)
+
+- Locations without a comma (no city/state)
+- Locations with unexpected formats
+- Missing location data
+*/
 
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -35,10 +44,24 @@ async function scrapeBYUEvents() {
 
   const events = await page.$$eval('.schedule-event-item', items => {
     return items.map(el => {
-      const title = el.querySelector('.schedule-event-links__sport-name')?.textContent.trim() || '';
-      const date = el.querySelector('.schedule-event-date__time')?.textContent.trim() || '';
+      const divider = el.querySelector('.schedule-event-item__divider')?.textContent.trim() || 
+                     el.querySelector('.schedule-event-item__neutral-divider')?.textContent.trim() || '';
+      const title = (
+        "BYU " + 
+        divider + // "at" or "vs." 
+        " " + 
+        el.querySelector('.schedule-event-item__opponent-name')?.textContent.trim()) || '';
+      const sport = el.querySelector('.schedule-event-links__sport-name')?.textContent.trim() || '';
+      
+      // Get date and time from separate <time> elements
+      const dateTimeElement = el.querySelector('.schedule-event-date__time');
+      const timeElements = dateTimeElement ? dateTimeElement.querySelectorAll('time') : [];
+      const date = timeElements[0] ? timeElements[0].textContent.trim() : '';
+      const time = timeElements[1] ? timeElements[1].textContent.trim() : '';
+      
       const location = el.querySelector('.schedule-event-location')?.textContent.trim() || '';
-      return { title, date, location };
+      
+      return { title, sport, date, time, location };
     });
   }); 
 
@@ -46,12 +69,18 @@ async function scrapeBYUEvents() {
   const eventsWithCoords = events.map(event => {
     let latitude = null;
     let longitude = null;
+    let location = '';
+    let venue = '';
     
     if (event.location) {
-      // Parse location: "Provo, Utah / Gail Miller Field"
-      // Extract city and state from the first part before "/"
-      const locationParts = event.location.split('/')[0].trim();
-      const cityStateParts = locationParts.split(',');
+      // Parse location: "Lawrence, Kansas / Rim Rock Farm"
+      // Split into location and venue
+      const locationParts = event.location.split('/');
+      location = locationParts[0].trim(); // "Lawrence, Kansas"
+      venue = locationParts.length > 1 ? locationParts[1].trim() : ''; // "Rim Rock Farm"
+      
+      // Extract city and state for coordinates
+      const cityStateParts = location.split(',');
       
       if (cityStateParts.length >= 2) {
         const city = cityStateParts[0].trim();
@@ -67,8 +96,11 @@ async function scrapeBYUEvents() {
     
     return {
       title: event.title,
+      sport: event.sport,
       date: event.date,
-      location: event.location,
+      time: event.time,
+      location: location,
+      venue: venue,
       latitude,
       longitude
     };
