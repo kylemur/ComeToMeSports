@@ -12,7 +12,7 @@ async function loadCityCoordinates() {
     if (cityCoordinatesLoaded) return;
     
     try {
-        const response = await fetch('ZIPCodes/uszips.csv');
+        const response = await fetch('../ZIPCodes/uszips.csv');
         const csvText = await response.text();
         cityCoordinatesData = csvText;
         cityCoordinatesLoaded = true;
@@ -163,7 +163,7 @@ if (typeof module !== 'undefined' && module.exports) {
     
     // Node.js version for tests
     function getCityCoordsNode(city, state) {
-        const CSV_PATH = path.join(__dirname, 'ZIPCodes/uszips.csv');
+        const CSV_PATH = path.join(__dirname, '../ZIPCodes/uszips.csv');
         const data = fs.readFileSync(CSV_PATH, 'utf8');
         const lines = data.split('\n');
         

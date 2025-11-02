@@ -9,7 +9,7 @@ function loadZipCoords(callback) {
         callback();
         return;
     }
-    Papa.parse('ZIPCodes/uszips.csv', {
+    Papa.parse('../ZIPCodes/uszips.csv', {
         download: true,
         header: true,
         skipEmptyLines: true,

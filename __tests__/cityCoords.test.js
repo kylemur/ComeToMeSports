@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { getCityCoords } = require('../cityCoords');
+const { getCityCoords } = require('../helperFunctions/cityCoords');
 
 describe('getCityCoords', () => {
     test('returns correct coordinates for a known city/state', () => {
