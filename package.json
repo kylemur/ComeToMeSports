@@ -1,0 +1,16 @@
+{
+  "name": "cometomesports",
+  "version": "1.0.0",
+  "description": "Web application to find sporting events near a given ZIP code.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "test:cityCoords": "jest cityCoords.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

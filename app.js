@@ -24,7 +24,7 @@ function isValidZipCode(zipCode) {
 // getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
-async function findEventsNearZip(zipCode, maxDistance = 1500) {
+async function findEventsNearZip(zipCode, maxDistance = 500) {
     const userCoords = getCoordinatesForZip(zipCode);
     if (!userCoords) {
         return [];
@@ -153,8 +153,9 @@ async function doSearch(zipCode) {
 function handleSearch(event) {
     event.preventDefault();
 
+    const searchModeZip = document.getElementById('searchModeZip');
     const zipCodeInput = document.getElementById('zipCode');
-    const zipCode = zipCodeInput.value.trim();
+    const cityInput = document.getElementById('cityInput');
 
     // Hide previous results and errors
     hideError();
@@ -162,39 +163,151 @@ function handleSearch(event) {
     document.getElementById('resultsSection').style.display = 'none';
     document.getElementById('noResults').style.display = 'none';
 
-    // Validate ZIP code
-    if (!zipCode) {
-        showError('Please enter a ZIP code.');
-        return;
-    }
+    if (searchModeZip.checked) {
+        // ZIP code search mode
+        const zipCode = zipCodeInput.value.trim();
 
-    if (!isValidZipCode(zipCode)) {
-        showError('Please enter a valid 5-digit ZIP code.');
-        return;
-    }
+        if (!zipCode) {
+            showError('Please enter a ZIP code.');
+            return;
+        }
 
-    // Wait for ZIP data to be loaded if not already
-    if (!window.zipCoordsLoaded) {
-        showLoading();
-        loadZipCoords(() => {
+        if (!isValidZipCode(zipCode)) {
+            showError('Please enter a valid 5-digit ZIP code.');
+            return;
+        }
+
+        // Wait for ZIP data to be loaded if not already
+        if (!window.zipCoordsLoaded) {
+            showLoading();
+            loadZipCoords(() => {
+                hideLoading();
+                doSearch(zipCode);
+            });
+            return;
+        }
+
+        doSearch(zipCode);
+    } else {
+        // City, State search mode
+        const cityState = cityInput.value.trim();
+        
+        if (!cityState) {
+            showError('Please enter a city and state.');
+            return;
+        }
+
+        // Parse city and state (e.g., "Los Angeles, CA")
+        const parts = cityState.split(',');
+        if (parts.length < 2) {
+            showError('Please enter city and state separated by a comma (e.g., "Los Angeles, CA").');
+            return;
+        }
+
+        const city = parts[0].trim();
+        const state = parts[1].trim();
+
+        if (!city || !state) {
+            showError('Please enter both city and state.');
+            return;
+        }
+
+        // Wait for ZIP data to be loaded if not already
+        if (!window.zipCoordsLoaded) {
+            showLoading();
+            loadZipCoords(() => {
+                hideLoading();
+                doSearchByCity(city, state);
+            });
+            return;
+        }
+
+        doSearchByCity(city, state);
+    }
+}
+
+async function doSearchByCity(city, state) {
+    // Show loading state early
+    showLoading();
+
+    try {
+        // Get coordinates for the city/state using getCityCoords (async)
+        const cityCoords = await getCityCoords(city, state);
+        
+        if (!cityCoords) {
             hideLoading();
-            doSearch(zipCode);
-        });
-        return;
-    }
+            showError(`Sorry, we don't have location data for ${city}, ${state}. Please try a different city or use ZIP code search.`);
+            return;
+        }
 
-    doSearch(zipCode);
+        // Load sports events
+        const response = await fetch('sportsData/BYUSports2025-10-25.json');
+        const sportsEvents = await response.json();
+        
+        // Calculate distances and filter events
+        const eventsWithDistance = sportsEvents
+            .map(event => {
+                const distance = calculateDistance(
+                    cityCoords.lat,
+                    cityCoords.lon,
+                    event.latitude,
+                    event.longitude
+                );
+                return { ...event, distance };
+            })
+            .filter(event => event.distance <= 500) // 500 mile radius
+            .sort((a, b) => a.distance - b.distance);
+
+        hideLoading();
+        displayEvents(eventsWithDistance);
+        
+    } catch (error) {
+        hideLoading();
+        showError('Error loading city coordinate data or events. Please try again.');
+        console.error('Error in doSearchByCity:', error);
+    }
 }
 
 // Initialize the application
 function init() {
     const searchForm = document.getElementById('searchForm');
     const zipCodeInput = document.getElementById('zipCode');
+    const cityInput = document.getElementById('cityInput');
+    const searchModeZip = document.getElementById('searchModeZip');
+    const searchModeCity = document.getElementById('searchModeCity');
+    const zipCodeGroup = document.getElementById('zipCodeGroup');
+    const cityStateGroup = document.getElementById('cityStateGroup');
+
+    // Add radio button functionality
+    function switchSearchMode() {
+        if (searchModeZip.checked) {
+            // Switch to ZIP Code mode
+            zipCodeGroup.style.display = 'block';
+            cityStateGroup.style.display = 'none';
+            zipCodeInput.required = true;
+            cityInput.required = false;
+            zipCodeInput.focus();
+        } else {
+            // Switch to City, State mode
+            zipCodeGroup.style.display = 'none';
+            cityStateGroup.style.display = 'block';
+            zipCodeInput.required = false;
+            cityInput.required = true;
+            cityInput.focus();
+        }
+        hideError(); // Clear any existing errors when switching modes
+    }
+
+    searchModeZip.addEventListener('change', switchSearchMode);
+    searchModeCity.addEventListener('change', switchSearchMode);
+
+    // Initialize the required attributes based on default selection
+    switchSearchMode();
 
     // Add form submission handler
     searchForm.addEventListener('submit', handleSearch);
 
-    // Add input validation
+    // Add input validation for ZIP code
     zipCodeInput.addEventListener('input', (e) => {
         // Only allow digits
         e.target.value = e.target.value.replace(/\D/g, '');
@@ -205,7 +318,15 @@ function init() {
         }
     });
 
-    // Focus on ZIP code input when page loads
+    // Add input validation for city input
+    cityInput.addEventListener('input', (e) => {
+        // Hide error when user starts typing
+        if (e.target.value.length > 0) {
+            hideError();
+        }
+    });
+
+    // Focus on ZIP code input when page loads (default mode)
     zipCodeInput.focus();
 }
 
