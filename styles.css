@@ -62,6 +62,19 @@ main {
     margin-bottom: 30px;
 }
 
+/* Filters container */
+.filters {
+    margin-bottom: 30px;
+}
+
+.filters h3 {
+    text-align: center;
+    color: blue;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
 /* Distance input section */
 .search-distance {
     text-align: center;
@@ -91,6 +104,40 @@ main {
 }
 
 .search-distance input:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Sport filter section */
+.search-sport {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.search-sport label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.search-sport select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    width: auto;
+    background: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.search-sport select:focus {
     outline: none;
     border-color: #fff;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);

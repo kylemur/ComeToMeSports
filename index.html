@@ -16,17 +16,39 @@
         </header>
 
         <main>
-            <div class="search-distance">
-                <label for="distanceInput">Search Radius (miles):</label>
-                <input 
-                    type="number" 
-                    id="distanceInput" 
-                    name="distanceInput" 
-                    value="50"
-                    placeholder="e.g., 50" 
-                    min="1" 
-                    max="500" 
-                >
+            <div class="filters">
+                <h3>Search Filters</h3>
+                <div class="search-distance">
+                    <label for="distanceInput">Search Radius (miles):</label>
+                    <input 
+                        type="number" 
+                        id="distanceInput" 
+                        name="distanceInput" 
+                        value="50"
+                        placeholder="e.g., 50" 
+                        min="1" 
+                        max="500" 
+                    >
+                </div>
+                <div class="search-sport">
+                    <label for="sportSelect">Select Sport:</label>
+                    <select id="sportSelect" name="sportSelect">
+                        <option value="all">All Sports</option>
+                        <option value="Football">Football</option>
+                        <option value="Men's Basketball">Men's Basketball</option>
+                        <option value="Men's Cross Country">Men's Cross Country</option>
+                        <option value="Men's Golf">Men's Golf</option>
+                        <option value="Men's Swimming & Diving">Men's Swimming & Diving</option>
+                        <option value="Men's Tennis">Men's Tennis</option>
+                        <option value="Women's Basketball">Women's Basketball</option>
+                        <option value="Women's Cross Country">Women's Cross Country</option>
+                        <option value="Women's Gymnastics">Women's Gymnastics</option>
+                        <option value="Women's Soccer">Women's Soccer</option>
+                        <option value="Women's Swimming & Diving">Women's Swimming & Diving</option>
+                        <option value="Women's Tennis">Women's Tennis</option>
+                        <option value="Women's Volleyball">Women's Volleyball</option>
+                    </select>
+                </div>
             </div>
             <div class="search-mode-toggle">
                 <label class="radio-option">
@@ -83,8 +105,8 @@
         </main>
 
         <footer>
-            <p>ZIP Code data provided by <a href="https://simplemaps.com/data/us-zips">SimpleMaps.com</a></p>
-            <p>&copy; 2025 ComeToMeSports. Find your next 🏂🤽‍♂️🤽‍♀️🤾‍♂️🤾‍♀️🏐🏈🎾🏏🏑🏒🏓🏸🎿🏹 game!</p>
+            <p>Location data provided by <a href="https://simplemaps.com/data/us-zips">SimpleMaps.com</a></p>
+            <p>&copy; 2025 ComeToMeSports. Find your next 🏂🤽‍♂️🤽‍♀️🤾‍♂️🤾‍♀️🏐🏈🎾🏏🏑🏒🏓🏸🎿🏹 event!</p>
         </footer>
     </div>
 

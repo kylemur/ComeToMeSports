@@ -24,7 +24,7 @@ function isValidZipCode(zipCode) {
 // getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
-async function findEventsNearZip(zipCode, maxDistance) {
+async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all') {
     const userCoords = getCoordinatesForZip(zipCode);
     if (!userCoords) {
         return [];
@@ -45,6 +45,7 @@ async function findEventsNearZip(zipCode, maxDistance) {
                 return { ...event, distance };
             })
             .filter(event => event.distance <= maxDistance)
+            .filter(event => selectedSport === 'all' || event.sport === selectedSport)
             .sort((a, b) => a.distance - b.distance);
     } catch (error) {
         console.error('Error loading events:', error);
@@ -136,11 +137,15 @@ async function doSearch(zipCode, distanceInput) {
         return;
     }
 
+    // Get selected sport
+    const sportSelect = document.getElementById('sportSelect');
+    const selectedSport = sportSelect ? sportSelect.value : 'all';
+
     // Show loading state
     showLoading();
 
     try {
-        const events = await findEventsNearZip(zipCode, distanceInput.value || 50);
+        const events = await findEventsNearZip(zipCode, distanceInput.value || 50, selectedSport);
         hideLoading();
         displayEvents(events);
     } catch (error) {
@@ -241,6 +246,10 @@ async function doSearchByCity(city, state, distanceInput) {
             return;
         }
 
+        // Get selected sport
+        const sportSelect = document.getElementById('sportSelect');
+        const selectedSport = sportSelect ? sportSelect.value : 'all';
+
         // Load sports events
         const response = await fetch('sportsData/BYUSports2025-10-25.json');
         const sportsEvents = await response.json();
@@ -257,6 +266,7 @@ async function doSearchByCity(city, state, distanceInput) {
                 return { ...event, distance };
             })
             .filter(event => event.distance <= (distanceInput.value || 50)) // Default 50 mile radius
+            .filter(event => selectedSport === 'all' || event.sport === selectedSport)
             .sort((a, b) => a.distance - b.distance);
 
         hideLoading();
@@ -329,6 +339,8 @@ function init() {
 
     // Add input validation for distance input
     const distanceInput = document.getElementById('distanceInput');
+    let distanceTimeout;
+    
     distanceInput.addEventListener('input', (e) => {
         const value = parseInt(e.target.value);
         if (value < 1) {
@@ -338,6 +350,45 @@ function init() {
         }
         // Hide error when user changes distance
         hideError();
+        
+        // Clear existing timeout
+        clearTimeout(distanceTimeout);
+        
+        // Set a debounced timeout to trigger search after user stops typing
+        distanceTimeout = setTimeout(() => {
+            // Check if there are currently displayed results OR no results message
+            const resultsSection = document.getElementById('resultsSection');
+            const noResults = document.getElementById('noResults');
+            
+            if (resultsSection.style.display !== 'none' || noResults.style.display !== 'none') {
+                // Hide the no results message before re-searching
+                noResults.style.display = 'none';
+                
+                // Trigger a new search with current inputs
+                const currentForm = new Event('submit');
+                searchForm.dispatchEvent(currentForm);
+            }
+        }, 800); // Wait 800ms after user stops typing
+    });
+
+    // Add event listener for sport filter changes
+    const sportSelect = document.getElementById('sportSelect');
+    sportSelect.addEventListener('change', (e) => {
+        // Hide error when user changes sport filter
+        hideError();
+        
+        // Check if there are currently displayed results OR no results message
+        const resultsSection = document.getElementById('resultsSection');
+        const noResults = document.getElementById('noResults');
+        
+        if (resultsSection.style.display !== 'none' || noResults.style.display !== 'none') {
+            // Hide the no results message before re-searching
+            noResults.style.display = 'none';
+            
+            // Trigger a new search with current inputs
+            const currentForm = new Event('submit');
+            searchForm.dispatchEvent(currentForm);
+        }
     });
 
     // Focus on ZIP code input when page loads (default mode)
