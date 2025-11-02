@@ -16,6 +16,18 @@
         </header>
 
         <main>
+            <div class="search-distance">
+                <label for="distanceInput">Search Radius (miles):</label>
+                <input 
+                    type="number" 
+                    id="distanceInput" 
+                    name="distanceInput" 
+                    value="50"
+                    placeholder="e.g., 50" 
+                    min="1" 
+                    max="500" 
+                >
+            </div>
             <div class="search-mode-toggle">
                 <label class="radio-option">
                     <input type="radio" name="searchMode" value="zip" id="searchModeZip" checked>
@@ -29,7 +41,7 @@
             <div class="search-section">
                 <form id="searchForm" class="search-form">
                     <div class="input-group" id="zipCodeGroup">
-                        <label for="zipCode">Enter your ZIP code:</label>
+                        <label for="zipCode">Enter ZIP code:</label>
                         <input 
                             type="text" 
                             id="zipCode" 
@@ -66,7 +78,7 @@
 
             <div id="noResults" class="no-results" style="display: none;">
                 <h2>No Events Found</h2>
-                <p>Sorry, no sporting events were found near your ZIP code. Try a different area!</p>
+                <p>Sorry, no sporting events were found nearby. Try a different area!</p>
             </div>
         </main>
 

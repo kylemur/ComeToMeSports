@@ -24,7 +24,7 @@ function isValidZipCode(zipCode) {
 // getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
-async function findEventsNearZip(zipCode, maxDistance = 500) {
+async function findEventsNearZip(zipCode, maxDistance) {
     const userCoords = getCoordinatesForZip(zipCode);
     if (!userCoords) {
         return [];
@@ -129,7 +129,7 @@ function hideLoading() {
 
 // Handle form submission
 
-async function doSearch(zipCode) {
+async function doSearch(zipCode, distanceInput) {
     // Check if we have coordinates for this ZIP code
     if (!getCoordinatesForZip(zipCode)) {
         showError('Sorry, we don\'t have location data for this ZIP code. Try: 90210, 10001, 60612, or other major city ZIP codes.');
@@ -140,7 +140,7 @@ async function doSearch(zipCode) {
     showLoading();
 
     try {
-        const events = await findEventsNearZip(zipCode);
+        const events = await findEventsNearZip(zipCode, distanceInput.value || 50);
         hideLoading();
         displayEvents(events);
     } catch (error) {
@@ -156,6 +156,7 @@ function handleSearch(event) {
     const searchModeZip = document.getElementById('searchModeZip');
     const zipCodeInput = document.getElementById('zipCode');
     const cityInput = document.getElementById('cityInput');
+    const distanceInput = document.getElementById('distanceInput');
 
     // Hide previous results and errors
     hideError();
@@ -182,12 +183,12 @@ function handleSearch(event) {
             showLoading();
             loadZipCoords(() => {
                 hideLoading();
-                doSearch(zipCode);
+                doSearch(zipCode, distanceInput);
             });
             return;
         }
 
-        doSearch(zipCode);
+        doSearch(zipCode, distanceInput);
     } else {
         // City, State search mode
         const cityState = cityInput.value.trim();
@@ -217,16 +218,16 @@ function handleSearch(event) {
             showLoading();
             loadZipCoords(() => {
                 hideLoading();
-                doSearchByCity(city, state);
+                doSearchByCity(city, state, distanceInput);
             });
             return;
         }
 
-        doSearchByCity(city, state);
+        doSearchByCity(city, state, distanceInput);
     }
 }
 
-async function doSearchByCity(city, state) {
+async function doSearchByCity(city, state, distanceInput) {
     // Show loading state early
     showLoading();
 
@@ -255,7 +256,7 @@ async function doSearchByCity(city, state) {
                 );
                 return { ...event, distance };
             })
-            .filter(event => event.distance <= 500) // 500 mile radius
+            .filter(event => event.distance <= (distanceInput.value || 50)) // Default 50 mile radius
             .sort((a, b) => a.distance - b.distance);
 
         hideLoading();
@@ -324,6 +325,19 @@ function init() {
         if (e.target.value.length > 0) {
             hideError();
         }
+    });
+
+    // Add input validation for distance input
+    const distanceInput = document.getElementById('distanceInput');
+    distanceInput.addEventListener('input', (e) => {
+        const value = parseInt(e.target.value);
+        if (value < 1) {
+            e.target.value = 1;
+        } else if (value > 500) {
+            e.target.value = 500;
+        }
+        // Hide error when user changes distance
+        hideError();
     });
 
     // Focus on ZIP code input when page loads (default mode)
