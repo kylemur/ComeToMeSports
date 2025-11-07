@@ -5,12 +5,20 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "test:cityCoords": "jest cityCoords.test.js"
+    "test:cityCoords": "jest cityCoords.test.js",
+    "playwright:ui": "npx playwright test --ui --ui-port 3000",
+    "playwright:test": "npx playwright test",
+    "playwright:headed": "npx playwright test --headed",
+    "playwright:codegen": "npx playwright codegen broncosports.com"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^30.2.0"
+    "jest": "^30.2.0",
+    "playwright": "^1.40.0"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.56.1"
   }
 }

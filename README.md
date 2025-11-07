@@ -92,3 +92,49 @@ Each event displays:
 - Advanced filtering (date range, sport type, price)
 - User favorites and bookmarking
 - Map integration for visual location display
+
+
+
+
+
+npx playwright test scrapeBSU.spec.js --headed --output playwright-results 
+# BSU Consent Manager Automation Setup
+## Installation
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
+3. Install browser binaries:
+```bash
+npx playwright install
+```
+## Usage
+Run the automation test:
+```bash
+npx playwright test scrapeBSU.spec.js --headed --output playwright-results
+```
+## What the script does:
+```bash
+1. Launches a browser instance
+2. Navigates to the BSU Consent Manager page
+3. Interacts with the consent form elements
+4. Submits the form and captures the results
+5. Saves screenshots and logs in the specified output directory
+```
+## Script Features:
+```bash
+- Headless browser testing
+- Automatic waiting for elements
+- Screenshot capturing
+- Detailed logging
+- Error handling for missing elements
+```
+## Customization:
+- Modify the URL in the script to target different pages
+- Adjust selectors if the website structure changes
+- Change output directory for results and screenshots
+Other useful options:
+--debug: Run with Playwright Inspector for debugging
+--ui: Run in interactive UI mode
+--trace on: Record traces for debugging
