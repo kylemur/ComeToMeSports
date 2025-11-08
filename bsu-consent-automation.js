@@ -15,7 +15,9 @@ async function handleBSUConsentManager() {
         await page.goto('https://broncosports.com/calendar', { waitUntil: 'networkidle' });
         
         // Wait for page to load
-        await page.waitForLoadState('networkidle');
+        // await page.waitForLoadState('networkidle'); // Probably doesn't work because         
+                                                        // new ads keep loading
+        await page.waitForTimeout(3000);
         
         // Step 1: Close consent manager
         console.log('Step 1: Looking for consent manager close button...');

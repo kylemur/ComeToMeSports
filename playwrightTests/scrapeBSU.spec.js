@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
+// import { handleBSUConsentManager } from '../bsu-consent-automation';
 
 test('BSU Consent Manager Test', async ({ page }) => {
+//   await handleBSUConsentManager(page);
+    
   // Set a longer timeout for this test
   test.setTimeout(60000);
   
