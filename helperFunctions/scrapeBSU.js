@@ -14,12 +14,23 @@ Edge cases to handle:
 - 
 */
 
+/*
+Day containers: .c-calendar__list-item - Each day's events
+Date headers: h3 - Date for each day
+Event containers: .s-game-card__header-inner-top - Individual events
+Sport names: .s-game-card-standard__header-sport-name span - Sport abbreviations like "TF"
+Opponent names: a[data-test-id="s-game-card-standard__header-team-opponent-link"] - Event titles
+Locations: span[data-test-id="s-game-card-facility-and-location__standard-location-details"] - City, State
+Dates: p[data-test-id="s-game-card-standard_header-game-date"] - Event dates
+Times: p[data-test-id="s-game-card-standard_header-game-time"] span - Event times
+*/
+
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 const { getCityCoords } = require('./cityCoords');
 
-// Target URL (BYU Athletics Calendar)
+// Target URL (BSU Athletics Calendar)
 const url = 'https://broncosports.com/calendar';
 
 async function scrapeBSUEvents() {
@@ -28,7 +39,7 @@ async function scrapeBSUEvents() {
   const yyyy = now.getFullYear();
   const mm = String(now.getMonth() + 1).padStart(2, '0');
   const dd = String(now.getDate()).padStart(2, '0');
-  const dirName = path.join(__dirname, 'sportsData');
+  const dirName = path.join(__dirname, '../sportsData');
   if (!fs.existsSync(dirName)) {
     fs.mkdirSync(dirName);
   }
@@ -45,39 +56,53 @@ async function scrapeBSUEvents() {
   await page.goto(url);
 
   // Wait for event items to load (adjust selector as needed)
-  await page.waitForSelector('button#_viewType_list', { timeout: 10000 }).catch(() => {});
-  // Switch to list view to simplify scraping
-  await page.click('button#_viewType_list');
+  await page.waitForSelector('.c-calendar__list-item', { timeout: 10000 }).catch(() => {});
+  // Click on View Type: "List" to ensure all events are visible
+  try {
+    const listViewButton = page.locator('button#_viewType_list');
+    await listViewButton.click();
+  } catch (error) {
+    console.error('Error clicking List View button:', error);
+  }
 
-  // <div class="c-calendar__list-item">...</div> is a day of events container
-  // <h3> is the date header
-  // <div data-v-001a9f8e="" class="s-game-card__header-inner-top flex w-full flex-row"> ...</div> is the event container
-  // <div class="s-game-card-standard__header-sport-name"> <span>TF</span> </div> is the sport name container ex. TF is for Track & Field
-  // <a data-test-id="s-game-card-standard__header-team-opponent-link">Sharon Colyear-Danville Season Opener</a> is the opponent name container ex. Sharon Colyear-Danville Season Opener
-  // <p data-test-id="s-game-card-facility-and-location__details-standard"> <span data-test-id="s-game-card-facility-and-location__standard-location-details">Boston, Mass.</span> </p> is the location container ex. Boston, Mass.
-  // <p data-test-id="s-game-card-standard_header-game-date">...</p> is the date container
-  // <p data-test-id="s-game-card-standard_header-game-time"><span>...</span></p> is the time container
-  const events = await page.$$eval('.schedule-event-item', items => {
-    return items.map(el => {
-      const divider = el.querySelector('.schedule-event-item__divider')?.textContent.trim() || 
-                     el.querySelector('.schedule-event-item__neutral-divider')?.textContent.trim() || '';
-      const title = (
-        "Boise State " + 
-        divider + // "at" or "vs." 
-        " " + 
-        el.querySelector('.schedule-event-item__opponent-name')?.textContent.trim()) || '';
-      const sport = el.querySelector('.schedule-event-links__sport-name')?.textContent.trim() || '';
+  const events = await page.$$eval('.c-calendar__list-item', dayContainers => {
+    const allEvents = [];
+    
+    dayContainers.forEach(dayContainer => {
+      // Get the date header for this day
+      const dateHeader = dayContainer.querySelector('h3')?.textContent.trim() || '';
       
-      // Get date and time from separate <time> elements
-      const dateTimeElement = el.querySelector('.schedule-event-date__time');
-      const timeElements = dateTimeElement ? dateTimeElement.querySelectorAll('time') : [];
-      const date = timeElements[0] ? timeElements[0].textContent.trim() : '';
-      const time = timeElements[1] ? timeElements[1].textContent.trim() : '';
+      // Get all event containers for this day
+      const eventContainers = dayContainer.querySelectorAll('.s-game-card__header-inner-top');
       
-      const location = el.querySelector('.schedule-event-location')?.textContent.trim() || '';
-      
-      return { title, sport, date, time, location };
+      eventContainers.forEach(eventEl => {
+        // Find the parent element that contains all the event data
+        const gameCard = eventEl.closest('[class*="s-game-card"]') || eventEl.parentElement;
+        
+        // Get sport name
+        const sport = gameCard.querySelector('.s-game-card-standard__header-sport-name span')?.textContent.trim() || '';
+        
+        // Get opponent name
+        const opponent = gameCard.querySelector('a[data-test-id="s-game-card-standard__header-team-opponent-link"]')?.textContent.trim() || '';
+        
+        // Create title
+        const title = opponent ? `Boise State vs. ${opponent}` : '';
+        
+        // Get location
+        const locationElement = gameCard.querySelector('span[data-test-id="s-game-card-facility-and-location__standard-location-details"]');
+        const location = locationElement?.textContent.trim() || '';
+        
+        // Get date and time
+        const date = gameCard.querySelector('p[data-test-id="s-game-card-standard_header-game-date"]')?.textContent.trim() || dateHeader;
+        const time = gameCard.querySelector('p[data-test-id="s-game-card-standard_header-game-time"] span')?.textContent.trim() || '';
+        
+        if (title || sport) { // Only add if we have at least a title or sport
+          allEvents.push({ title, sport, date, time, location });
+        }
+      });
     });
+    
+    return allEvents;
   }); 
 
   // Add coordinates to events
@@ -126,4 +151,4 @@ async function scrapeBSUEvents() {
   await browser.close();
 }
 
-scrapeBYUEvents();
+scrapeBSUEvents();

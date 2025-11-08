@@ -23,7 +23,7 @@ async function scrapeBYUEvents() {
   const yyyy = now.getFullYear();
   const mm = String(now.getMonth() + 1).padStart(2, '0');
   const dd = String(now.getDate()).padStart(2, '0');
-  const dirName = path.join(__dirname, 'sportsData');
+  const dirName = path.join(__dirname, '../sportsData');
   if (!fs.existsSync(dirName)) {
     fs.mkdirSync(dirName);
   }
