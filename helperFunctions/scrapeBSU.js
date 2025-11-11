@@ -88,9 +88,12 @@ async function scrapeBSUEvents() {
         // Create title
         const title = opponent ? `Boise State vs. ${opponent}` : '';
         
-        // Get location
+        // Get location      // weird and inconsistent formatting on locations 
+                                // ex. Boston, Mass. 
+                                // ex. Hinkle Fieldhouse (Indianapolis, Ind.)
+                                // ex. ExtraMile Arena Boise, Idaho
         const locationElement = gameCard.querySelector('span[data-test-id="s-game-card-facility-and-location__standard-location-details"]');
-        const location = locationElement?.textContent.trim() || '';
+        const location = locationElement?.textContent.trim() || ''; 
         
         // Get date and time
         const date = gameCard.querySelector('p[data-test-id="s-game-card-standard_header-game-date"]')?.textContent.trim() || dateHeader;

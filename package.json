@@ -9,7 +9,12 @@
     "playwright:ui": "npx playwright test --ui --ui-port 3000",
     "playwright:test": "npx playwright test",
     "playwright:headed": "npx playwright test --headed",
-    "playwright:codegen": "npx playwright codegen broncosports.com"
+    "playwright:codegen": "npx playwright codegen broncosports.com",
+    "scrape-byu": "node helperFunctions/scrapeBYU.js",
+    "scrape-bsu": "node helperFunctions/scrapeBSU.js",
+    "scrape-all": "npm run scrape-byu && npm run scrape-bsu",
+    "build": "npm run scrape-all",
+    "dev": "npm run scrape-all && echo 'Data updated! Open index.html in browser'"
   },
   "keywords": [],
   "author": "",

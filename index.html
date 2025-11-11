@@ -6,6 +6,11 @@
     <title>ComeToMeSports - Find Sporting Events Near You</title>
     <link rel="icon" href="images/CTMS.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <meta name="description" content="ComeToMeSports helps you find sporting events near you based on your location and sport preferences.">
+    <meta property="og:description" content="ComeToMeSports helps you find sporting events near you based on your location and sport preferences.">
+    <meta property="og:title" content="ComeToMeSports - Find Sporting Events Near You">
+    <meta property="og:image" content="images/CTMS_ComeToMeSports_crop.png">
 </head>
 <body>
     <div class="container">
@@ -18,6 +23,14 @@
         <main>
             <div class="filters">
                 <h3>Search Filters</h3>
+                <div class="search-university">
+                    <label for="universitySelect">Select University:</label>
+                    <select id="universitySelect" name="universitySelect">
+                        <option value="all">All Universities</option>
+                        <option value="BYU">Brigham Young University</option>
+                        <option value="BSU">Boise State University</option>
+                    </select>
+                </div>
                 <div class="search-distance">
                     <label for="distanceInput">Search Radius (miles):</label>
                     <input 

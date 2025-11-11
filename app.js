@@ -24,17 +24,28 @@ function isValidZipCode(zipCode) {
 // getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
-async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all') {
+async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', selectedUniversity = 'all') {
     const userCoords = getCoordinatesForZip(zipCode);
     if (!userCoords) {
         return [];
     }
 
     try {
-        // const response = await fetch('sportsData/mockEvents.json');
-        const response = await fetch('sportsData/BYUSports2025-10-25.json');
-        const sportsEvents = await response.json();
-        return sportsEvents
+        const dataFiles = await getEventDataFiles(selectedUniversity);
+        let allEvents = [];
+        
+        // Load events from appropriate data files based on university selection
+        for (const dataFile of dataFiles) {
+            try {
+                const response = await fetch(dataFile);
+                const sportsEvents = await response.json();
+                allEvents = allEvents.concat(sportsEvents);
+            } catch (error) {
+                console.warn(`Could not load ${dataFile}:`, error);
+            }
+        }
+
+        return allEvents
             .map(event => {
                 const distance = calculateDistance(
                     userCoords.lat,
@@ -51,6 +62,43 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all') {
         console.error('Error loading events:', error);
         return [];
     }
+}
+
+// Get appropriate data files based on university selection
+async function getEventDataFiles(selectedUniversity) {
+    const dataFiles = [];
+    
+    if (selectedUniversity === 'all') {
+        // Check for both university data files
+        dataFiles.push('sportsData/BYUSports2025-11-11.json');
+        dataFiles.push('sportsData/BSUSports2025-11-11.json');
+    } else if (selectedUniversity === 'BYU') {
+        // Try to scrape fresh BYU data first
+        await triggerBYUScraper();
+        dataFiles.push('sportsData/BYUSports2025-11-11.json');
+    } else if (selectedUniversity === 'BSU') {
+        dataFiles.push('sportsData/BSUSports2025-11-11.json');
+    }
+    
+    return dataFiles;
+}
+
+// Trigger BYU scraper (Build Process approach)
+async function triggerBYUScraper() {
+    console.log('🔄 Checking for fresh BYU data...');
+    
+    // In a build process approach, data would be pre-generated
+    // For now, show user how to update data manually
+    const today = new Date();
+    const dateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const expectedFile = `sportsData/BYUSports${dateString}.json`;
+    
+    console.log(`📁 Looking for: ${expectedFile}`);
+    console.log('💡 To get fresh data, run: npm run scrape-byu');
+    console.log('🔧 Or set up automated builds with GitHub Actions');
+    
+    // Note: In a proper build process, this function wouldn't be needed
+    // because data files would already exist from the build step
 }
 
 // Format distance for display
@@ -137,15 +185,17 @@ async function doSearch(zipCode, distanceInput) {
         return;
     }
 
-    // Get selected sport
+    // Get selected sport and university
     const sportSelect = document.getElementById('sportSelect');
+    const universitySelect = document.getElementById('universitySelect');
     const selectedSport = sportSelect ? sportSelect.value : 'all';
+    const selectedUniversity = universitySelect ? universitySelect.value : 'all';
 
     // Show loading state
     showLoading();
 
     try {
-        const events = await findEventsNearZip(zipCode, distanceInput.value || 50, selectedSport);
+        const events = await findEventsNearZip(zipCode, distanceInput.value || 50, selectedSport, selectedUniversity);
         hideLoading();
         displayEvents(events);
     } catch (error) {
@@ -246,16 +296,28 @@ async function doSearchByCity(city, state, distanceInput) {
             return;
         }
 
-        // Get selected sport
+        // Get selected sport and university
         const sportSelect = document.getElementById('sportSelect');
+        const universitySelect = document.getElementById('universitySelect');
         const selectedSport = sportSelect ? sportSelect.value : 'all';
+        const selectedUniversity = universitySelect ? universitySelect.value : 'all';
 
-        // Load sports events
-        const response = await fetch('sportsData/BYUSports2025-10-25.json');
-        const sportsEvents = await response.json();
+        // Get appropriate data files and load events
+        const dataFiles = await getEventDataFiles(selectedUniversity);
+        let allEvents = [];
+        
+        for (const dataFile of dataFiles) {
+            try {
+                const response = await fetch(dataFile);
+                const sportsEvents = await response.json();
+                allEvents = allEvents.concat(sportsEvents);
+            } catch (error) {
+                console.warn(`Could not load ${dataFile}:`, error);
+            }
+        }
         
         // Calculate distances and filter events
-        const eventsWithDistance = sportsEvents
+        const eventsWithDistance = allEvents
             .map(event => {
                 const distance = calculateDistance(
                     cityCoords.lat,
@@ -384,6 +446,29 @@ function init() {
         if (resultsSection.style.display !== 'none' || noResults.style.display !== 'none') {
             // Hide the no results message before re-searching
             noResults.style.display = 'none';
+            
+            // Trigger a new search with current inputs
+            const currentForm = new Event('submit');
+            searchForm.dispatchEvent(currentForm);
+        }
+    });
+
+    // Add event listener for university filter changes
+    const universitySelect = document.getElementById('universitySelect');
+    universitySelect.addEventListener('change', (e) => {
+        // Hide error when user changes university filter
+        hideError();
+        
+        // Check if there are currently displayed results OR no results message
+        const resultsSection = document.getElementById('resultsSection');
+        const noResults = document.getElementById('noResults');
+        
+        if (resultsSection.style.display !== 'none' || noResults.style.display !== 'none') {
+            // Hide the no results message before re-searching
+            noResults.style.display = 'none';
+            
+            // Show loading state for university change (might trigger scraping)
+            showLoading();
             
             // Trigger a new search with current inputs
             const currentForm = new Event('submit');
