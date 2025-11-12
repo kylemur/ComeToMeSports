@@ -67,17 +67,30 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', se
 // Get appropriate data files based on university selection
 async function getEventDataFiles(selectedUniversity) {
     const dataFiles = [];
+
+    // Determine which data files to load
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const dirName = path.join(__dirname, './sportsData');
+
+    const BYUfileName = `BYUSports${yyyy}-${mm}-${dd}.json`;
+    const BYUfilePath = path.join(dirName, BYUfileName);
+    
+    const BSUfileName = `BSUSports${yyyy}-${mm}-${dd}.json`;
+    const BSUfilePath = path.join(dirName, BSUfileName);
     
     if (selectedUniversity === 'all') {
         // Check for both university data files
-        dataFiles.push('sportsData/BYUSports2025-11-11.json');
-        dataFiles.push('sportsData/BSUSports2025-11-11.json');
+        dataFiles.push(BYUfilePath);
+        dataFiles.push(BSUfilePath);
     } else if (selectedUniversity === 'BYU') {
         // Try to scrape fresh BYU data first
         await triggerBYUScraper();
-        dataFiles.push('sportsData/BYUSports2025-11-11.json');
+        dataFiles.push(BYUfilePath);
     } else if (selectedUniversity === 'BSU') {
-        dataFiles.push('sportsData/BSUSports2025-11-11.json');
+        dataFiles.push(BSUfilePath);
     }
     
     return dataFiles;

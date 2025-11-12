@@ -8,7 +8,7 @@ on:
   # Allows you to run this workflow manually
   workflow_dispatch:
   
-  # Runs daily at 12:00 PM UTC (6 AM MST / 7 AM EST / 4 AM PST)
+  # Runs daily at 12:00 PM UTC (5 AM MST / 7 AM EST / 4 AM PST)
   schedule:
     - cron: '0 12 * * *'
 
