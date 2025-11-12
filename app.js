@@ -68,18 +68,17 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', se
 async function getEventDataFiles(selectedUniversity) {
     const dataFiles = [];
 
-    // Determine which data files to load
+    // Generate current date for filename
     const now = new Date();
     const yyyy = now.getFullYear();
     const mm = String(now.getMonth() + 1).padStart(2, '0');
     const dd = String(now.getDate()).padStart(2, '0');
-    const dirName = path.join(__dirname, './sportsData');
 
     const BYUfileName = `BYUSports${yyyy}-${mm}-${dd}.json`;
-    const BYUfilePath = path.join(dirName, BYUfileName);
-    
+    const BYUfilePath = `sportsData/${BYUfileName}`;
+
     const BSUfileName = `BSUSports${yyyy}-${mm}-${dd}.json`;
-    const BSUfilePath = path.join(dirName, BSUfileName);
+    const BSUfilePath = `sportsData/${BSUfileName}`;
     
     if (selectedUniversity === 'all') {
         // Check for both university data files
