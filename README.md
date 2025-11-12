@@ -138,3 +138,21 @@ Other useful options:
 --debug: Run with Playwright Inspector for debugging
 --ui: Run in interactive UI mode
 --trace on: Record traces for debugging
+
+
+
+File Pathing Notes
+When your site is served from kylemur.github.io/ComeToMeSports/, the file structure becomes:
+
+kylemur.github.io/ComeToMeSports/
+├── index.html
+├── app.js
+├── helperFunctions/
+│   ├── zipCoords.js
+│   └── cityCoords.js
+└── ZIPCodes/
+    └── uszips.csv
+
+From zipCoords.js:
+../ZIPCodes/uszips.csv (correct for local development) tried to go to kylemur.github.io/ZIPCodes/uszips.csv ❌
+uszips.csv correctly goes to kylemur.github.io/ComeToMeSports/ZIPCodes/uszips.csv ✅
