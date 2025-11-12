@@ -12,7 +12,7 @@ async function loadCityCoordinates() {
     if (cityCoordinatesLoaded) return;
     
     try {
-        const response = await fetch('../ZIPCodes/uszips.csv');
+        const response = await fetch('./ZIPCodes/uszips.csv');
         const csvText = await response.text();
         cityCoordinatesData = csvText;
         cityCoordinatesLoaded = true;
