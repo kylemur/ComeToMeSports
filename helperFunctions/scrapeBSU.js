@@ -55,29 +55,57 @@ async function scrapeBSUEvents() {
   const page = await browser.newPage();
   await page.goto(url);
 
-  // Wait for event items to load (adjust selector as needed)
-  await page.waitForSelector('.c-calendar__list-item', { timeout: 10000 }).catch(() => {});
+  // Wait for calendar component to load first
+  console.log('Looking for calendar component...');
+  try {
+    await page.waitForSelector('#calendarComponent', { timeout: 10000 });
+    console.log('✅ Calendar component found');
+  } catch (error) {
+    console.log('❌ Calendar component not found:', error.message);
+  }
+  
   // Click on View Type: "List" to ensure all events are visible
   try {
     const listViewButton = page.locator('button#_viewType_list');
     await listViewButton.click();
+    console.log('Clicked List View button');
   } catch (error) {
     console.error('Error clicking List View button:', error);
+    console.log('Continuing without switching to List View');
   }
 
-  const events = await page.$$eval('.c-calendar__list-item', dayContainers => {
+  // Give the page a moment to fully load after clicking list view
+  console.log('Waiting for page to settle after list view click...');
+  await page.waitForTimeout(2000);
+
+  // NOW wait for event items to load (after list view is activated)
+  console.log('Looking for calendar day elements...');
+  try {
+    await page.waitForSelector('#calendarComponent .c-calendar__list.grid > div', { timeout: 10000 });
+    const elementCount = await page.$$eval('#calendarComponent .c-calendar__list.grid > div', elements => elements.length);
+    console.log(`✅ Found ${elementCount} calendar day elements`);
+  } catch (error) {
+    console.log('❌ No calendar day elements found within 10 seconds');
+    console.log('Error:', error.message);
+  }
+  
+  const events = await page.$$eval('#calendarComponent .c-calendar__list.grid > div', dayContainers => {
     const allEvents = [];
+    console.log('Starting to process day containers...');
     
     dayContainers.forEach(dayContainer => {
       // Get the date header for this day
       const dateHeader = dayContainer.querySelector('h3')?.textContent.trim() || '';
+      console.log(`Processing events for date: ${dateHeader}`);
       
       // Get all event containers for this day
       const eventContainers = dayContainer.querySelectorAll('.s-game-card__header-inner-top');
+      console.log(`Found ${eventContainers.length} events for date: ${dateHeader}`);
       
       eventContainers.forEach(eventEl => {
         // Find the parent element that contains all the event data
         const gameCard = eventEl.closest('[class*="s-game-card"]') || eventEl.parentElement;
+        console.log(`Processing event: ${gameCard.textContent.trim().slice(0, 50)}...`);
         
         // Get sport name
         const sport = gameCard.querySelector('.s-game-card-standard__header-sport-name span')?.textContent.trim() || '';
