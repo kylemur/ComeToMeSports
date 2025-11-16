@@ -109,10 +109,15 @@ async function scrapeBSUEvents() {
         console.log(`Processing event: ${gameCard.textContent.trim().slice(0, 50)}...`);
         
         // Get sport name
-        const sport = gameCard.querySelector('.s-game-card-standard__header-sport-name span')?.textContent.trim() || '';
+        const sport = gameCard.querySelector('.s-game-card__header-sport-name span')?.textContent.trim() || '';
         
         // Get opponent name
-        const opponent = gameCard.querySelector('a[data-test-id="s-game-card-standard__header-team-opponent-link"]')?.textContent.trim() || '';
+        let opponent = gameCard.querySelector('a[data-test-id="s-game-card-standard__header-team-opponent-link"]')?.textContent.trim() || '';
+        
+        // If no opponent found with primary selector, try alternative selector
+        if (!opponent) {
+          opponent = gameCard.querySelector('.s-game-card__header__team p')?.textContent.trim() || '';
+        }
         
         // Create title
         const title = opponent ? `Boise State vs. ${opponent}` : '';
@@ -126,7 +131,7 @@ async function scrapeBSUEvents() {
         
         // Get date and time
         const date = gameCard.querySelector('p[data-test-id="s-game-card-standard_header-game-date"]')?.textContent.trim() || dateHeader;
-        const time = gameCard.querySelector('p[data-test-id="s-game-card-standard_header-game-time"] span')?.textContent.trim() || '';
+        const time = gameCard.querySelector('.s-game-card__header__game-score-time p span.s-text-paragraph-small')?.textContent.trim() || '';
         
         if (title || sport) { // Only add if we have at least a title or sport
           allEvents.push({ title, sport, date, time, location });

@@ -1,13 +1,33 @@
 [
   {
-    "title": "Boise State vs. ITA Conference Masters",
-    "sport": "WTEN",
+    "title": "Boise State vs. San Francisco",
+    "sport": "WBB",
     "date": "Sunday, November 9, 2025",
-    "time": "",
-    "location": "San Diego, Calif.",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
     "venue": "",
-    "latitude": 32.7162,
-    "longitude": -117.18589
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "",
+    "sport": "WBVB",
+    "date": "Sunday, November 9, 2025",
+    "time": "TBA",
+    "location": "Moraga, Calif.",
+    "venue": "",
+    "latitude": 37.83102,
+    "longitude": -122.10425
+  },
+  {
+    "title": "",
+    "sport": "WBVB",
+    "date": "Sunday, November 9, 2025",
+    "time": "TBA",
+    "location": "Huntsville, Ala.",
+    "venue": "",
+    "latitude": 34.72497,
+    "longitude": -86.56304
   },
   {
     "title": "Boise State vs. ITA Sectional Championships",
@@ -20,34 +40,14 @@
     "longitude": -122.33454
   },
   {
-    "title": "Boise State vs. AVCA National Pairs Championship",
-    "sport": "WBVB",
+    "title": "Boise State vs. ITA Conference Masters",
+    "sport": "WTEN",
     "date": "Sunday, November 9, 2025",
-    "time": "TBA",
-    "location": "Huntsville, Ala.",
+    "time": "",
+    "location": "San Diego, Calif.",
     "venue": "",
-    "latitude": 34.72497,
-    "longitude": -86.56304
-  },
-  {
-    "title": "Boise State vs. Saint Mary's Pairs Championship",
-    "sport": "WBVB",
-    "date": "Sunday, November 9, 2025",
-    "time": "TBA",
-    "location": "Moraga, Calif.",
-    "venue": "",
-    "latitude": 37.83102,
-    "longitude": -122.10425
-  },
-  {
-    "title": "Boise State vs. San Francisco",
-    "sport": "WBB",
-    "date": "Sunday, November 9, 2025",
-    "time": "2 p.m.",
-    "location": "Boise, Idaho",
-    "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": 32.7162,
+    "longitude": -117.18589
   },
   {
     "title": "Boise State vs. Ohio State University",
