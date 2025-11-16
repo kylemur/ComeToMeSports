@@ -5,10 +5,14 @@
  * - "San Diego, Calif." -> "San Diego, CA" 
  * - "Boise State Esports Arena" -> "Boise, ID"
  * - "Hinkle Fieldhouse (Indianapolis, Ind.)" -> "Indianapolis, IN"
+ * 
+ * 
+ * No coordinates found for normalized location: Lake Nona, FL (original: Lake Nona, Fla.)
+ * No coordinates found for normalized location: USAFA, CO (original: USAFA, Colo.)
  */
 
 /**
- * Maps abbreviated state names to standard postal codes
+ * Maps abbreviated state names to two-letter state codes
  */
 const stateAbbreviationMap = {
   'Ala.': 'AL', 'Alabama': 'AL',

@@ -1,7 +1,7 @@
 [
   {
     "title": "Boise State vs. ITA Conference Masters",
-    "sport": "WTEN",
+    "sport": "Women's Tennis",
     "date": "Sunday, November 9, 2025",
     "time": "",
     "location": "San Diego, Calif.",
@@ -11,7 +11,7 @@
   },
   {
     "title": "Boise State vs. ITA Sectional Championships",
-    "sport": "WTEN",
+    "sport": "Women's Tennis",
     "date": "Sunday, November 9, 2025",
     "time": "",
     "location": "Seattle, Wash.",
@@ -21,7 +21,7 @@
   },
   {
     "title": "Boise State vs. AVCA National Pairs Championship",
-    "sport": "WBVB",
+    "sport": "Women's Beach Volleyball",
     "date": "Sunday, November 9, 2025",
     "time": "TBA",
     "location": "Huntsville, Ala.",
@@ -31,7 +31,7 @@
   },
   {
     "title": "Boise State vs. Saint Mary's Pairs Championship",
-    "sport": "WBVB",
+    "sport": "Women's Beach Volleyball",
     "date": "Sunday, November 9, 2025",
     "time": "TBA",
     "location": "Moraga, Calif.",
@@ -41,7 +41,7 @@
   },
   {
     "title": "Boise State vs. San Francisco",
-    "sport": "WBB",
+    "sport": "Women's Basketball",
     "date": "Sunday, November 9, 2025",
     "time": "2 p.m.",
     "location": "Boise, Idaho",
@@ -51,7 +51,7 @@
   },
   {
     "title": "Boise State vs. Ohio State University",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Monday, November 10, 2025",
     "time": "6 P.M.",
     "location": "Boise State Esports Arena",
@@ -61,7 +61,7 @@
   },
   {
     "title": "Boise State vs. San Diego State",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Monday, November 10, 2025",
     "time": "8 P.M.",
     "location": "Boise State Esports Arena",
@@ -71,7 +71,7 @@
   },
   {
     "title": "Boise State vs. Ohio State University",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Tuesday, November 11, 2025",
     "time": "6 P.M.",
     "location": "Boise State Esports Arena",
@@ -81,7 +81,7 @@
   },
   {
     "title": "Boise State vs. San Diego State",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Tuesday, November 11, 2025",
     "time": "8 P.M.",
     "location": "Boise State Esports Arena",
@@ -91,7 +91,7 @@
   },
   {
     "title": "Boise State vs. UTRGV",
-    "sport": "MBB",
+    "sport": "Men's Basketball",
     "date": "Tuesday, November 11, 2025",
     "time": "7 PM",
     "location": "Boise, Idaho",
@@ -101,7 +101,7 @@
   },
   {
     "title": "Boise State vs. Ohio State University",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Wednesday, November 12, 2025",
     "time": "6 P.M.",
     "location": "Boise State Esports Arena",
@@ -111,7 +111,7 @@
   },
   {
     "title": "Boise State vs. San Diego State",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Wednesday, November 12, 2025",
     "time": "8 P.M.",
     "location": "Boise State Esports Arena",
@@ -121,7 +121,7 @@
   },
   {
     "title": "Boise State vs. Ohio State University",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Thursday, November 13, 2025",
     "time": "6 P.M.",
     "location": "Boise State Esports Arena",
@@ -131,7 +131,7 @@
   },
   {
     "title": "Boise State vs. San Diego State",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Thursday, November 13, 2025",
     "time": "8 P.M.",
     "location": "Boise State Esports Arena",
@@ -141,7 +141,7 @@
   },
   {
     "title": "Boise State vs. San José State",
-    "sport": "WVB",
+    "sport": "Women's Volleyball",
     "date": "Thursday, November 13, 2025",
     "time": "7 p.m.",
     "location": "San Jose, Calif.",
@@ -151,7 +151,7 @@
   },
   {
     "title": "Boise State vs. Ohio State University",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Friday, November 14, 2025",
     "time": "6 P.M.",
     "location": "Boise State Esports Arena",
@@ -161,7 +161,7 @@
   },
   {
     "title": "Boise State vs. San Diego State",
-    "sport": "ES",
+    "sport": "Esports",
     "date": "Friday, November 14, 2025",
     "time": "8 P.M.",
     "location": "Boise State Esports Arena",
@@ -171,7 +171,7 @@
   },
   {
     "title": "Boise State vs. NCAA Regionals",
-    "sport": "XC",
+    "sport": "Cross Country",
     "date": "Friday, November 14, 2025",
     "time": "",
     "location": "Sacramento, Calif.",
@@ -181,7 +181,7 @@
   },
   {
     "title": "Boise State vs. Wildcat Invite",
-    "sport": "WTEN",
+    "sport": "Women's Tennis",
     "date": "Friday, November 14, 2025",
     "time": "",
     "location": "Tucson, Ariz.",
@@ -191,7 +191,7 @@
   },
   {
     "title": "Boise State vs. UC Davis",
-    "sport": "WBB",
+    "sport": "Women's Basketball",
     "date": "Friday, November 14, 2025",
     "time": "6:30 p.m.",
     "location": "Boise, Idaho",
@@ -201,7 +201,7 @@
   },
   {
     "title": "Boise State vs. Wildcat Invite",
-    "sport": "WTEN",
+    "sport": "Women's Tennis",
     "date": "Saturday, November 15, 2025",
     "time": "",
     "location": "Tucson, Ariz.",
@@ -211,7 +211,7 @@
   },
   {
     "title": "Boise State vs. Fresno State",
-    "sport": "WVB",
+    "sport": "Women's Volleyball",
     "date": "Saturday, November 15, 2025",
     "time": "1 p.m. MT",
     "location": "Fresno, Calif.",
@@ -221,7 +221,7 @@
   },
   {
     "title": "Boise State vs. Montana State",
-    "sport": "MBB",
+    "sport": "Men's Basketball",
     "date": "Saturday, November 15, 2025",
     "time": "2 PM",
     "location": "Boise, Idaho",
@@ -231,7 +231,7 @@
   },
   {
     "title": "Boise State vs. San Diego State",
-    "sport": "FB",
+    "sport": "Football",
     "date": "Saturday, November 15, 2025",
     "time": "8:30 p.m. MT",
     "location": "San Diego, Calif.",
@@ -241,12 +241,862 @@
   },
   {
     "title": "Boise State vs. Wildcat Invite",
-    "sport": "WTEN",
+    "sport": "Women's Tennis",
     "date": "Sunday, November 16, 2025",
     "time": "",
     "location": "Tucson, Ariz.",
     "venue": "",
     "latitude": 32.21702,
     "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Wildcat Invite",
+    "sport": "Women's Tennis",
+    "date": "Sunday, November 16, 2025",
+    "time": "",
+    "location": "Tucson, Ariz.",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Nebraska",
+    "sport": "Esports",
+    "date": "Monday, November 17, 2025",
+    "time": "6 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Esports",
+    "date": "Monday, November 17, 2025",
+    "time": "8 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nebraska",
+    "sport": "Esports",
+    "date": "Tuesday, November 18, 2025",
+    "time": "6 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Esports",
+    "date": "Tuesday, November 18, 2025",
+    "time": "8 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Individual Championships",
+    "sport": "Women's Tennis",
+    "date": "Tuesday, November 18, 2025",
+    "time": "",
+    "location": "Orlando, Fla.",
+    "venue": "",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "Boise State vs. Colorado",
+    "sport": "Women's Basketball",
+    "date": "Tuesday, November 18, 2025",
+    "time": "7 p.m.",
+    "location": "Boulder, Colo.",
+    "venue": "",
+    "latitude": 40.04795,
+    "longitude": -105.19876
+  },
+  {
+    "title": "Boise State vs. Wichita State",
+    "sport": "Men's Basketball",
+    "date": "Tuesday, November 18, 2025",
+    "time": "7 PM",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nebraska",
+    "sport": "Esports",
+    "date": "Wednesday, November 19, 2025",
+    "time": "6 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Esports",
+    "date": "Wednesday, November 19, 2025",
+    "time": "8 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Individual Championships",
+    "sport": "Women's Tennis",
+    "date": "Wednesday, November 19, 2025",
+    "time": "",
+    "location": "Orlando, Fla.",
+    "venue": "",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "Boise State vs. NCAA National Championships",
+    "sport": "Men's Tennis",
+    "date": "Wednesday, November 19, 2025",
+    "time": "All Day",
+    "location": "Lake Nona, Fla.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Nebraska",
+    "sport": "Esports",
+    "date": "Thursday, November 20, 2025",
+    "time": "6 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Esports",
+    "date": "Thursday, November 20, 2025",
+    "time": "8 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Individual Championships",
+    "sport": "Women's Tennis",
+    "date": "Thursday, November 20, 2025",
+    "time": "",
+    "location": "Orlando, Fla.",
+    "venue": "",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "Boise State vs. NCAA National Championships",
+    "sport": "Men's Tennis",
+    "date": "Thursday, November 20, 2025",
+    "time": "All Day",
+    "location": "Lake Nona, Fla.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Women's Volleyball",
+    "date": "Thursday, November 20, 2025",
+    "time": "6 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nebraska",
+    "sport": "Esports",
+    "date": "Friday, November 21, 2025",
+    "time": "6 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Esports",
+    "date": "Friday, November 21, 2025",
+    "time": "8 P.M.",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Individual Championships",
+    "sport": "Women's Tennis",
+    "date": "Friday, November 21, 2025",
+    "time": "",
+    "location": "Orlando, Fla.",
+    "venue": "",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "Boise State vs. NCAA National Championships",
+    "sport": "Men's Tennis",
+    "date": "Friday, November 21, 2025",
+    "time": "All Day",
+    "location": "Lake Nona, Fla.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Seattle U",
+    "sport": "Women's Basketball",
+    "date": "Friday, November 21, 2025",
+    "time": "6:30 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Individual Championships",
+    "sport": "Women's Tennis",
+    "date": "Saturday, November 22, 2025",
+    "time": "",
+    "location": "Orlando, Fla.",
+    "venue": "",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "Boise State vs. NCAA National Championships",
+    "sport": "Men's Tennis",
+    "date": "Saturday, November 22, 2025",
+    "time": "All Day",
+    "location": "Lake Nona, Fla.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. NCAA Championships",
+    "sport": "Cross Country",
+    "date": "Saturday, November 22, 2025",
+    "time": "",
+    "location": "Columbia, Mo.",
+    "venue": "",
+    "latitude": 38.89595,
+    "longitude": -92.24365
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Football",
+    "date": "Saturday, November 22, 2025",
+    "time": "TBA",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Women's Volleyball",
+    "date": "Saturday, November 22, 2025",
+    "time": "Noon",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Individual Championships",
+    "sport": "Women's Tennis",
+    "date": "Sunday, November 23, 2025",
+    "time": "",
+    "location": "Orlando, Fla.",
+    "venue": "",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "Boise State vs. NCAA National Championships",
+    "sport": "Men's Tennis",
+    "date": "Sunday, November 23, 2025",
+    "time": "All Day",
+    "location": "Lake Nona, Fla.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. UC Riverside",
+    "sport": "Women's Basketball",
+    "date": "Sunday, November 23, 2025",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Individual Championships",
+    "sport": "Women's Tennis",
+    "date": "Sunday, November 23, 2025",
+    "time": "",
+    "location": "Orlando, Fla.",
+    "venue": "",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "Boise State vs. NCAA National Championships",
+    "sport": "Men's Tennis",
+    "date": "Sunday, November 23, 2025",
+    "time": "All Day",
+    "location": "Lake Nona, Fla.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. UC Riverside",
+    "sport": "Women's Basketball",
+    "date": "Sunday, November 23, 2025",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA National Championships",
+    "sport": "Men's Tennis",
+    "date": "Monday, November 24, 2025",
+    "time": "All Day",
+    "location": "Lake Nona, Fla.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. USC",
+    "sport": "Men's Basketball",
+    "date": "Monday, November 24, 2025",
+    "time": "3 PM",
+    "location": "Lahaina, Hawaii",
+    "venue": "",
+    "latitude": 20.90961,
+    "longitude": -156.62226
+  },
+  {
+    "title": "Boise State vs. NC State/Seton Hall",
+    "sport": "Men's Basketball",
+    "date": "Tuesday, November 25, 2025",
+    "time": "TBA",
+    "location": "Lahaina, Hawaii",
+    "venue": "",
+    "latitude": 20.90961,
+    "longitude": -156.62226
+  },
+  {
+    "title": "Boise State vs. MW First Round",
+    "sport": "Women's Volleyball",
+    "date": "Wednesday, November 26, 2025",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. TBA",
+    "sport": "Men's Basketball",
+    "date": "Wednesday, November 26, 2025",
+    "time": "TBA",
+    "location": "Lahaina, Hawaii",
+    "venue": "",
+    "latitude": 20.90961,
+    "longitude": -156.62226
+  },
+  {
+    "title": "Boise State vs. North Dakota",
+    "sport": "Women's Basketball",
+    "date": "Thursday, November 27, 2025",
+    "time": "1 p.m.",
+    "location": "U.S. Virgin Islands",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. MW Semifinals",
+    "sport": "Women's Volleyball",
+    "date": "Friday, November 28, 2025",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Elon/Tulane",
+    "sport": "Women's Basketball",
+    "date": "Friday, November 28, 2025",
+    "time": "10:30 a.m./1 p.m.",
+    "location": "U.S. Virgin Islands",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Football",
+    "date": "Friday, November 28, 2025",
+    "time": "2 p.m. MT",
+    "location": "Logan, Utah",
+    "venue": "",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "Boise State vs. MW Final",
+    "sport": "Women's Volleyball",
+    "date": "Saturday, November 29, 2025",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Mountain West Football Championship",
+    "sport": "Football",
+    "date": "Friday, December 5, 2025",
+    "time": "6 p.m.",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Sharon Colyear-Danville Season Opener",
+    "sport": "Track & Field",
+    "date": "Saturday, December 6, 2025",
+    "time": "",
+    "location": "Boston, Mass.",
+    "venue": "",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "Boise State vs. Butler",
+    "sport": "Men's Basketball",
+    "date": "Saturday, December 6, 2025",
+    "time": "12 PM",
+    "location": "Hinkle Fieldhouse (Indianapolis, Ind.)",
+    "venue": "",
+    "latitude": 39.77369,
+    "longitude": -86.10949
+  },
+  {
+    "title": "Boise State vs. California Baptist",
+    "sport": "Women's Basketball",
+    "date": "Saturday, December 6, 2025",
+    "time": "1 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Duquesne",
+    "sport": "Men's Basketball",
+    "date": "Wednesday, December 10, 2025",
+    "time": "7 PM",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Utah",
+    "sport": "Women's Basketball",
+    "date": "Wednesday, December 10, 2025",
+    "time": "7 p.m.",
+    "location": "Salt Lake City, Utah",
+    "venue": "",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "Boise State vs. Spokane Indoor Challenge",
+    "sport": "Track & Field",
+    "date": "Saturday, December 13, 2025",
+    "time": "",
+    "location": "Spokane, Wash.",
+    "venue": "",
+    "latitude": 47.66271,
+    "longitude": -117.43609
+  },
+  {
+    "title": "Boise State vs. Southern Utah",
+    "sport": "Women's Basketball",
+    "date": "Saturday, December 13, 2025",
+    "time": "1 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Saint Mary's",
+    "sport": "Men's Basketball",
+    "date": "Sunday, December 14, 2025",
+    "time": "4 PM",
+    "location": "Mountain America Center (Idaho Falls, Idaho)",
+    "venue": "",
+    "latitude": 43.53222,
+    "longitude": -111.86516
+  },
+  {
+    "title": "Boise State vs. Saint Mary's",
+    "sport": "Men's Basketball",
+    "date": "Sunday, December 14, 2025",
+    "time": "4 PM",
+    "location": "Mountain America Center (Idaho Falls, Idaho)",
+    "venue": "",
+    "latitude": 43.53222,
+    "longitude": -111.86516
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Women's Basketball",
+    "date": "Wednesday, December 17, 2025",
+    "time": "7 p.m.",
+    "location": "Albuquerque, N.M.",
+    "venue": "",
+    "latitude": 35.09669,
+    "longitude": -106.64339
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Women's Basketball",
+    "date": "Saturday, December 20, 2025",
+    "time": "2 p.m.",
+    "location": "San Diego, Calif.",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Men's Basketball",
+    "date": "Saturday, December 20, 2025",
+    "time": "6 PM",
+    "location": "Lawlor Events Center (Reno, Nev.)",
+    "venue": "",
+    "latitude": 39.52602,
+    "longitude": -119.81262
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Men's Basketball",
+    "date": "Tuesday, December 30, 2025",
+    "time": "9 PM",
+    "location": "",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Women's Basketball",
+    "date": "Wednesday, December 31, 2025",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Grand Canyon",
+    "sport": "Women's Basketball",
+    "date": "Saturday, January 3, 2026",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Men's Basketball",
+    "date": "Saturday, January 3, 2026",
+    "time": "8 PM",
+    "location": "Viejas Arena (San Diego, Calif.)",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Women's Basketball",
+    "date": "Wednesday, January 7, 2026",
+    "time": "TBA",
+    "location": "USAFA, Colo.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Grand Canyon",
+    "sport": "Men's Basketball",
+    "date": "Wednesday, January 7, 2026",
+    "time": "9 PM",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Southern Utah",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, January 9, 2026",
+    "time": "6:30 p.m. MT",
+    "location": "Cedar City, UT",
+    "venue": "",
+    "latitude": 37.55477,
+    "longitude": -113.25665
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Women's Basketball",
+    "date": "Saturday, January 10, 2026",
+    "time": "1 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Men's Basketball",
+    "date": "Saturday, January 10, 2026",
+    "time": "7 PM",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. UNLV",
+    "sport": "Men's Basketball",
+    "date": "Tuesday, January 13, 2026",
+    "time": "9 PM",
+    "location": "Thomas & Mack Center (Las Vegas, Nev.)",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Wyoming",
+    "sport": "Women's Basketball",
+    "date": "Wednesday, January 14, 2026",
+    "time": "6:30 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nevada Invitational",
+    "sport": "Track & Field",
+    "date": "Friday, January 16, 2026",
+    "time": "",
+    "location": "Reno, Nev.",
+    "venue": "",
+    "latitude": 39.52602,
+    "longitude": -119.81262
+  },
+  {
+    "title": "Boise State vs. BYU",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, January 16, 2026",
+    "time": "7 p.m. MT",
+    "location": "Provo, Utah",
+    "venue": "",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Men's Basketball",
+    "date": "Friday, January 16, 2026",
+    "time": "8:30 PM",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Women's Basketball",
+    "date": "Saturday, January 17, 2026",
+    "time": "1 p.m.",
+    "location": "Logan, Utah",
+    "venue": "",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "Boise State vs. Wyoming",
+    "sport": "Men's Basketball",
+    "date": "Tuesday, January 20, 2026",
+    "time": "6:30 PM",
+    "location": "Arena-Auditorium (Laramie, WY)",
+    "venue": "",
+    "latitude": 41.21404,
+    "longitude": -105.85037
+  },
+  {
+    "title": "Boise State vs. Fresno State",
+    "sport": "Women's Basketball",
+    "date": "Wednesday, January 21, 2026",
+    "time": "6:30 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, January 23, 2026",
+    "time": "7 p.m. MT",
+    "location": "USAFA, Colo.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Mark Colligan Memorial",
+    "sport": "Track & Field",
+    "date": "Saturday, January 24, 2026",
+    "time": "",
+    "location": "Lincoln, Neb.",
+    "venue": "",
+    "latitude": 40.78361,
+    "longitude": -96.70083
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Men's Basketball",
+    "date": "Saturday, January 24, 2026",
+    "time": "2 PM",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Grand Canyon",
+    "sport": "Women's Basketball",
+    "date": "Saturday, January 24, 2026",
+    "time": "2 p.m.",
+    "location": "Phoenix, Ariz.",
+    "venue": "",
+    "latitude": 33.45059,
+    "longitude": -112.07833
+  },
+  {
+    "title": "Boise State vs. San José State",
+    "sport": "Men's Basketball",
+    "date": "Tuesday, January 27, 2026",
+    "time": "TBA",
+    "location": "Provident Credit Union Event Center (San Jose, Calif.)",
+    "venue": "",
+    "latitude": 37.34656,
+    "longitude": -121.9097
+  },
+  {
+    "title": "Boise State vs. UW Invitational",
+    "sport": "Track & Field",
+    "date": "Friday, January 30, 2026",
+    "time": "",
+    "location": "Seattle, Wash.",
+    "venue": "",
+    "latitude": 47.61119,
+    "longitude": -122.33454
+  },
+  {
+    "title": "Boise State vs. Grand Canyon",
+    "sport": "Men's Basketball",
+    "date": "Friday, January 30, 2026",
+    "time": "7 PM",
+    "location": "Global Credit Union Arena (Phoenix, AZ)",
+    "venue": "",
+    "latitude": 33.45059,
+    "longitude": -112.07833
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, January 30, 2026",
+    "time": "7 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, January 30, 2026",
+    "time": "7 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Sacramento State",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, January 30, 2026",
+    "time": "7 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. UW Invitational",
+    "sport": "Track & Field",
+    "date": "Saturday, January 31, 2026",
+    "time": "",
+    "location": "Seattle, Wash.",
+    "venue": "",
+    "latitude": 47.61119,
+    "longitude": -122.33454
+  },
+  {
+    "title": "Boise State vs. San Jose State",
+    "sport": "Women's Basketball",
+    "date": "Saturday, January 31, 2026",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
   }
 ]

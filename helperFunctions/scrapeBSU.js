@@ -11,7 +11,7 @@
 /* Scrape Boise State Athletics events and save to JSON with coordinates 
 
 Edge cases to handle:
-- 
+- Some events are douplicated because they show up at the end of one week and beginning of next week
 */
 
 /*
@@ -90,57 +90,111 @@ async function scrapeBSUEvents() {
     console.log('Error:', error.message);
   }
   
-  const events = await page.$$eval('#calendarComponent .c-calendar__list.grid > div', dayContainers => {
-    const allEvents = [];
-    console.log('Starting to process day containers...');
+  // Collect events from multiple weeks
+  let allEvents = [];
+  const totalWeeks = 12;
+  
+  for (let week = 0; week < totalWeeks; week++) {
+    console.log(`\n--- Scraping Week ${week + 1} of ${totalWeeks} ---`);
     
-    dayContainers.forEach(dayContainer => {
-      // Get the date header for this day
-      const dateHeader = dayContainer.querySelector('h3')?.textContent.trim() || '';
-      console.log(`Processing events for date: ${dateHeader}`);
+    // Wait a moment for the calendar to load
+    await page.waitForTimeout(1000);
+    
+    // Scrape events from current week
+    const weekEvents = await page.$$eval('#calendarComponent .c-calendar__list.grid > div', dayContainers => {
+      const events = [];
+      console.log(`Processing ${dayContainers.length} day containers for this week...`);
       
-      // Get all event containers for this day
-      const eventContainers = dayContainer.querySelectorAll('.s-game-card__header-inner-top');
-      console.log(`Found ${eventContainers.length} events for date: ${dateHeader}`);
-      
-      eventContainers.forEach(eventEl => {
-        // Find the parent element that contains all the event data
-        const gameCard = eventEl.closest('[class*="s-game-card"]') || eventEl.parentElement;
-        console.log(`Processing event: ${gameCard.textContent.trim().slice(0, 50)}...`);
-        
-        // Get sport name
-        const sport = gameCard.querySelector('.s-game-card__header-sport-name span')?.textContent.trim() || '';
-        
-        // Get opponent name
-        let opponent = gameCard.querySelector('a[data-test-id="s-game-card-standard__header-team-opponent-link"]')?.textContent.trim() || '';
-        
-        // If no opponent found with primary selector, try alternative selector
-        if (!opponent) {
-          opponent = gameCard.querySelector('.s-game-card__header__team p')?.textContent.trim() || '';
+      dayContainers.forEach(dayContainer => {
+        // Get the date header for this day
+        const dateHeader = dayContainer.querySelector('h3')?.textContent.trim() || '';
+        if (dateHeader) {
+          console.log(`Processing events for date: ${dateHeader}`);
         }
         
-        // Create title
-        const title = opponent ? `Boise State vs. ${opponent}` : '';
+        // Get all event containers for this day
+        const eventContainers = dayContainer.querySelectorAll('.s-game-card__header-inner-top');
         
-        // Get location      // weird and inconsistent formatting on locations 
-                                // ex. Boston, Mass. 
-                                // ex. Hinkle Fieldhouse (Indianapolis, Ind.)
-                                // ex. ExtraMile Arena Boise, Idaho
-        const locationElement = gameCard.querySelector('span[data-test-id="s-game-card-facility-and-location__standard-location-details"]');
-        const location = locationElement?.textContent.trim() || ''; 
-        
-        // Get date and time
-        const date = gameCard.querySelector('p[data-test-id="s-game-card-standard_header-game-date"]')?.textContent.trim() || dateHeader;
-        const time = gameCard.querySelector('.s-game-card__header__game-score-time p span.s-text-paragraph-small')?.textContent.trim() || '';
-        
-        if (title || sport) { // Only add if we have at least a title or sport
-          allEvents.push({ title, sport, date, time, location });
-        }
+        eventContainers.forEach(eventEl => {
+          // Find the parent element that contains all the event data
+          const gameCard = eventEl.closest('[class*="s-game-card"]') || eventEl.parentElement;
+          
+          /**
+           * Maps abbreviated sport names to full names
+           */
+          const sportAbbreviationMap = {
+          'FB': 'Football',
+          'MBB': 'Men\'s Basketball',
+          'MGOLF': 'Men\'s Golf',
+          'MTEN': "Men's Tennis",
+          'SB': 'Softball',
+          'TF': 'Track & Field',
+          'WVB': 'Women\'s Volleyball',
+          'WBB': "Women's Basketball",
+          'WGOLF': "Women's Golf",
+          'WGYM': "Women's Gymnastics",
+          'WSOC': "Women's Soccer",
+          'WTEN': "Women's Tennis", 
+          'WBVB': "Women's Beach Volleyball",
+          'XC': 'Cross Country',
+          'ES': 'Esports'
+          };
+          // Get sport name
+          const sportAbbreviation = gameCard.querySelector('.s-game-card__header-sport-name span')?.textContent.trim() || '';
+          const sport = sportAbbreviationMap[sportAbbreviation] || sportAbbreviation;
+          
+          // Get opponent name
+          let opponent = gameCard.querySelector('a[data-test-id="s-game-card-standard__header-team-opponent-link"]')?.textContent.trim() || '';
+          
+          // If no opponent found with primary selector, try alternative selector
+          if (!opponent) {
+            opponent = gameCard.querySelector('.s-game-card__header__team p')?.textContent.trim() || '';
+          }
+          
+          // Create title
+          const title = opponent ? `Boise State vs. ${opponent}` : '';
+          
+          // Get location
+          const locationElement = gameCard.querySelector('span[data-test-id="s-game-card-facility-and-location__standard-location-details"]');
+          const location = locationElement?.textContent.trim() || ''; 
+          
+          // Get date and time
+          const date = gameCard.querySelector('p[data-test-id="s-game-card-standard_header-game-date"]')?.textContent.trim() || dateHeader;
+          const time = gameCard.querySelector('.s-game-card__header__game-score-time p span.s-text-paragraph-small')?.textContent.trim() || '';
+          
+          if (title || sport) { // Only add if we have at least a title or sport
+            events.push({ title, sport, date, time, location });
+          }
+        });
       });
+      
+      return events;
     });
     
-    return allEvents;
-  }); 
+    console.log(`Found ${weekEvents.length} events in week ${week + 1}`);
+    allEvents = allEvents.concat(weekEvents);
+    
+    // Click next week button if not the last week
+    if (week < totalWeeks - 1) {
+      try {
+        const nextButton = page.locator('#calendarComponent .fc-next-button.fc-button.fc-button-primary span');
+        await nextButton.click();
+        console.log('Clicked next week button');
+        
+        // Wait for the calendar to update
+        await page.waitForTimeout(2000);
+      } catch (error) {
+        console.log(`Error clicking next week button: ${error.message}`);
+        console.log('Stopping at week', week + 1);
+        break;
+      }
+    }
+  }
+  
+  console.log(`\n--- Total events collected: ${allEvents.length} across ${totalWeeks} weeks ---`);
+  
+  // Remove the old single-week scraping code and use allEvents instead
+  const events = allEvents; 
 
   // Add coordinates to events
   const eventsWithCoords = events.map(event => {
