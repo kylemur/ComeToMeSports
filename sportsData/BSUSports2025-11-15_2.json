@@ -1,25 +1,5 @@
 [
   {
-    "title": "Boise State vs. ITA Conference Masters",
-    "sport": "",
-    "date": "Sunday, November 9, 2025",
-    "time": "",
-    "location": "San Diego, Calif.",
-    "venue": "",
-    "latitude": 32.7162,
-    "longitude": -117.18589
-  },
-  {
-    "title": "Boise State vs. ITA Sectional Championships",
-    "sport": "",
-    "date": "Sunday, November 9, 2025",
-    "time": "",
-    "location": "Seattle, Wash.",
-    "venue": "",
-    "latitude": 47.61119,
-    "longitude": -122.33454
-  },
-  {
     "title": "Boise State vs. San Francisco",
     "sport": "",
     "date": "Sunday, November 9, 2025",
@@ -30,14 +10,34 @@
     "longitude": -116.16493
   },
   {
+    "title": "Boise State vs. ITA Sectional Championships",
+    "sport": "",
+    "date": "Sunday, November 9, 2025",
+    "time": "",
+    "location": "Seattle, Wash.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. ITA Conference Masters",
+    "sport": "",
+    "date": "Sunday, November 9, 2025",
+    "time": "",
+    "location": "San Diego, Calif.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
     "title": "Boise State vs. Ohio State University",
     "sport": "",
     "date": "Monday, November 10, 2025",
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. San Diego State",
@@ -46,8 +46,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. Ohio State University",
@@ -56,8 +56,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. San Diego State",
@@ -66,8 +66,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. UTRGV",
@@ -86,8 +86,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. San Diego State",
@@ -96,8 +96,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. Ohio State University",
@@ -106,8 +106,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. San Diego State",
@@ -116,8 +116,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. San José State",
@@ -126,8 +126,8 @@
     "time": "",
     "location": "San Jose, Calif.",
     "venue": "",
-    "latitude": 37.34656,
-    "longitude": -121.9097
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. Ohio State University",
@@ -136,8 +136,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. San Diego State",
@@ -146,8 +146,8 @@
     "time": "",
     "location": "Boise State Esports Arena",
     "venue": "",
-    "latitude": 43.66821,
-    "longitude": -116.16493
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. NCAA Regionals",
@@ -156,8 +156,8 @@
     "time": "",
     "location": "Sacramento, Calif.",
     "venue": "",
-    "latitude": 38.58761,
-    "longitude": -121.49077
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. Wildcat Invite",
@@ -166,8 +166,8 @@
     "time": "",
     "location": "Tucson, Ariz.",
     "venue": "",
-    "latitude": 32.21702,
-    "longitude": -110.97138
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. UC Davis",
@@ -186,8 +186,8 @@
     "time": "",
     "location": "Tucson, Ariz.",
     "venue": "",
-    "latitude": 32.21702,
-    "longitude": -110.97138
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. Fresno State",
@@ -196,8 +196,8 @@
     "time": "",
     "location": "Fresno, Calif.",
     "venue": "",
-    "latitude": 36.84026,
-    "longitude": -119.80038
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. Montana State",
@@ -216,8 +216,8 @@
     "time": "",
     "location": "San Diego, Calif.",
     "venue": "",
-    "latitude": 32.7162,
-    "longitude": -117.18589
+    "latitude": null,
+    "longitude": null
   },
   {
     "title": "Boise State vs. Wildcat Invite",
@@ -226,7 +226,7 @@
     "time": "",
     "location": "Tucson, Ariz.",
     "venue": "",
-    "latitude": 32.21702,
-    "longitude": -110.97138
+    "latitude": null,
+    "longitude": null
   }
 ]

@@ -29,6 +29,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 const { getCityCoords } = require('./cityCoords');
+const { getBSULocationForCoords } = require('./locationCity');
 
 // Target URL (BSU Athletics Calendar)
 const url = 'https://broncosports.com/calendar';
@@ -150,18 +151,25 @@ async function scrapeBSUEvents() {
       location = locationParts[0].trim(); // "Lawrence, Kansas"
       venue = locationParts.length > 1 ? locationParts[1].trim() : ''; // "Rim Rock Farm"
       
-      // Extract city and state for coordinates
-      const cityStateParts = location.split(',');
-      
-      if (cityStateParts.length >= 2) {
-        const city = cityStateParts[0].trim();
-        const state = cityStateParts[1].trim();
+      // Use location normalization to get coordinates
+      const normalizedLocation = getBSULocationForCoords(location);
+      if (normalizedLocation) {
+        const cityStateParts = normalizedLocation.split(',');
         
-        const coords = getCityCoords(city, state);
-        if (coords) {
-          latitude = coords.lat;
-          longitude = coords.lon;
+        if (cityStateParts.length >= 2) {
+          const city = cityStateParts[0].trim();
+          const state = cityStateParts[1].trim();
+          
+          const coords = getCityCoords(city, state);
+          if (coords) {
+            latitude = coords.lat;
+            longitude = coords.lon;
+          } else {
+            console.log(`No coordinates found for normalized location: ${normalizedLocation} (original: ${location})`);
+          }
         }
+      } else {
+        console.log(`Could not normalize location: ${location}`);
       }
     }
     
