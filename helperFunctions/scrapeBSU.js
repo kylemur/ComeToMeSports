@@ -11,6 +11,7 @@
 /* Scrape Boise State Athletics events and save to JSON with coordinates 
 
 Edge cases to handle:
+- Data is grabbed for the whole week, including previous days (ex. if today is Wednesday, events from Monday and Tuesday are included)
 - Some events are douplicated because they show up at the end of one week and beginning of next week
 */
 
