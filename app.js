@@ -73,8 +73,9 @@ class TicketmasterAPI {
         console.log(`🏟️ Starting general sports search for area`);
         console.log(`📍 Search parameters: ZIP ${zipCode}, ${radius} mile radius`);
         
-        // Search without keyword to find all sports events in the area
+        // Search with empty keyword to find all sports events (this works better than no keyword)
         const params = new URLSearchParams({
+            keyword: '', // Empty keyword works better than no keyword parameter
             classificationName: 'Sports',
             postalCode: zipCode,
             radius: radius,

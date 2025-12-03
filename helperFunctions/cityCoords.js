@@ -219,6 +219,30 @@ async function getCityZip(city, state) {
         return null;
     }
     
+    // For university towns, try to detect university-related ZIP codes first
+    const universityKeywords = ['university', 'college', 'campus'];
+    const isUniversityTown = universityKeywords.some(keyword => 
+        city.toLowerCase().includes(keyword)
+    ) || ['provo', 'cambridge', 'college station', 'university park', 'ames', 'lawrence', 'gainesville', 'tuscaloosa', 'eugene', 'ann arbor'].includes(city.toLowerCase());
+    
+    if (isUniversityTown && matches.length > 1) {
+        // For known university towns like Provo, prefer specific ZIP codes that are more likely to have sports events
+        const universityZips = {
+            'provo': ['84602'], // BYU campus area
+            'cambridge': ['02138'], // Harvard area
+            'college station': ['77840'], // Texas A&M area
+        };
+        
+        const cityKey = city.toLowerCase();
+        if (universityZips[cityKey]) {
+            const preferredZip = matches.find(match => universityZips[cityKey].includes(match.zip));
+            if (preferredZip) {
+                console.log(`📍 Found ${matches.length} ZIP codes for ${city}, ${state}. Using university area ZIP: ${preferredZip.zip} (pop: ${preferredZip.population})`);
+                return preferredZip.zip;
+            }
+        }
+    }
+    
     // Sort by population (descending) and return the ZIP with highest population
     matches.sort((a, b) => b.population - a.population);
     console.log(`📍 Found ${matches.length} ZIP codes for ${city}, ${state}. Using highest population: ${matches[0].zip} (pop: ${matches[0].population})`);
