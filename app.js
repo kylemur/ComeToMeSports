@@ -27,7 +27,7 @@ class TicketmasterAPI {
                 postalCode: zipCode,
                 radius: radius,
                 unit: 'miles',
-                size: 20,
+                size: 200,
                 sort: 'date,asc',
                 countryCode: 'US',
                 apikey: this.apiKey
@@ -75,7 +75,7 @@ class TicketmasterAPI {
             postalCode: zipCode,
             radius: radius,
             unit: 'miles',
-            size: 5,
+            size: 50,
             sort: 'date,asc',
             countryCode: 'US',
             apikey: this.apiKey
