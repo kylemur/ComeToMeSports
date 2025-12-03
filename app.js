@@ -14,9 +14,6 @@ class TicketmasterAPI {
         console.log(`🏈 Starting Ticketmaster search for university: ${universityName}`);
         console.log(`📍 Search parameters: ZIP ${zipCode}, ${radius} mile radius`);
         
-        // First, let's test if there are ANY sports events in the area
-        await this.debugGeneralSportsSearch(zipCode, radius);
-        
         for (let i = 0; i < searchTerms.length; i++) {
             const searchTerm = searchTerms[i];
             console.log(`🔍 [${i + 1}/${searchTerms.length}] Searching for: "${searchTerm}"`);
@@ -621,6 +618,20 @@ async function doSearchByCity(city, state, distanceInput) {
     }
 }
 
+// Toggle custom university input visibility
+function toggleCustomUniversityInput() {
+    const universitySelect = document.getElementById('universitySelect');
+    const customUniversityGroup = document.getElementById('customUniversityGroup');
+    
+    if (universitySelect && customUniversityGroup) {
+        if (universitySelect.value === 'other') {
+            customUniversityGroup.style.display = 'block';
+        } else {
+            customUniversityGroup.style.display = 'none';
+        }
+    }
+}
+
 // Initialize the application
 function init() {
     const searchForm = document.getElementById('searchForm');
@@ -692,25 +703,6 @@ function init() {
         }
         // Hide error when user changes distance
         hideError();
-        
-        // Clear existing timeout
-        clearTimeout(distanceTimeout);
-        
-        // Set a debounced timeout to trigger search after user stops typing
-        distanceTimeout = setTimeout(() => {
-            // Check if there are currently displayed results OR no results message
-            const resultsSection = document.getElementById('resultsSection');
-            const noResults = document.getElementById('noResults');
-            
-            if (resultsSection.style.display !== 'none' || noResults.style.display !== 'none') {
-                // Hide the no results message before re-searching
-                noResults.style.display = 'none';
-                
-                // Trigger a new search with current inputs
-                const currentForm = new Event('submit');
-                searchForm.dispatchEvent(currentForm);
-            }
-        }, 800); // Wait 800ms after user stops typing
     });
 
     // Add event listener for sport filter changes
@@ -718,19 +710,6 @@ function init() {
     sportSelect.addEventListener('change', (e) => {
         // Hide error when user changes sport filter
         hideError();
-        
-        // Check if there are currently displayed results OR no results message
-        const resultsSection = document.getElementById('resultsSection');
-        const noResults = document.getElementById('noResults');
-        
-        if (resultsSection.style.display !== 'none' || noResults.style.display !== 'none') {
-            // Hide the no results message before re-searching
-            noResults.style.display = 'none';
-            
-            // Trigger a new search with current inputs
-            const currentForm = new Event('submit');
-            searchForm.dispatchEvent(currentForm);
-        }
     });
 
     // Add event listener for university filter changes
@@ -739,21 +718,8 @@ function init() {
         // Hide error when user changes university filter
         hideError();
         
-        // Check if there are currently displayed results OR no results message
-        const resultsSection = document.getElementById('resultsSection');
-        const noResults = document.getElementById('noResults');
-        
-        if (resultsSection.style.display !== 'none' || noResults.style.display !== 'none') {
-            // Hide the no results message before re-searching
-            noResults.style.display = 'none';
-            
-            // Show loading state for university change (might trigger scraping)
-            showLoading();
-            
-            // Trigger a new search with current inputs
-            const currentForm = new Event('submit');
-            searchForm.dispatchEvent(currentForm);
-        }
+        // Handle custom university input visibility
+        toggleCustomUniversityInput();
     });
 
     // Focus on ZIP code input when page loads (default mode)
