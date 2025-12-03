@@ -113,6 +113,7 @@ class TicketmasterAPI {
             'Auburn University': ['Auburn', 'Auburn Tigers', 'Tigers', 'Auburn University'],
             'University of California, Berkeley': ['Cal Berkeley', 'California', 'Cal Bears', 'UC Berkeley'],
             'University of California, Los Angeles': ['UCLA', 'UCLA Bruins', 'Bruins', 'California Los Angeles'],
+            'UCLA': ['UCLA', 'UCLA Bruins', 'Bruins', 'UCLA Basketball', 'UCLA Football'],
             'University of Southern California': ['USC', 'USC Trojans', 'Trojans', 'Southern California'],
             'University of Notre Dame': ['Notre Dame', 'Notre Dame Fighting Irish', 'Fighting Irish', 'ND'],
             'Texas A&M University': ['Texas A&M', 'Aggies', 'TAMU', 'Texas A&M Aggies'],
@@ -124,7 +125,16 @@ class TicketmasterAPI {
             'Ohio State University': ['Ohio State', 'OSU', 'Buckeyes', 'Ohio State Buckeyes'],
             'University of Florida': ['Florida', 'Florida Gators', 'Gators', 'UF'],
             'University of Texas': ['Texas', 'Texas Longhorns', 'Longhorns', 'UT'],
-            'University of Georgia': ['Georgia', 'Georgia Bulldogs', 'Bulldogs', 'UGA']
+            'Texas': ['Texas', 'Texas Longhorns', 'Longhorns', 'UT', 'Texas Basketball'],
+            'University of Georgia': ['Georgia', 'Georgia Bulldogs', 'Bulldogs', 'UGA'],
+            'Alabama': ['Alabama', 'Alabama Crimson Tide', 'Crimson Tide', 'Bama'],
+            'Kentucky': ['Kentucky', 'Kentucky Wildcats', 'Wildcats', 'UK'],
+            'Tennessee': ['Tennessee', 'Tennessee Volunteers', 'Volunteers', 'Vols'],
+            'Mississippi': ['Mississippi', 'Ole Miss', 'Rebels', 'Ole Miss Rebels'],
+            'Louisiana State University': ['LSU', 'Louisiana State', 'Tigers', 'LSU Tigers'],
+            'Arkansas': ['Arkansas', 'Arkansas Razorbacks', 'Razorbacks'],
+            'South Carolina': ['South Carolina', 'South Carolina Gamecocks', 'Gamecocks'],
+            'Vanderbilt University': ['Vanderbilt', 'Vanderbilt Commodores', 'Commodores']
         };
         
         if (variations[universityName]) {
