@@ -573,13 +573,37 @@ async function doSearchByCity(city, state, distanceInput) {
         const sportSelect = document.getElementById('sportSelect');
         const universitySelect = document.getElementById('universitySelect');
         const selectedSport = sportSelect ? sportSelect.value : 'all';
-        const selectedUniversity = universitySelect ? universitySelect.value : 'all';
+        
+        // For city search, ignore custom university input and default to 'all'
+        // City search should find all sports events in the area, not university-specific
+        const selectedUniversity = 'all';
 
-        // Generate a fake ZIP code from coordinates for Ticketmaster API
-        const fakeZipCode = '90210'; // Default ZIP for API calls when using city search
+        // Look up ZIP code from the city using uszips.csv data
+        let zipCode = await getCityZip(city, state);
+        if (!zipCode) {
+            // If no ZIP found, try common city variations
+            const cityVariations = [
+                city.replace(' city', ''),
+                city.replace('saint ', 'st. '),
+                city.replace('st. ', 'saint ')
+            ];
+            
+            for (const variation of cityVariations) {
+                zipCode = await getCityZip(variation, state);
+                if (zipCode) break;
+            }
+        }
+        
+        // Final fallback to a default ZIP if still not found
+        if (!zipCode) {
+            zipCode = '90210';
+            console.warn(`⚠️ No ZIP code found for ${city}, ${state}. Using fallback ZIP ${zipCode}`);
+        } else {
+            console.log(`🏙️ City search: ${city}, ${state} -> Found ZIP ${zipCode}`);
+        }
 
         // Get appropriate data files and events (including Ticketmaster)
-        const { dataFiles, events } = await getEventDataFiles(selectedUniversity, fakeZipCode);
+        const { dataFiles, events } = await getEventDataFiles(selectedUniversity, zipCode, distanceInput.value || 50);
         let allEvents = [...events]; // Start with Ticketmaster events
         
         // Load file-based events (BYU/BSU)
@@ -644,6 +668,20 @@ function init() {
 
     // Add radio button functionality
     function switchSearchMode() {
+        // Clear any previous results when switching modes
+        const resultsSection = document.getElementById('resultsSection');
+        const noResults = document.getElementById('noResults');
+        if (resultsSection) resultsSection.style.display = 'none';
+        if (noResults) noResults.style.display = 'none';
+        
+        // Reset university selection when switching to city mode (city search finds all events)
+        const universitySelect = document.getElementById('universitySelect');
+        if (!searchModeZip.checked && universitySelect) {
+            // Switching to city mode - reset to "All Universities"
+            universitySelect.value = 'all';
+            toggleCustomUniversityInput(); // Hide custom input
+        }
+        
         if (searchModeZip.checked) {
             // Switch to ZIP Code mode
             zipCodeGroup.style.display = 'block';

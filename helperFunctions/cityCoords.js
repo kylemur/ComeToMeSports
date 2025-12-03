@@ -156,6 +156,59 @@ function parseCSVLine(line) {
     return result;
 }
 
+/**
+ * Finds a ZIP code for a given city and state using uszips.csv.
+ * Returns the first matching ZIP code found.
+ * @param {string} city - The city name (case-insensitive).
+ * @param {string} state - The 2-letter state abbreviation or full state name (case-insensitive).
+ * @returns {string | null} The ZIP code or null if not found.
+ */
+async function getCityZip(city, state) {
+    // Load data if not already loaded
+    if (!cityCoordinatesLoaded) {
+        await loadCityCoordinates();
+    }
+    
+    if (!cityCoordinatesData) {
+        console.error('City coordinates data not available');
+        return null;
+    }
+    
+    const lines = cityCoordinatesData.split('\n');
+    
+    // Parse CSV header to find column indices
+    const headers = parseCSVLine(lines[0]);
+    const zipIdx = headers.findIndex(h => h.toLowerCase() === 'zip');
+    const cityIdx = headers.findIndex(h => h.toLowerCase() === 'city');
+    const stateIdIdx = headers.findIndex(h => h.toLowerCase() === 'state_id');
+    const stateNameIdx = headers.findIndex(h => h.toLowerCase() === 'state_name');
+
+    for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue; // Skip empty lines
+        
+        const cols = parseCSVLine(lines[i]);
+        if (cols.length <= Math.max(zipIdx, cityIdx, stateIdIdx, stateNameIdx)) continue;
+        
+        const csvZip = cols[zipIdx] ? cols[zipIdx].trim() : '';
+        const csvCity = cols[cityIdx] ? cols[cityIdx].trim() : '';
+        const csvStateId = cols[stateIdIdx] ? cols[stateIdIdx].trim() : '';
+        const csvStateName = cols[stateNameIdx] ? cols[stateNameIdx].trim() : '';
+        
+        if (
+            csvCity &&
+            csvZip &&
+            csvCity.toLowerCase() === city.trim().toLowerCase() &&
+            (
+                (csvStateId && csvStateId.toLowerCase() === state.trim().toLowerCase()) ||
+                (csvStateName && csvStateName.toLowerCase() === state.trim().toLowerCase())
+            )
+        ) {
+            return csvZip;
+        }
+    }
+    return null;
+}
+
 // For Node.js compatibility (tests)
 if (typeof module !== 'undefined' && module.exports) {
     const fs = require('fs');
