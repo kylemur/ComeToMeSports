@@ -25,11 +25,87 @@
                 <div class="search-university">
                     <label for="universitySelect">Select University:</label>
                     <select id="universitySelect" name="universitySelect">
-                        <option value="all">All Universities</option>
-                        <option value="UofAL">University of Alabama</option>
+                        <!-- <option value="all">All Universities</option> -->
+                        <option value="other">Other (Enter Custom)</option>
+                        <option value="Alabama">University of Alabama</option>
+                        <option value="Auburn">Auburn University</option>
+                        <option value="Arizona">University of Arizona</option>
+                        <option value="Arizona State">Arizona State University</option>
+                        <option value="Arkansas">University of Arkansas</option>
+                        <option value="Baylor">Baylor University</option>
+                        <option value="Boston College">Boston College</option>
                         <option value="BYU">Brigham Young University</option>
                         <option value="BSU">Boise State University</option>
+                        <option value="California">University of California, Berkeley</option>
+                        <option value="UCLA">University of California, Los Angeles</option>
+                        <option value="Clemson">Clemson University</option>
+                        <option value="Colorado">University of Colorado Boulder</option>
+                        <option value="Connecticut">University of Connecticut</option>
+                        <option value="Duke">Duke University</option>
+                        <option value="Florida">University of Florida</option>
+                        <option value="Florida State">Florida State University</option>
+                        <option value="Georgia">University of Georgia</option>
+                        <option value="Georgia Tech">Georgia Institute of Technology</option>
+                        <option value="Illinois">University of Illinois</option>
+                        <option value="Indiana">Indiana University</option>
+                        <option value="Iowa">University of Iowa</option>
+                        <option value="Iowa State">Iowa State University</option>
+                        <option value="Kansas">University of Kansas</option>
+                        <option value="Kansas State">Kansas State University</option>
+                        <option value="Kentucky">University of Kentucky</option>
+                        <option value="Louisville">University of Louisville</option>
+                        <option value="LSU">Louisiana State University</option>
+                        <option value="Maryland">University of Maryland</option>
+                        <option value="Miami">University of Miami</option>
+                        <option value="Michigan">University of Michigan</option>
+                        <option value="Michigan State">Michigan State University</option>
+                        <option value="Minnesota">University of Minnesota</option>
+                        <option value="Mississippi">University of Mississippi</option>
+                        <option value="Mississippi State">Mississippi State University</option>
+                        <option value="Missouri">University of Missouri</option>
+                        <option value="Nebraska">University of Nebraska</option>
+                        <option value="Nevada">University of Nevada</option>
+                        <option value="North Carolina">University of North Carolina</option>
+                        <option value="NC State">North Carolina State University</option>
+                        <option value="Northwestern">Northwestern University</option>
+                        <option value="Notre Dame">University of Notre Dame</option>
+                        <option value="Ohio State">Ohio State University</option>
+                        <option value="Oklahoma">University of Oklahoma</option>
+                        <option value="Oklahoma State">Oklahoma State University</option>
+                        <option value="Oregon">University of Oregon</option>
+                        <option value="Oregon State">Oregon State University</option>
+                        <option value="Penn State">Pennsylvania State University</option>
+                        <option value="Pittsburgh">University of Pittsburgh</option>
+                        <option value="Purdue">Purdue University</option>
+                        <option value="Rutgers">Rutgers University</option>
+                        <option value="South Carolina">University of South Carolina</option>
+                        <option value="Stanford">Stanford University</option>
+                        <option value="Syracuse">Syracuse University</option>
+                        <option value="TCU">Texas Christian University</option>
+                        <option value="Tennessee">University of Tennessee</option>
+                        <option value="Texas">University of Texas at Austin</option>
+                        <option value="Texas A&M">Texas A&M University</option>
+                        <option value="Texas Tech">Texas Tech University</option>
+                        <option value="USC">University of Southern California</option>
+                        <option value="Utah">University of Utah</option>
+                        <option value="Vanderbilt">Vanderbilt University</option>
+                        <option value="Virginia">University of Virginia</option>
+                        <option value="Virginia Tech">Virginia Polytechnic Institute</option>
+                        <option value="Wake Forest">Wake Forest University</option>
+                        <option value="Washington">University of Washington</option>
+                        <option value="Washington State">Washington State University</option>
+                        <option value="West Virginia">West Virginia University</option>
+                        <option value="Wisconsin">University of Wisconsin</option>
                     </select>
+                    <div id="customUniversityDiv" class="custom-university" style="display: none;">
+                        <label for="customUniversityInput">Enter University Name:</label>
+                        <input 
+                            type="text" 
+                            id="customUniversityInput" 
+                            name="customUniversityInput" 
+                            placeholder="e.g., Harvard University" 
+                        >
+                    </div>
                 </div>
                 <div class="search-distance">
                     <label for="distanceInput">Search Radius (miles):</label>
@@ -127,5 +203,17 @@
     <script src="helperFunctions/zipCoords.js"></script>
     <script src="helperFunctions/cityCoords.js"></script>
     <script src="app.js"></script>
+    <script>
+        // Show/hide custom university input based on dropdown selection
+        document.getElementById('universitySelect').addEventListener('change', function() {
+            const customDiv = document.getElementById('customUniversityDiv');
+            if (this.value === 'other') {
+                customDiv.style.display = 'block';
+            } else {
+                customDiv.style.display = 'none';
+                document.getElementById('customUniversityInput').value = '';
+            }
+        });
+    </script>
 </body>
 </html>

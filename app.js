@@ -1,5 +1,109 @@
 // Mock events are now loaded from sportsData/mockEvents.json
 
+// TicketmasterAPI integration for universities other than BYU/BSU
+class TicketmasterAPI {
+    constructor(apiKey) {
+        this.apiKey = apiKey;
+        this.baseURL = 'https://app.ticketmaster.com/discovery/v2';
+    }
+
+    async searchUniversitySports(universityName, zipCode, radius = 50) {
+        // Try multiple search variations for better results
+        const searchTerms = this.generateSearchTerms(universityName);
+        
+        for (const searchTerm of searchTerms) {
+            console.log(`🔍 Searching Ticketmaster for: "${searchTerm}" within ${radius} miles of ${zipCode}`);
+            
+            const params = new URLSearchParams({
+                keyword: searchTerm,
+                classificationName: 'Sports',
+                postalCode: zipCode,
+                radius: radius,
+                unit: 'miles',
+                size: 20,
+                sort: 'date,asc',
+                countryCode: 'US',
+                apikey: this.apiKey
+            });
+
+            try {
+                const response = await fetch(`${this.baseURL}/events.json?${params}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                const events = this.formatTicketmasterEvents(data._embedded?.events || []);
+                
+                if (events.length > 0) {
+                    console.log(`✅ Found ${events.length} events for "${searchTerm}"`);
+                    return events;
+                }
+                console.log(`❌ No events found for "${searchTerm}"`);
+            } catch (error) {
+                console.error(`Error fetching Ticketmaster events for "${searchTerm}":`, error);
+            }
+        }
+        
+        return []; // Return empty array if no search terms yielded results
+    }
+
+    generateSearchTerms(universityName) {
+        const terms = [universityName];
+        
+        // Add variations for common university naming patterns
+        const variations = {
+            'Boston College': ['Boston College', 'BC Eagles', 'Eagles'],
+            'University of Alabama': ['Alabama', 'Alabama Crimson Tide', 'Crimson Tide'],
+            'Auburn University': ['Auburn', 'Auburn Tigers', 'Tigers'],
+            'University of California, Berkeley': ['Cal Berkeley', 'California', 'Cal Bears'],
+            'University of California, Los Angeles': ['UCLA', 'UCLA Bruins', 'Bruins'],
+            'University of Southern California': ['USC', 'USC Trojans', 'Trojans'],
+            'University of Notre Dame': ['Notre Dame', 'Notre Dame Fighting Irish', 'Fighting Irish'],
+            'Texas A&M University': ['Texas A&M', 'Aggies', 'TAMU'],
+            'Pennsylvania State University': ['Penn State', 'Penn State Nittany Lions', 'Nittany Lions']
+        };
+        
+        if (variations[universityName]) {
+            return variations[universityName];
+        }
+        
+        // Generic variations for other universities
+        if (universityName.includes('University of')) {
+            const shortName = universityName.replace('University of ', '');
+            terms.push(shortName);
+        }
+        
+        if (universityName.includes('State')) {
+            terms.push(universityName.replace('State University', '').trim());
+            terms.push(universityName.replace('University', '').trim());
+        }
+        
+        return [...new Set(terms)]; // Remove duplicates
+    }
+
+    formatTicketmasterEvents(events) {
+        return events.map(event => {
+            const venue = event._embedded?.venues?.[0];
+            const classification = event.classifications?.[0];
+            
+            return {
+                title: event.name,
+                sport: classification?.sport?.name || classification?.genre?.name || 'Sports',
+                date: event.dates?.start?.localDate || 'TBD',
+                time: event.dates?.start?.localTime || 'TBD',
+                venue: venue?.name || 'TBD',
+                location: venue?.city?.name && venue?.state?.name ? 
+                    `${venue.city.name}, ${venue.state.name}` : 'TBD',
+                latitude: venue?.location ? parseFloat(venue.location.latitude) : null,
+                longitude: venue?.location ? parseFloat(venue.location.longitude) : null,
+                url: event.url,
+                source: 'Ticketmaster'
+            };
+        }).filter(event => event.latitude && event.longitude); // Only include events with coordinates
+    }
+}
+
 
 // ZIP code to coordinates mapping is now loaded in zipCoords.js using PapaParse
 
@@ -31,10 +135,10 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', se
     }
 
     try {
-        const dataFiles = await getEventDataFiles(selectedUniversity);
-        let allEvents = [];
+        const { dataFiles, events } = await getEventDataFiles(selectedUniversity, zipCode, maxDistance);
+        let allEvents = [...events]; // Start with Ticketmaster events
         
-        // Load events from appropriate data files based on university selection
+        // Load events from file-based data (BYU/BSU)
         for (const dataFile of dataFiles) {
             try {
                 const response = await fetch(dataFile);
@@ -65,8 +169,9 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', se
 }
 
 // Get appropriate data files based on university selection
-async function getEventDataFiles(selectedUniversity) {
+async function getEventDataFiles(selectedUniversity, zipCode = null, radius = 50) {
     const dataFiles = [];
+    const events = [];
 
     // Generate current date for filename
     const now = new Date();
@@ -80,19 +185,41 @@ async function getEventDataFiles(selectedUniversity) {
     const BSUfileName = `BSUSports${yyyy}-${mm}-${dd}.json`;
     const BSUfilePath = `sportsData/${BSUfileName}`;
     
-    if (selectedUniversity === 'all') {
-        // Check for both university data files
-        dataFiles.push(BYUfilePath);
-        dataFiles.push(BSUfilePath);
-    } else if (selectedUniversity === 'BYU') {
+    // if (selectedUniversity === 'all') {
+    //     // Check for both university data files
+    //     dataFiles.push(BYUfilePath);
+    //     dataFiles.push(BSUfilePath);
+    // } else if (selectedUniversity === 'BYU') {
+    if (selectedUniversity === 'BYU') {
         // Try to scrape fresh BYU data first
         await triggerBYUScraper();
         dataFiles.push(BYUfilePath);
     } else if (selectedUniversity === 'BSU') {
         dataFiles.push(BSUfilePath);
+    } else if (selectedUniversity !== 'other' && zipCode) {
+        // For other universities, use Ticketmaster API
+        try {
+            const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
+            const ticketmasterEvents = await ticketmaster.searchUniversitySports(selectedUniversity, zipCode, radius);
+            events.push(...ticketmasterEvents);
+        } catch (error) {
+            console.error(`Error fetching Ticketmaster events for ${selectedUniversity}:`, error);
+        }
+    } else if (selectedUniversity === 'other' && zipCode) {
+        // For custom university input
+        const customUniversity = document.getElementById('customUniversityInput')?.value;
+        if (customUniversity) {
+            try {
+                const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
+                const ticketmasterEvents = await ticketmaster.searchUniversitySports(customUniversity, zipCode, radius);
+                events.push(...ticketmasterEvents);
+            } catch (error) {
+                console.error(`Error fetching Ticketmaster events for ${customUniversity}:`, error);
+            }
+        }
     }
     
-    return dataFiles;
+    return { dataFiles, events };
 }
 
 // Trigger BYU scraper (Build Process approach)
@@ -143,6 +270,8 @@ function createEventCard(event) {
                 <strong>Location:</strong> ${event.location}<br>
                 <strong>Distance:</strong> <span class="distance">${formatDistance(event.distance)} away</span>
             </div>
+            ${event.source ? `<div class="event-source">📊 ${event.source}</div>` : ''}
+            ${event.url ? `<div class="event-tickets"><a href="${event.url}" target="_blank" rel="noopener noreferrer">🎫 Buy Tickets</a></div>` : ''}
         </div>
     `;
 }
@@ -314,10 +443,14 @@ async function doSearchByCity(city, state, distanceInput) {
         const selectedSport = sportSelect ? sportSelect.value : 'all';
         const selectedUniversity = universitySelect ? universitySelect.value : 'all';
 
-        // Get appropriate data files and load events
-        const dataFiles = await getEventDataFiles(selectedUniversity);
-        let allEvents = [];
+        // Generate a fake ZIP code from coordinates for Ticketmaster API
+        const fakeZipCode = '90210'; // Default ZIP for API calls when using city search
+
+        // Get appropriate data files and events (including Ticketmaster)
+        const { dataFiles, events } = await getEventDataFiles(selectedUniversity, fakeZipCode);
+        let allEvents = [...events]; // Start with Ticketmaster events
         
+        // Load file-based events (BYU/BSU)
         for (const dataFile of dataFiles) {
             try {
                 const response = await fetch(dataFile);
