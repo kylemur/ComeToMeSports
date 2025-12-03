@@ -11,8 +11,12 @@ class TicketmasterAPI {
         // Try multiple search variations for better results
         const searchTerms = this.generateSearchTerms(universityName);
         
-        for (const searchTerm of searchTerms) {
-            console.log(`🔍 Searching Ticketmaster for: "${searchTerm}" within ${radius} miles of ${zipCode}`);
+        console.log(`🏈 Starting Ticketmaster search for university: ${universityName}`);
+        console.log(`📍 Search parameters: ZIP ${zipCode}, ${radius} mile radius`);
+        
+        for (let i = 0; i < searchTerms.length; i++) {
+            const searchTerm = searchTerms[i];
+            console.log(`🔍 [${i + 1}/${searchTerms.length}] Searching for: "${searchTerm}"`);
             
             const params = new URLSearchParams({
                 keyword: searchTerm,
@@ -33,18 +37,30 @@ class TicketmasterAPI {
                 }
                 
                 const data = await response.json();
+                console.log(`📊 API Response for "${searchTerm}":`, {
+                    totalElements: data.page?.totalElements || 0,
+                    totalPages: data.page?.totalPages || 0,
+                    hasEvents: !!data._embedded?.events
+                });
+                
                 const events = this.formatTicketmasterEvents(data._embedded?.events || []);
                 
                 if (events.length > 0) {
-                    console.log(`✅ Found ${events.length} events for "${searchTerm}"`);
+                    console.log(`✅ SUCCESS! Found ${events.length} events for "${searchTerm}"`);
                     return events;
                 }
                 console.log(`❌ No events found for "${searchTerm}"`);
+                
+                // Add small delay between searches to be respectful to the API
+                if (i < searchTerms.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
             } catch (error) {
-                console.error(`Error fetching Ticketmaster events for "${searchTerm}":`, error);
+                console.error(`💥 Error searching for "${searchTerm}":`, error);
             }
         }
         
+        console.log(`🚫 No events found for any search term for ${universityName}`);
         return []; // Return empty array if no search terms yielded results
     }
 
@@ -53,18 +69,27 @@ class TicketmasterAPI {
         
         // Add variations for common university naming patterns
         const variations = {
-            'Boston College': ['Boston College', 'BC Eagles', 'Eagles'],
-            'University of Alabama': ['Alabama', 'Alabama Crimson Tide', 'Crimson Tide'],
-            'Auburn University': ['Auburn', 'Auburn Tigers', 'Tigers'],
-            'University of California, Berkeley': ['Cal Berkeley', 'California', 'Cal Bears'],
-            'University of California, Los Angeles': ['UCLA', 'UCLA Bruins', 'Bruins'],
-            'University of Southern California': ['USC', 'USC Trojans', 'Trojans'],
-            'University of Notre Dame': ['Notre Dame', 'Notre Dame Fighting Irish', 'Fighting Irish'],
-            'Texas A&M University': ['Texas A&M', 'Aggies', 'TAMU'],
-            'Pennsylvania State University': ['Penn State', 'Penn State Nittany Lions', 'Nittany Lions']
+            'Boston College': ['Boston College', 'BC Eagles', 'Eagles', 'BC', 'Boston College Eagles'],
+            'University of Alabama': ['Alabama', 'Alabama Crimson Tide', 'Crimson Tide', 'Bama'],
+            'Auburn University': ['Auburn', 'Auburn Tigers', 'Tigers', 'Auburn University'],
+            'University of California, Berkeley': ['Cal Berkeley', 'California', 'Cal Bears', 'UC Berkeley'],
+            'University of California, Los Angeles': ['UCLA', 'UCLA Bruins', 'Bruins', 'California Los Angeles'],
+            'University of Southern California': ['USC', 'USC Trojans', 'Trojans', 'Southern California'],
+            'University of Notre Dame': ['Notre Dame', 'Notre Dame Fighting Irish', 'Fighting Irish', 'ND'],
+            'Texas A&M University': ['Texas A&M', 'Aggies', 'TAMU', 'Texas A&M Aggies'],
+            'Pennsylvania State University': ['Penn State', 'Penn State Nittany Lions', 'Nittany Lions', 'PSU'],
+            'Duke University': ['Duke', 'Duke Blue Devils', 'Blue Devils'],
+            'University of North Carolina': ['UNC', 'North Carolina', 'Tar Heels', 'Carolina'],
+            'Stanford University': ['Stanford', 'Stanford Cardinal', 'Cardinal'],
+            'University of Michigan': ['Michigan', 'Michigan Wolverines', 'Wolverines'],
+            'Ohio State University': ['Ohio State', 'OSU', 'Buckeyes', 'Ohio State Buckeyes'],
+            'University of Florida': ['Florida', 'Florida Gators', 'Gators', 'UF'],
+            'University of Texas': ['Texas', 'Texas Longhorns', 'Longhorns', 'UT'],
+            'University of Georgia': ['Georgia', 'Georgia Bulldogs', 'Bulldogs', 'UGA']
         };
         
         if (variations[universityName]) {
+            console.log(`📝 Using predefined search terms for ${universityName}:`, variations[universityName]);
             return variations[universityName];
         }
         
@@ -79,6 +104,12 @@ class TicketmasterAPI {
             terms.push(universityName.replace('University', '').trim());
         }
         
+        // Add "College" variations
+        if (universityName.includes('College')) {
+            terms.push(universityName.replace(' College', '').trim());
+        }
+        
+        console.log(`📝 Generated search terms for ${universityName}:`, [...new Set(terms)]);
         return [...new Set(terms)]; // Remove duplicates
     }
 
