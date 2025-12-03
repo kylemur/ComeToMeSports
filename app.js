@@ -219,13 +219,60 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', se
         let allEvents = [...events]; // Start with Ticketmaster events
         
         // Load events from file-based data (BYU/BSU)
-        for (const dataFile of dataFiles) {
-            try {
-                const response = await fetch(dataFile);
-                const sportsEvents = await response.json();
-                allEvents = allEvents.concat(sportsEvents);
-            } catch (error) {
-                console.warn(`Could not load ${dataFile}:`, error);
+        for (const dataFileInfo of dataFiles) {
+            // Handle both old string format and new object format for backward compatibility
+            if (typeof dataFileInfo === 'string') {
+                // Legacy format - just try the file path
+                try {
+                    const response = await fetch(dataFileInfo);
+                    const sportsEvents = await response.json();
+                    allEvents = allEvents.concat(sportsEvents);
+                    console.log(`✅ Loaded ${sportsEvents.length} events from ${dataFileInfo}`);
+                } catch (error) {
+                    console.warn(`Could not load ${dataFileInfo}:`, error);
+                }
+            } else {
+                // New format with primary and fallback paths
+                const { primary, fallback, type } = dataFileInfo;
+                let fileLoaded = false;
+                
+                // Try primary file (today's data)
+                try {
+                    console.log(`🔍 Trying to load today's ${type} data: ${primary}`);
+                    const response = await fetch(primary);
+                    if (response.ok) {
+                        const sportsEvents = await response.json();
+                        allEvents = allEvents.concat(sportsEvents);
+                        console.log(`✅ Loaded ${sportsEvents.length} events from today's ${type} data`);
+                        fileLoaded = true;
+                    } else {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    console.warn(`Could not load today's ${type} data (${primary}):`, error.message);
+                }
+                
+                // If primary failed, try fallback file (yesterday's data)
+                if (!fileLoaded) {
+                    try {
+                        console.log(`🔍 Trying to load yesterday's ${type} data: ${fallback}`);
+                        const response = await fetch(fallback);
+                        if (response.ok) {
+                            const sportsEvents = await response.json();
+                            allEvents = allEvents.concat(sportsEvents);
+                            console.log(`✅ Loaded ${sportsEvents.length} events from yesterday's ${type} data`);
+                            fileLoaded = true;
+                        } else {
+                            throw new Error(`HTTP ${response.status}`);
+                        }
+                    } catch (error) {
+                        console.warn(`Could not load yesterday's ${type} data (${fallback}):`, error.message);
+                    }
+                }
+                
+                if (!fileLoaded) {
+                    console.warn(`❌ No ${type} data available (tried both today and yesterday)`);
+                }
             }
         }
 
@@ -259,23 +306,31 @@ async function getEventDataFiles(selectedUniversity, zipCode = null, radius = 50
     const mm = String(now.getMonth() + 1).padStart(2, '0');
     const dd = String(now.getDate()).padStart(2, '0');
 
+    // Generate yesterday's date for fallback
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayYyyy = yesterday.getFullYear();
+    const yesterdayMm = String(yesterday.getMonth() + 1).padStart(2, '0');
+    const yesterdayDd = String(yesterday.getDate()).padStart(2, '0');
+
     const BYUfileName = `BYUSports${yyyy}-${mm}-${dd}.json`;
     const BYUfilePath = `sportsData/${BYUfileName}`;
+    const BYUYesterdayFileName = `BYUSports${yesterdayYyyy}-${yesterdayMm}-${yesterdayDd}.json`;
+    const BYUYesterdayFilePath = `sportsData/${BYUYesterdayFileName}`;
 
     const BSUfileName = `BSUSports${yyyy}-${mm}-${dd}.json`;
     const BSUfilePath = `sportsData/${BSUfileName}`;
+    const BSUYesterdayFileName = `BSUSports${yesterdayYyyy}-${yesterdayMm}-${yesterdayDd}.json`;
+    const BSUYesterdayFilePath = `sportsData/${BSUYesterdayFileName}`;
     
-    // if (selectedUniversity === 'all') {
-    //     // Check for both university data files
-    //     dataFiles.push(BYUfilePath);
-    //     dataFiles.push(BSUfilePath);
-    // } else if (selectedUniversity === 'BYU') {
     if (selectedUniversity === 'BYU') {
         // Try to scrape fresh BYU data first
         await triggerBYUScraper();
-        dataFiles.push(BYUfilePath);
+        // Add both today's and yesterday's file paths for fallback
+        dataFiles.push({ primary: BYUfilePath, fallback: BYUYesterdayFilePath, type: 'BYU' });
     } else if (selectedUniversity === 'BSU') {
-        dataFiles.push(BSUfilePath);
+        // Add both today's and yesterday's file paths for fallback
+        dataFiles.push({ primary: BSUfilePath, fallback: BSUYesterdayFilePath, type: 'BSU' });
     } else if (selectedUniversity !== 'other' && zipCode) {
         // For other universities, use Ticketmaster API
         try {
