@@ -182,17 +182,22 @@ async function getCityZip(city, state) {
     const cityIdx = headers.findIndex(h => h.toLowerCase() === 'city');
     const stateIdIdx = headers.findIndex(h => h.toLowerCase() === 'state_id');
     const stateNameIdx = headers.findIndex(h => h.toLowerCase() === 'state_name');
+    const populationIdx = headers.findIndex(h => h.toLowerCase() === 'population');
 
+    // Collect all matching ZIP codes with their populations
+    const matches = [];
+    
     for (let i = 1; i < lines.length; i++) {
         if (!lines[i].trim()) continue; // Skip empty lines
         
         const cols = parseCSVLine(lines[i]);
-        if (cols.length <= Math.max(zipIdx, cityIdx, stateIdIdx, stateNameIdx)) continue;
+        if (cols.length <= Math.max(zipIdx, cityIdx, stateIdIdx, stateNameIdx, populationIdx)) continue;
         
         const csvZip = cols[zipIdx] ? cols[zipIdx].trim() : '';
         const csvCity = cols[cityIdx] ? cols[cityIdx].trim() : '';
         const csvStateId = cols[stateIdIdx] ? cols[stateIdIdx].trim() : '';
         const csvStateName = cols[stateNameIdx] ? cols[stateNameIdx].trim() : '';
+        const csvPopulation = cols[populationIdx] ? parseInt(cols[populationIdx].trim()) || 0 : 0;
         
         if (
             csvCity &&
@@ -203,10 +208,21 @@ async function getCityZip(city, state) {
                 (csvStateName && csvStateName.toLowerCase() === state.trim().toLowerCase())
             )
         ) {
-            return csvZip;
+            matches.push({
+                zip: csvZip,
+                population: csvPopulation
+            });
         }
     }
-    return null;
+    
+    if (matches.length === 0) {
+        return null;
+    }
+    
+    // Sort by population (descending) and return the ZIP with highest population
+    matches.sort((a, b) => b.population - a.population);
+    console.log(`📍 Found ${matches.length} ZIP codes for ${city}, ${state}. Using highest population: ${matches[0].zip} (pop: ${matches[0].population})`);
+    return matches[0].zip;
 }
 
 // For Node.js compatibility (tests)

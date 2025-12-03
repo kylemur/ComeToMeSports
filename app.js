@@ -8,6 +8,11 @@ class TicketmasterAPI {
     }
 
     async searchUniversitySports(universityName, zipCode, radius = 50) {
+        // Handle city searches (when universityName is 'all') differently
+        if (universityName === 'all') {
+            return this.searchGeneralSports(zipCode, radius);
+        }
+        
         // Try multiple search variations for better results
         const searchTerms = this.generateSearchTerms(universityName);
         
@@ -62,6 +67,50 @@ class TicketmasterAPI {
         
         console.log(`🚫 No events found for any search term for ${universityName}`);
         return []; // Return empty array if no search terms yielded results
+    }
+
+    async searchGeneralSports(zipCode, radius) {
+        console.log(`🏟️ Starting general sports search for area`);
+        console.log(`📍 Search parameters: ZIP ${zipCode}, ${radius} mile radius`);
+        
+        // Search without keyword to find all sports events in the area
+        const params = new URLSearchParams({
+            classificationName: 'Sports',
+            postalCode: zipCode,
+            radius: radius,
+            unit: 'miles',
+            size: 200,
+            sort: 'date,asc',
+            countryCode: 'US',
+            apikey: this.apiKey
+        });
+
+        try {
+            const response = await fetch(`${this.baseURL}/events.json?${params}`);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            console.log(`📊 General sports search results:`, {
+                totalElements: data.page?.totalElements || 0,
+                totalPages: data.page?.totalPages || 0,
+                hasEvents: !!data._embedded?.events
+            });
+            
+            const events = this.formatTicketmasterEvents(data._embedded?.events || []);
+            
+            if (events.length > 0) {
+                console.log(`✅ Found ${events.length} general sports events in the area`);
+                return events;
+            } else {
+                console.log(`❌ No sports events found in area`);
+                return [];
+            }
+        } catch (error) {
+            console.error(`💥 Error in general sports search:`, error);
+            return [];
+        }
     }
 
     async debugGeneralSportsSearch(zipCode, radius) {
@@ -329,7 +378,7 @@ async function getEventDataFiles(selectedUniversity, zipCode = null, radius = 50
         // Add both today's and yesterday's file paths for fallback
         dataFiles.push({ primary: BSUfilePath, fallback: BSUYesterdayFilePath, type: 'BSU' });
     } else if (selectedUniversity !== 'other' && zipCode) {
-        // For other universities, use Ticketmaster API
+        // For other universities or general 'all' search, use Ticketmaster API
         try {
             const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
             const ticketmasterEvents = await ticketmaster.searchUniversitySports(selectedUniversity, zipCode, radius);
