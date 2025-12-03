@@ -14,6 +14,9 @@ class TicketmasterAPI {
         console.log(`🏈 Starting Ticketmaster search for university: ${universityName}`);
         console.log(`📍 Search parameters: ZIP ${zipCode}, ${radius} mile radius`);
         
+        // First, let's test if there are ANY sports events in the area
+        await this.debugGeneralSportsSearch(zipCode, radius);
+        
         for (let i = 0; i < searchTerms.length; i++) {
             const searchTerm = searchTerms[i];
             console.log(`🔍 [${i + 1}/${searchTerms.length}] Searching for: "${searchTerm}"`);
@@ -62,6 +65,42 @@ class TicketmasterAPI {
         
         console.log(`🚫 No events found for any search term for ${universityName}`);
         return []; // Return empty array if no search terms yielded results
+    }
+
+    async debugGeneralSportsSearch(zipCode, radius) {
+        console.log(`🔍 DEBUG: Checking for ANY sports events in ${zipCode} within ${radius} miles...`);
+        
+        const params = new URLSearchParams({
+            classificationName: 'Sports',
+            postalCode: zipCode,
+            radius: radius,
+            unit: 'miles',
+            size: 5,
+            sort: 'date,asc',
+            countryCode: 'US',
+            apikey: this.apiKey
+        });
+
+        try {
+            const response = await fetch(`${this.baseURL}/events.json?${params}`);
+            const data = await response.json();
+            
+            console.log(`📊 General sports search results:`, {
+                totalElements: data.page?.totalElements || 0,
+                totalPages: data.page?.totalPages || 0,
+                hasEvents: !!data._embedded?.events
+            });
+            
+            if (data._embedded?.events?.length > 0) {
+                console.log(`✅ Found ${data._embedded.events.length} general sports events nearby:`, 
+                    data._embedded.events.map(e => ({ name: e.name, date: e.dates?.start?.localDate }))
+                );
+            } else {
+                console.log(`❌ No sports events found in ${zipCode} within ${radius} miles`);
+            }
+        } catch (error) {
+            console.error(`💥 Error in general sports search:`, error);
+        }
     }
 
     generateSearchTerms(universityName) {
