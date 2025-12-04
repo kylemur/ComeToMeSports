@@ -656,14 +656,59 @@ async function doSearchByCity(city, state, distanceInput) {
         const { dataFiles, events } = await getEventDataFiles(selectedUniversity, zipCode, distanceInput.value || 50);
         let allEvents = [...events]; // Start with Ticketmaster events
         
-        // Load file-based events (BYU/BSU)
-        for (const dataFile of dataFiles) {
-            try {
-                const response = await fetch(dataFile);
-                const sportsEvents = await response.json();
-                allEvents = allEvents.concat(sportsEvents);
-            } catch (error) {
-                console.warn(`Could not load ${dataFile}:`, error);
+        // Load file-based events (BYU/BSU) with fallback mechanism
+        for (const dataFileInfo of dataFiles) {
+            if (typeof dataFileInfo === 'string') {
+                // Old format - simple string path
+                try {
+                    const response = await fetch(dataFileInfo);
+                    const sportsEvents = await response.json();
+                    allEvents = allEvents.concat(sportsEvents);
+                } catch (error) {
+                    console.warn(`Could not load ${dataFileInfo}:`, error);
+                }
+            } else {
+                // New format with primary and fallback paths
+                const { primary, fallback, type } = dataFileInfo;
+                let fileLoaded = false;
+                
+                // Try primary file (today's data)
+                try {
+                    console.log(`🔍 Trying to load today's ${type} data: ${primary}`);
+                    const response = await fetch(primary);
+                    if (response.ok) {
+                        const sportsEvents = await response.json();
+                        allEvents = allEvents.concat(sportsEvents);
+                        console.log(`✅ Loaded ${sportsEvents.length} events from today's ${type} data`);
+                        fileLoaded = true;
+                    } else {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    console.warn(`Could not load today's ${type} data (${primary}):`, error.message);
+                }
+                
+                // If primary failed, try fallback file (yesterday's data)
+                if (!fileLoaded) {
+                    try {
+                        console.log(`🔍 Trying to load yesterday's ${type} data: ${fallback}`);
+                        const response = await fetch(fallback);
+                        if (response.ok) {
+                            const sportsEvents = await response.json();
+                            allEvents = allEvents.concat(sportsEvents);
+                            console.log(`✅ Loaded ${sportsEvents.length} events from yesterday's ${type} data`);
+                            fileLoaded = true;
+                        } else {
+                            throw new Error(`HTTP ${response.status}`);
+                        }
+                    } catch (error) {
+                        console.warn(`Could not load yesterday's ${type} data (${fallback}):`, error.message);
+                    }
+                }
+                
+                if (!fileLoaded) {
+                    console.warn(`❌ Could not load any ${type} data files`);
+                }
             }
         }
         
