@@ -7,10 +7,6 @@ on:
   
   # Allows you to run this workflow manually
   workflow_dispatch:
-  
-  # Runs daily at 12:00 PM UTC (5 AM MST / 7 AM EST / 4 AM PST)
-  schedule:
-    - cron: '0 12 * * *'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -43,14 +39,75 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
         
-      - name: Scrape fresh sports data
+      - name: Download existing sports data from Pages
+        continue-on-error: true
         run: |
-          echo "🕐 Starting scrape at: $(date)"
-          echo "🏈 Scraping BYU sports data..."
-          npm run scrape-byu
-          echo "🐎 Scraping BSU sports data..."
-          npm run scrape-bsu
-          echo "📊 Sports data updated at: $(date)"
+          echo "🔍 Attempting to preserve existing sports data..."
+          # Try to download existing BYU data
+          curl -f -o sportsData/BYUSports$(date +%Y-%m-%d).json \
+            "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/sportsData/BYUSports$(date +%Y-%m-%d).json" || \
+            echo "No current BYU data found"
+          
+          # Try to download existing BSU data
+          curl -f -o sportsData/BSUSports$(date +%Y-%m-%d).json \
+            "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/sportsData/BSUSports$(date +%Y-%m-%d).json" || \
+            echo "No current BSU data found"
+          
+          # Try to download yesterday's data as backup
+          curl -f -o sportsData/BYUSports$(date -d "yesterday" +%Y-%m-%d).json \
+            "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/sportsData/BYUSports$(date -d "yesterday" +%Y-%m-%d).json" || \
+            echo "No yesterday BYU data found"
+          
+          curl -f -o sportsData/BSUSports$(date -d "yesterday" +%Y-%m-%d).json \
+            "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/sportsData/BSUSports$(date -d "yesterday" +%Y-%m-%d).json" || \
+            echo "No yesterday BSU data found"
+          
+          echo "📁 Current sportsData directory:"
+          ls -la sportsData/ || echo "sportsData directory not found"
+        
+      - name: Scrape fresh sports data (if needed)
+        run: |
+          echo "🕐 Starting deployment scrape check at: $(date)"
+          
+          # Check if we have today's data files
+          TODAY=$(date +%Y-%m-%d)
+          BYU_FILE="sportsData/BYUSports${TODAY}.json"
+          BSU_FILE="sportsData/BSUSports${TODAY}.json"
+          
+          NEED_BYU=false
+          NEED_BSU=false
+          
+          if [ ! -f "$BYU_FILE" ]; then
+            echo "❌ Missing today's BYU data file: $BYU_FILE"
+            NEED_BYU=true
+          else
+            echo "✅ Found today's BYU data file: $BYU_FILE"
+          fi
+          
+          if [ ! -f "$BSU_FILE" ]; then
+            echo "❌ Missing today's BSU data file: $BSU_FILE" 
+            NEED_BSU=true
+          else
+            echo "✅ Found today's BSU data file: $BSU_FILE"
+          fi
+          
+          # Only scrape what we need
+          if [ "$NEED_BYU" = true ]; then
+            echo "🏈 Scraping missing BYU sports data..."
+            npm run scrape-byu
+          fi
+          
+          if [ "$NEED_BSU" = true ]; then
+            echo "🐎 Scraping missing BSU sports data..."
+            npm run scrape-bsu
+          fi
+          
+          if [ "$NEED_BYU" = false ] && [ "$NEED_BSU" = false ]; then
+            echo "🎉 All sports data is current - no scraping needed!"
+          fi
+          
+          echo "📁 Final sportsData directory:"
+          ls -la sportsData/ || echo "sportsData directory not found"
           
       - name: Setup Pages
         uses: actions/configure-pages@v4

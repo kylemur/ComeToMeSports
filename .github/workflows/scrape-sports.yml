@@ -1,0 +1,62 @@
+name: Scrape Sports Data
+
+on:
+  # Runs daily at 12:00 PM UTC (5 AM MST / 7 AM EST / 4 AM PST)
+  schedule:
+    - cron: '0 12 * * *'
+  
+  # Allows manual triggering
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+        
+      - name: Create sportsData directory
+        run: mkdir -p sportsData
+        
+      - name: Scrape fresh sports data
+        run: |
+          echo "🕐 Starting scrape at: $(date)"
+          echo "🏈 Scraping BYU sports data..."
+          npm run scrape-byu
+          echo "🐎 Scraping BSU sports data..."
+          npm run scrape-bsu
+          echo "📊 Sports data updated at: $(date)"
+          echo "📁 Generated files:"
+          ls -la sportsData/
+          
+      - name: Commit and push scraped data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Add the new sports data files
+          git add sportsData/*.json
+          
+          # Check if there are any changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update sports data - $(date +'%Y-%m-%d %H:%M UTC')"
+            git push
+            echo "✅ Successfully committed and pushed sports data"
+          fi
