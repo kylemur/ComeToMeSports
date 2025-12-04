@@ -623,10 +623,7 @@ async function doSearchByCity(city, state, distanceInput) {
         const sportSelect = document.getElementById('sportSelect');
         const universitySelect = document.getElementById('universitySelect');
         const selectedSport = sportSelect ? sportSelect.value : 'all';
-        
-        // For city search, ignore custom university input and default to 'all'
-        // City search should find all sports events in the area, not university-specific
-        const selectedUniversity = 'all';
+        const selectedUniversity = universitySelect ? universitySelect.value : 'all';
 
         // Look up ZIP code from the city using uszips.csv data
         let zipCode = await getCityZip(city, state);
@@ -769,14 +766,6 @@ function init() {
         if (resultsSection) resultsSection.style.display = 'none';
         if (noResults) noResults.style.display = 'none';
         
-        // Reset university selection when switching to city mode (city search finds all events)
-        const universitySelect = document.getElementById('universitySelect');
-        if (!searchModeZip.checked && universitySelect) {
-            // Switching to city mode - reset to "All Universities"
-            universitySelect.value = 'all';
-            toggleCustomUniversityInput(); // Hide custom input
-        }
-        
         if (searchModeZip.checked) {
             // Switch to ZIP Code mode
             zipCodeGroup.style.display = 'block';
@@ -854,6 +843,9 @@ function init() {
         // Handle custom university input visibility
         toggleCustomUniversityInput();
     });
+
+    // Initialize custom university input visibility based on current selection
+    toggleCustomUniversityInput();
 
     // Focus on ZIP code input when page loads (default mode)
     zipCodeInput.focus();

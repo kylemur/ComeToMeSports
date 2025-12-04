@@ -78,14 +78,15 @@ main {
 /* Distance input section */
 .search-distance {
     text-align: center;
-    margin-bottom: 25px;
-    padding: 20px;
+    margin-bottom: 5px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(10px);
 }
 
 .search-distance label {
+    color: blueviolet;
     display: block;
     font-size: 1.1rem;
     font-weight: 600;
@@ -112,14 +113,15 @@ main {
 /* Sport filter section */
 .search-sport {
     text-align: center;
-    margin-bottom: 25px;
-    padding: 20px;
+    margin-bottom: 5px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(10px);
 }
 
 .search-sport label {
+    color: blueviolet;
     display: block;
     font-size: 1.1rem;
     font-weight: 600;
@@ -138,6 +140,41 @@ main {
 }
 
 .search-sport select:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* University filter section */
+.search-university {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.search-university label {
+    color: blueviolet;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.search-university select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    width: auto;
+    background: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.search-university select:focus {
     outline: none;
     border-color: #fff;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
