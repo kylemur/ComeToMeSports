@@ -255,7 +255,37 @@ function isValidZipCode(zipCode) {
 // getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
-async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', selectedUniversity = 'all') {
+// Helper function to parse event dates that may not include year
+function parseEventDate(eventDateString) {
+    if (!eventDateString || eventDateString === 'TBD') {
+        return null;
+    }
+    
+    // First try parsing as-is (works for ISO dates and full date strings)
+    let eventDate = new Date(eventDateString);
+    
+    // If that didn't work or resulted in a very old date (like 2001), try to fix it
+    if (isNaN(eventDate.getTime()) || eventDate.getFullYear() < 2020) {
+        // Handle formats like "Wed., Dec. 10" or "Dec. 10"
+        const currentYear = new Date().getFullYear();
+        const nextYear = currentYear + 1;
+        
+        // Remove day of week prefix if present (e.g., "Wed., ")
+        const cleanDateString = eventDateString.replace(/^[A-Za-z]+\.?,\s*/, '');
+        
+        // Try current year first
+        eventDate = new Date(`${cleanDateString}, ${currentYear}`);
+        
+        // If the date has already passed this year, try next year
+        if (eventDate.getTime() < Date.now()) {
+            eventDate = new Date(`${cleanDateString}, ${nextYear}`);
+        }
+    }
+    
+    return isNaN(eventDate.getTime()) ? null : eventDate;
+}
+
+async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', selectedUniversity = 'all', startDate = null, endDate = null) {
     console.log(`🔍 Starting findEventsNearZip for ZIP: ${zipCode}, university: ${selectedUniversity}`);
     
     const userCoords = getCoordinatesForZip(zipCode);
@@ -342,6 +372,51 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', se
             })
             .filter(event => event.distance <= maxDistance)
             .filter(event => selectedSport === 'all' || event.sport === selectedSport)
+            .filter(event => {
+                // Apply date filtering if start or end date is specified
+                console.log('Date filtering check:', { 
+                    startDate, 
+                    endDate, 
+                    eventName: event.name, 
+                    eventDate: event.date 
+                });
+                
+                // If no dates specified, include all events
+                if ((!startDate || startDate === '') && (!endDate || endDate === '')) {
+                    console.log('No date filters applied - including event');
+                    return true;
+                }
+                
+                const eventDate = event.date;
+                if (!eventDate || eventDate === 'TBD') {
+                    console.log('Event has no date or TBD - including event');
+                    return true; // Include events with unknown dates
+                }
+                
+                const eventDateObj = parseEventDate(eventDate);
+                if (!eventDateObj) {
+                    console.log('Event has invalid date - including event');
+                    return true; // Include events with invalid dates
+                }
+                
+                console.log('Parsed event date:', { original: eventDate, parsed: eventDateObj });
+                
+                // Check if event date is within range
+                if (startDate && startDate !== '') {
+                    const startDateObj = new Date(startDate);
+                    console.log('Checking start date:', { eventDate: eventDateObj, startDate: startDateObj, passes: eventDateObj >= startDateObj });
+                    if (eventDateObj < startDateObj) return false;
+                }
+                
+                if (endDate && endDate !== '') {
+                    const endDateObj = new Date(endDate);
+                    console.log('Checking end date:', { eventDate: eventDateObj, endDate: endDateObj, passes: eventDateObj <= endDateObj });
+                    if (eventDateObj > endDateObj) return false;
+                }
+                
+                console.log('Event passed all date filters');
+                return true;
+            })
             .sort((a, b) => a.distance - b.distance);
     } catch (error) {
         console.error('Error loading events:', error);
@@ -570,17 +645,24 @@ async function doSearch(zipCode, distanceInput) {
         return;
     }
 
-    // Get selected sport and university
+    // Get selected sport, university, and date range
     const sportSelect = document.getElementById('sportSelect');
     const universitySelect = document.getElementById('universitySelect');
+    const startDateInput = document.getElementById('startDate');
+    const endDateInput = document.getElementById('endDate');
+    
     const selectedSport = sportSelect ? sportSelect.value : 'all';
     const selectedUniversity = universitySelect ? universitySelect.value : 'all';
+    const startDate = startDateInput && startDateInput.value ? startDateInput.value : null;
+    const endDate = endDateInput && endDateInput.value ? endDateInput.value : null;
+    
+    console.log('Date filtering:', { startDate, endDate });
 
     // Show loading state
     showLoading();
 
     try {
-        const events = await findEventsNearZip(zipCode, distanceInput.value || 50, selectedSport, selectedUniversity);
+        const events = await findEventsNearZip(zipCode, distanceInput.value || 50, selectedSport, selectedUniversity, startDate, endDate);
         hideLoading();
         
         // Get coordinates for the ZIP code to center the map
@@ -691,11 +773,18 @@ async function doSearchByCity(city, state, distanceInput) {
             return;
         }
 
-        // Get selected sport and university
+        // Get selected sport, university, and date range
         const sportSelect = document.getElementById('sportSelect');
         const universitySelect = document.getElementById('universitySelect');
+        const startDateInput = document.getElementById('startDate');
+        const endDateInput = document.getElementById('endDate');
+        
         const selectedSport = sportSelect ? sportSelect.value : 'all';
         const selectedUniversity = universitySelect ? universitySelect.value : 'all';
+        const startDate = startDateInput && startDateInput.value ? startDateInput.value : null;
+        const endDate = endDateInput && endDateInput.value ? endDateInput.value : null;
+        
+        console.log('City search date filtering:', { startDate, endDate });
 
         // Look up ZIP code from the city using uszips.csv data
         let zipCode = await getCityZip(city, state);
@@ -794,6 +883,51 @@ async function doSearchByCity(city, state, distanceInput) {
             })
             .filter(event => event.distance <= (distanceInput.value || 50)) // Default 50 mile radius
             .filter(event => selectedSport === 'all' || event.sport === selectedSport)
+            .filter(event => {
+                // Apply date filtering if start or end date is specified
+                console.log('City search date filtering check:', { 
+                    startDate, 
+                    endDate, 
+                    eventName: event.name, 
+                    eventDate: event.date 
+                });
+                
+                // If no dates specified, include all events
+                if ((!startDate || startDate === '') && (!endDate || endDate === '')) {
+                    console.log('No date filters applied - including event');
+                    return true;
+                }
+                
+                const eventDate = event.date;
+                if (!eventDate || eventDate === 'TBD') {
+                    console.log('Event has no date or TBD - including event');
+                    return true; // Include events with unknown dates
+                }
+                
+                const eventDateObj = parseEventDate(eventDate);
+                if (!eventDateObj) {
+                    console.log('Event has invalid date - including event');
+                    return true; // Include events with invalid dates
+                }
+                
+                console.log('Parsed event date:', { original: eventDate, parsed: eventDateObj });
+                
+                // Check if event date is within range
+                if (startDate && startDate !== '') {
+                    const startDateObj = new Date(startDate);
+                    console.log('Checking start date:', { eventDate: eventDateObj, startDate: startDateObj, passes: eventDateObj >= startDateObj });
+                    if (eventDateObj < startDateObj) return false;
+                }
+                
+                if (endDate && endDate !== '') {
+                    const endDateObj = new Date(endDate);
+                    console.log('Checking end date:', { eventDate: eventDateObj, endDate: endDateObj, passes: eventDateObj <= endDateObj });
+                    if (eventDateObj > endDateObj) return false;
+                }
+                
+                console.log('Event passed all date filters');
+                return true;
+            })
             .sort((a, b) => a.distance - b.distance);
 
         hideLoading();

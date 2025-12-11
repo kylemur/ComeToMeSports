@@ -85,6 +85,26 @@ main {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+/* Unified filter section styling */
+.filters > div {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Unified filter label styling - main labels */
+.filters > div > label {
+    color: blueviolet !important;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
 /* Distance input section */
 .search-distance {
     text-align: center;
@@ -189,6 +209,36 @@ main {
     outline: none;
     border-color: #fff;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Special date range layout */
+.date-inputs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.date-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.date-input-group label {
+    color: #666 !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 2px !important;
+}
+
+.date-input-group input {
+    width: 150px !important;
+    padding: 8px 12px !important;
+    font-size: 0.95rem !important;
+    border-radius: 15px !important;
 }
 
 .search-form {

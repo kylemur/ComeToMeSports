@@ -56,12 +56,33 @@ async function scrapeBYUEvents() {
       // Get date and time from separate <time> elements
       const dateTimeElement = el.querySelector('.schedule-event-date__time');
       const timeElements = dateTimeElement ? dateTimeElement.querySelectorAll('time') : [];
-      const date = timeElements[0] ? timeElements[0].textContent.trim() : '';
+      const rawDate = timeElements[0] ? timeElements[0].textContent.trim() : '';
       const time = timeElements[1] ? timeElements[1].textContent.trim() : '';
+      
+      // Add year to the date
+      let dateWithYear = rawDate;
+      if (rawDate) {
+        const currentYear = new Date().getFullYear();
+        const nextYear = currentYear + 1;
+        
+        // Remove day of week prefix if present (e.g., "Wed., ")
+        const cleanDate = rawDate.replace(/^[A-Za-z]+\.?,\s*/, '');
+        
+        // Try parsing with current year
+        const testCurrentYear = new Date(`${cleanDate}, ${currentYear}`);
+        const now = new Date();
+        
+        // If the date with current year has already passed, use next year
+        if (testCurrentYear.getTime() < now.getTime()) {
+          dateWithYear = `${cleanDate}, ${nextYear}`;
+        } else {
+          dateWithYear = `${cleanDate}, ${currentYear}`;
+        }
+      }
       
       const location = el.querySelector('.schedule-event-location')?.textContent.trim() || '';
       
-      return { title, sport, date, time, location };
+      return { title, sport, date: dateWithYear, time, location };
     });
   }); 
 
