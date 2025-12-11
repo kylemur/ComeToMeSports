@@ -501,18 +501,28 @@ function displayEventsWithMap(events, searchCoordinates = null) {
         // Display events on map
         window.mapManager.displayEventsOnMap(events, searchCoordinates);
         
-        // Show map section
+        // Always show both map and results sections
         const mapSection = document.getElementById('mapSection');
-        if (mapSection && events.length > 0) {
-            mapSection.style.display = 'block';
+        const resultsSection = document.getElementById('resultsSection');
+        
+        if (events.length > 0) {
+            // Show map section
+            if (mapSection) {
+                mapSection.style.display = 'block';
+                
+                // Fix map rendering issue - invalidate size after display
+                setTimeout(() => {
+                    if (window.mapManager && window.mapManager.map) {
+                        window.mapManager.map.invalidateSize();
+                        window.mapManager.fitMapToMarkers();
+                    }
+                }, 100);
+            }
             
-            // Fix map rendering issue - invalidate size after display
-            setTimeout(() => {
-                if (window.mapManager && window.mapManager.map) {
-                    window.mapManager.map.invalidateSize();
-                    window.mapManager.fitMapToMarkers();
-                }
-            }, 100);
+            // Show results section (list view)
+            if (resultsSection) {
+                resultsSection.style.display = 'block';
+            }
         }
     } catch (error) {
         console.error('Error in displayEventsWithMap:', error);

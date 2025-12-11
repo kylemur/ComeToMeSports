@@ -25,7 +25,9 @@
     <div class="container">
         <header>
             <img src="images/CTMS_ComeToMeSports_crop.png" alt="ComeToMeSports Logo">
-            <p>🏌️‍♂️🏌️‍♀️⛹️‍♂️⛹️‍♀️🤾‍♂️🤾‍♀️🥎🏐🏈🏉🎳🥍🏓🎱🏒🏇🏄‍♂️🏄‍♀️🏊‍♂️🏊‍♀️🚴‍♂️🚴‍♀️🚵‍♂️🚵‍♀️🛼⛳🎣</p>
+            <p class="emoji-banner">
+                🏌️‍♂️⛹️‍♂️🤾‍♂️🥎🏐🏈🏉🎳🥍🏓🎱🏒🏇🏄‍♂️🏊‍♂️🚴‍♂️🚵‍♂️🛼⛳🎣🏂🤽‍♂️🎾🏏🏑🎿🏹
+            </p>
             <p class="subtitle">Find sporting events near you!</p>
         </header>
 
@@ -117,18 +119,6 @@
                         >
                     </div>
                 </div>
-                <div class="search-distance">
-                    <label for="distanceInput">Search Radius (miles):</label>
-                    <input 
-                        type="number" 
-                        id="distanceInput" 
-                        name="distanceInput" 
-                        value="50"
-                        placeholder="e.g., 50" 
-                        min="1" 
-                        max="500" 
-                    >
-                </div>
                 <div class="search-sport">
                     <label for="sportSelect">Select Sport:</label>
                     <select id="sportSelect" name="sportSelect">
@@ -147,6 +137,18 @@
                         <option value="Women's Tennis">Women's Tennis</option>
                         <option value="Women's Volleyball">Women's Volleyball</option>
                     </select>
+                </div>
+                <div class="search-distance">
+                    <label for="distanceInput">Search Radius (miles):</label>
+                    <input 
+                        type="number" 
+                        id="distanceInput" 
+                        name="distanceInput" 
+                        value="50"
+                        placeholder="e.g., 50" 
+                        min="1" 
+                        max="500" 
+                    >
                 </div>
             </div>
             <div class="search-mode-toggle">
@@ -196,7 +198,6 @@
             <!-- Map Section -->
             <div id="mapSection" style="display: none;">
                 <div class="map-controls">
-                    <button id="toggleMapView" class="map-toggle-btn">Show List View</button>
                     <button id="fitMapBounds" class="map-control-btn">Fit All Events</button>
                 </div>
                 <div id="eventsMap"></div>
@@ -215,7 +216,7 @@
 
         <footer>
             <p>Location data provided by <a href="https://simplemaps.com/data/us-zips">SimpleMaps.com</a></p>
-            <p>&copy; 2025 ComeToMeSports. Find your next 🏂🤽‍♂️🤽‍♀️🤾‍♂️🤾‍♀️🏐🏈🎾🏏🏑🏒🏓🏸🎿🏹 event!</p>
+            <p>&copy; 2025 ComeToMeSports. Find your next event!</p>
         </footer>
     </div>
 

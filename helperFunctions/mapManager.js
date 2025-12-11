@@ -34,12 +34,7 @@ class MapManager {
      * Setup map control event listeners
      */
     setupMapControls() {
-        const toggleBtn = document.getElementById('toggleMapView');
         const fitBoundsBtn = document.getElementById('fitMapBounds');
-
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', () => this.toggleView());
-        }
 
         if (fitBoundsBtn) {
             fitBoundsBtn.addEventListener('click', () => this.fitMapToMarkers());
