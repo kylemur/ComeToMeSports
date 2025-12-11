@@ -40,16 +40,6 @@
     "longitude": -116.16493
   },
   {
-    "title": "Boise State vs. Washington",
-    "sport": "Football",
-    "date": "Saturday, December 13, 2025",
-    "time": "6 p.m. MT",
-    "location": "Inglewood, Calif.",
-    "venue": "",
-    "latitude": 33.95647,
-    "longitude": -118.35863
-  },
-  {
     "title": "Boise State vs. Saint Mary's",
     "sport": "Men's Basketball",
     "date": "Sunday, December 14, 2025",
@@ -93,7 +83,7 @@
     "title": "Boise State vs. Nevada",
     "sport": "Men's Basketball",
     "date": "Saturday, December 20, 2025",
-    "time": "8 PM",
+    "time": "6 PM",
     "location": "Lawlor Events Center (Reno, Nev.)",
     "venue": "",
     "latitude": 39.52602,
