@@ -6,6 +6,16 @@
     <title>ComeToMeSports - Find Sporting Events Near You</title>
     <link rel="icon" href="images/CTMS.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+         crossorigin=""/>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+         crossorigin=""></script>
     <meta name="description" content="ComeToMeSports helps you find sporting events near you based on your location and sport preferences.">
     <meta property="og:description" content="ComeToMeSports helps you find sporting events near you based on your location and sport preferences.">
     <meta property="og:title" content="ComeToMeSports - Find Sporting Events Near You">
@@ -174,12 +184,22 @@
                         >
                         <button type="submit">Find Events</button>
                     </div>
+                    <p class="note">Note: Event distances and locations are approximate.</p>
                 </form>
                 <div id="errorMessage" class="error-message" style="display: none;"></div>
             </div>
 
             <div id="loadingMessage" class="loading" style="display: none;">
                 <p>🔍 Searching for events...</p>
+            </div>
+
+            <!-- Map Section -->
+            <div id="mapSection" style="display: none;">
+                <div class="map-controls">
+                    <button id="toggleMapView" class="map-toggle-btn">Show List View</button>
+                    <button id="fitMapBounds" class="map-control-btn">Fit All Events</button>
+                </div>
+                <div id="eventsMap"></div>
             </div>
 
             <div id="resultsSection" class="results-section" style="display: none;">
@@ -202,6 +222,7 @@
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="helperFunctions/zipCoords.js"></script>
     <script src="helperFunctions/cityCoords.js"></script>
+    <script src="helperFunctions/mapManager.js"></script>
     <script src="app.js"></script>
     <script>
         // Show/hide custom university input based on dropdown selection

@@ -256,13 +256,20 @@ function isValidZipCode(zipCode) {
 
 // Find events near a ZIP code
 async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', selectedUniversity = 'all') {
+    console.log(`🔍 Starting findEventsNearZip for ZIP: ${zipCode}, university: ${selectedUniversity}`);
+    
     const userCoords = getCoordinatesForZip(zipCode);
     if (!userCoords) {
+        console.error('No coordinates found for ZIP code:', zipCode);
         return [];
     }
+    console.log('User coordinates:', userCoords);
 
     try {
+        console.log('Calling getEventDataFiles...');
         const { dataFiles, events } = await getEventDataFiles(selectedUniversity, zipCode, maxDistance);
+        console.log(`Found ${events.length} Ticketmaster events, ${dataFiles.length} data files to process`);
+        
         let allEvents = [...events]; // Start with Ticketmaster events
         
         // Load events from file-based data (BYU/BSU)
@@ -474,6 +481,46 @@ function displayEvents(events) {
     }
 }
 
+// Enhanced display events function with map support
+function displayEventsWithMap(events, searchCoordinates = null) {
+    try {
+        // Display list view
+        displayEvents(events);
+        
+        // Check if mapManager is available
+        if (typeof window.mapManager === 'undefined') {
+            console.warn('MapManager not available, skipping map functionality');
+            return;
+        }
+        
+        // Initialize map if not already done
+        if (!window.mapManager.map) {
+            window.mapManager.initializeMap();
+        }
+        
+        // Display events on map
+        window.mapManager.displayEventsOnMap(events, searchCoordinates);
+        
+        // Show map section
+        const mapSection = document.getElementById('mapSection');
+        if (mapSection && events.length > 0) {
+            mapSection.style.display = 'block';
+            
+            // Fix map rendering issue - invalidate size after display
+            setTimeout(() => {
+                if (window.mapManager && window.mapManager.map) {
+                    window.mapManager.map.invalidateSize();
+                    window.mapManager.fitMapToMarkers();
+                }
+            }, 100);
+        }
+    } catch (error) {
+        console.error('Error in displayEventsWithMap:', error);
+        // Fall back to just showing the list view if map fails
+        displayEvents(events);
+    }
+}
+
 // Show error message
 function showError(message) {
     const errorElement = document.getElementById('errorMessage');
@@ -502,6 +549,11 @@ function hideLoading() {
 // Handle form submission
 
 async function doSearch(zipCode, distanceInput) {
+    // Add debugging to check if required functions are available
+    console.log('doSearch called with:', zipCode, distanceInput.value);
+    console.log('getCoordinatesForZip available:', typeof getCoordinatesForZip);
+    console.log('window.mapManager available:', typeof window.mapManager);
+    
     // Check if we have coordinates for this ZIP code
     if (!getCoordinatesForZip(zipCode)) {
         showError('Sorry, we don\'t have location data for this ZIP code. Try: 90210, 10001, 60612, or other major city ZIP codes.');
@@ -520,11 +572,21 @@ async function doSearch(zipCode, distanceInput) {
     try {
         const events = await findEventsNearZip(zipCode, distanceInput.value || 50, selectedSport, selectedUniversity);
         hideLoading();
-        displayEvents(events);
+        
+        // Get coordinates for the ZIP code to center the map
+        const zipCoordinates = getCoordinatesForZip(zipCode);
+        console.log('ZIP coordinates:', zipCoordinates);
+        
+        // Convert lng to lon for map compatibility
+        const mapCoordinates = zipCoordinates ? { lat: zipCoordinates.lat, lon: zipCoordinates.lng } : null;
+        console.log('Map coordinates:', mapCoordinates);
+        
+        displayEventsWithMap(events, mapCoordinates);
     } catch (error) {
         hideLoading();
-        showError('Error loading events. Please try again.');
-        console.error('Error:', error);
+        console.error('Detailed error in doSearch:', error);
+        console.error('Error stack:', error.stack);
+        showError(`Error loading events: ${error.message || 'Please try again.'}`);
     }
 }
 
@@ -725,7 +787,7 @@ async function doSearchByCity(city, state, distanceInput) {
             .sort((a, b) => a.distance - b.distance);
 
         hideLoading();
-        displayEvents(eventsWithDistance);
+        displayEventsWithMap(eventsWithDistance, { lat: cityCoords.lat, lon: cityCoords.lon });
         
     } catch (error) {
         hideLoading();

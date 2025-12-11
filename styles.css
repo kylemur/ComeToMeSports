@@ -426,3 +426,164 @@ footer {
     font-weight: 600;
     color: purple;
 }
+
+/* Map Section Styles */
+#mapSection {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-controls {
+    background: #f8f9fa;
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.map-toggle-btn, .map-control-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-toggle-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.map-toggle-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.map-control-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.map-control-btn:hover {
+    background: #545b62;
+}
+
+#eventsMap {
+    height: 500px;
+    width: 100%;
+}
+
+/* Custom Leaflet Popup Styles */
+.leaflet-popup-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+}
+
+.event-popup {
+    max-width: 250px;
+}
+
+.event-popup h4 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.event-popup .event-details {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 4px 0;
+}
+
+.event-popup .event-sport {
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.event-popup .event-distance {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.event-popup .event-link {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-top: 8px;
+    transition: background 0.3s ease;
+}
+
+.event-popup .event-link:hover {
+    background: #0056b3;
+}
+
+/* Map integration styles */
+.view-toggle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.view-toggle-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.view-toggle-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Event marker styles */
+.event-marker {
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 21px;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.user-location-marker {
+    background: white;
+    border: 2px solid #28a745;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26px;
+    font-size: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Responsive Map Controls */
+@media (max-width: 768px) {
+    .map-controls {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #eventsMap {
+        height: 400px;
+    }
+}
