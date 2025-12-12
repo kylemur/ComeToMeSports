@@ -229,6 +229,194 @@ class TicketmasterAPI {
             };
         }).filter(event => event.latitude && event.longitude); // Only include events with coordinates
     }
+
+    // NFL search methods
+    async searchNFLGames(zipCode, options = {}) {
+        const {
+            radius = 50,
+            size = 200,
+            sort = 'date,asc'
+        } = options;
+
+        console.log(`🏈 Searching for NFL games near ZIP ${zipCode}...`);
+
+        const params = new URLSearchParams({
+            keyword: 'NFL',
+            classificationName: 'Sports',
+            postalCode: zipCode,
+            radius: radius,
+            unit: 'miles',
+            size: size,
+            sort: sort,
+            countryCode: 'US',
+            apikey: this.apiKey
+        });
+
+        return this.executeNFLSearch(params);
+    }
+
+    async searchNFLGamesByCoordinates(lat, lon, options = {}) {
+        const {
+            radius = 50,
+            size = 200,
+            sort = 'date,asc'
+        } = options;
+
+        console.log(`🏈 Searching for NFL games near coordinates ${lat}, ${lon}...`);
+
+        const params = new URLSearchParams({
+            keyword: 'NFL',
+            classificationName: 'Sports',
+            latlong: `${lat},${lon}`,
+            radius: radius,
+            unit: 'miles',
+            size: size,
+            sort: sort,
+            countryCode: 'US',
+            apikey: this.apiKey
+        });
+
+        return this.executeNFLSearch(params);
+    }
+
+    async executeNFLSearch(params) {
+
+        try {
+            const response = await fetch(`${this.baseURL}/events.json?${params}`);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            console.log(`📊 NFL API Response:`, {
+                totalElements: data.page?.totalElements || 0,
+                totalPages: data.page?.totalPages || 0,
+                hasEvents: !!data._embedded?.events
+            });
+            
+            if (data._embedded?.events) {
+                // Filter to only include NFL games
+                const nflEvents = data._embedded.events.filter(event => 
+                    event.name && (
+                        event.name.toLowerCase().includes('nfl') ||
+                        event.classifications?.some(c => 
+                            c.segment?.name?.toLowerCase().includes('sports') &&
+                            c.genre?.name?.toLowerCase().includes('football')
+                        ) ||
+                        this.isNFLTeam(event.name)
+                    )
+                );
+                
+                console.log(`✅ Found ${nflEvents.length} NFL events`);
+                const formattedEvents = this.formatTicketmasterEvents(nflEvents);
+                
+                return {
+                    events: formattedEvents,
+                    totalElements: data.page?.totalElements || 0,
+                    totalPages: data.page?.totalPages || 0,
+                    currentPage: data.page?.number || 0
+                };
+            } else {
+                console.log('❌ No NFL events found');
+                return {
+                    events: [],
+                    totalElements: 0,
+                    totalPages: 0,
+                    currentPage: 0
+                };
+            }
+        } catch (error) {
+            console.error('❌ Error searching NFL games:', error);
+            throw error;
+        }
+    }
+
+    async searchNFLGamesByCoordinates(lat, lon, options = {}) {
+        const {
+            radius = 50,
+            size = 200,
+            sort = 'date,asc'
+        } = options;
+
+        console.log(`🏈 Searching for NFL games near coordinates ${lat}, ${lon}...`);
+
+        const params = new URLSearchParams({
+            keyword: 'NFL',
+            classificationName: 'Sports',
+            latlong: `${lat},${lon}`,
+            radius: radius,
+            unit: 'miles',
+            size: size,
+            sort: sort,
+            countryCode: 'US',
+            apikey: this.apiKey
+        });
+
+        try {
+            const response = await fetch(`${this.baseURL}/events.json?${params}`);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            console.log(`📊 NFL API Response:`, {
+                totalElements: data.page?.totalElements || 0,
+                totalPages: data.page?.totalPages || 0,
+                hasEvents: !!data._embedded?.events
+            });
+            
+            if (data._embedded?.events) {
+                // Filter to only include NFL games
+                const nflEvents = data._embedded.events.filter(event => 
+                    event.name && (
+                        event.name.toLowerCase().includes('nfl') ||
+                        event.classifications?.some(c => 
+                            c.segment?.name?.toLowerCase().includes('sports') &&
+                            c.genre?.name?.toLowerCase().includes('football')
+                        ) ||
+                        this.isNFLTeam(event.name)
+                    )
+                );
+                
+                console.log(`✅ Found ${nflEvents.length} NFL events`);
+                const formattedEvents = this.formatTicketmasterEvents(nflEvents);
+                
+                return {
+                    events: formattedEvents,
+                    totalElements: data.page?.totalElements || 0,
+                    totalPages: data.page?.totalPages || 0,
+                    currentPage: data.page?.number || 0
+                };
+            } else {
+                console.log('❌ No NFL events found');
+                return {
+                    events: [],
+                    totalElements: 0,
+                    totalPages: 0,
+                    currentPage: 0
+                };
+            }
+        } catch (error) {
+            console.error('❌ Error searching NFL games by coordinates:', error);
+            throw error;
+        }
+    }
+
+    isNFLTeam(eventName) {
+        const nflTeams = [
+            'Cardinals', 'Falcons', 'Ravens', 'Bills', 'Panthers', 'Bears', 'Bengals', 'Browns',
+            'Cowboys', 'Broncos', 'Lions', 'Packers', 'Texans', 'Colts', 'Jaguars', 'Chiefs',
+            'Raiders', 'Chargers', 'Rams', 'Dolphins', 'Vikings', 'Patriots', 'Saints', 'Giants',
+            'Jets', 'Eagles', 'Steelers', '49ers', 'Seahawks', 'Buccaneers', 'Titans', 'Commanders'
+        ];
+        
+        const lowerEventName = eventName.toLowerCase();
+        return nflTeams.some(team => 
+            lowerEventName.includes(team.toLowerCase()) ||
+            lowerEventName.includes('vs ' + team.toLowerCase()) ||
+            lowerEventName.includes(team.toLowerCase() + ' vs')
+        );
+    }
 }
 
 
@@ -504,6 +692,144 @@ async function triggerBYUScraper() {
     // because data files would already exist from the build step
 }
 
+// NFL search function
+async function doNFLSearch(zipCode, distanceInput) {
+    hideError();
+    showLoading();
+    
+    try {
+        console.log(`🏈 Searching for NFL games near ZIP: ${zipCode}`);
+        
+        const distance = parseInt(distanceInput.value) || 50;
+        const coordinates = getCoordinatesForZip(zipCode);
+        const selectedTeam = document.getElementById('nflTeamSelect')?.value || 'all';
+        
+        // Create local ticketmaster instance
+        const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
+        
+        // Search for NFL games using TicketmasterAPI
+        const nflEvents = await ticketmaster.searchNFLGames(zipCode, {
+            radius: distance,
+            size: 200
+        });
+        
+        let allEvents = [];
+        
+        if (nflEvents && nflEvents.events) {
+            console.log(`Found ${nflEvents.events.length} NFL events`);
+            // Events are already in the correct format
+            allEvents = nflEvents.events;
+        }
+        
+        // Filter by selected team if not "all"
+        if (selectedTeam !== 'all') {
+            allEvents = allEvents.filter(event => {
+                const eventName = event.title.toLowerCase();
+                const teamName = selectedTeam.toLowerCase();
+                return eventName.includes(teamName) || 
+                       eventName.includes(teamName.split(' ').pop()); // Check for team nickname
+            });
+            console.log(`Filtered to ${allEvents.length} events for ${selectedTeam}`);
+        }
+        
+        // Filter events based on date criteria
+        const startDateInput = document.getElementById('startDate');
+        const endDateInput = document.getElementById('endDate');
+        const startDate = startDateInput && startDateInput.value ? startDateInput.value : null;
+        const endDate = endDateInput && endDateInput.value ? endDateInput.value : null;
+        
+        allEvents = allEvents.filter(event => {
+            // Apply date filtering if start or end date is specified
+            console.log('NFL date filtering check:', { 
+                startDate, 
+                endDate, 
+                eventName: event.title, 
+                eventDate: event.date 
+            });
+            
+            // If no dates specified, include all events
+            if ((!startDate || startDate === '') && (!endDate || endDate === '')) {
+                console.log('No date filters applied - including event');
+                return true;
+            }
+            
+            const eventDate = event.date;
+            if (!eventDate || eventDate === 'TBD') {
+                console.log('Event has no date or TBD - including event');
+                return true; // Include events with unknown dates
+            }
+            
+            const eventDateObj = parseEventDate(eventDate);
+            if (!eventDateObj) {
+                console.log('Event has invalid date - including event');
+                return true; // Include events with invalid dates
+            }
+            
+            console.log('Parsed event date:', { original: eventDate, parsed: eventDateObj });
+            
+            // Check if event date is within range
+            if (startDate && startDate !== '') {
+                const startDateObj = new Date(startDate);
+                console.log('Checking start date:', { eventDate: eventDateObj, startDate: startDateObj, passes: eventDateObj >= startDateObj });
+                if (eventDateObj < startDateObj) return false;
+            }
+            
+            if (endDate && endDate !== '') {
+                const endDateObj = new Date(endDate);
+                console.log('Checking end date:', { eventDate: eventDateObj, endDate: endDateObj, passes: eventDateObj <= endDateObj });
+                if (eventDateObj > endDateObj) return false;
+            }
+            
+            console.log('Event passed all date filters');
+            return true;
+        });
+        
+        console.log(`🏆 Total NFL events after filtering: ${allEvents.length}`);
+        
+        if (allEvents.length === 0) {
+            hideLoading();
+            showNoResults();
+            return;
+        }
+        
+        // Calculate distances for NFL events
+        const eventsWithDistance = allEvents.map(event => {
+            if (!event.latitude || !event.longitude) {
+                console.warn('Event missing coordinates:', event.title);
+                return null; // Skip events without coordinates
+            }
+            
+            const eventDistance = calculateDistance(
+                coordinates.lat,
+                coordinates.lng || coordinates.lon, // Handle both lng (ZIP) and lon (city) formats
+                event.latitude,
+                event.longitude
+            );
+            
+            return { 
+                ...event, 
+                distance: eventDistance
+            };
+        }).filter(event => event !== null) // Remove events without coordinates
+        .sort((a, b) => a.distance - b.distance);
+        
+        // Display results with map
+        // Ensure coordinates are in the correct format for map display
+        const mapCoordinates = {
+            lat: coordinates.lat,
+            lng: coordinates.lng || coordinates.lon,
+            lon: coordinates.lon || coordinates.lng
+        };
+        displayEventsWithMap(eventsWithDistance, mapCoordinates);
+        
+    } catch (error) {
+        console.error('NFL search error:', error);
+        showError('Failed to search for NFL games. Please try again.');
+    } finally {
+        hideLoading();
+    }
+}
+
 // Format distance for display
 function formatDistance(distance) {
     return distance < 1 ? 
@@ -619,6 +945,12 @@ function hideError() {
     errorElement.style.display = 'none';
 }
 
+// Show no results message
+function showNoResults() {
+    document.getElementById('noResults').style.display = 'block';
+    document.getElementById('resultsSection').style.display = 'none';
+}
+
 // Show loading state
 function showLoading() {
     document.getElementById('loadingMessage').style.display = 'block';
@@ -645,6 +977,15 @@ async function doSearch(zipCode, distanceInput) {
         return;
     }
 
+    // Get selected event type
+    const eventType = document.querySelector('input[name="eventType"]:checked')?.value || 'college';
+    
+    if (eventType === 'nfl') {
+        await doNFLSearch(zipCode, distanceInput);
+        return;
+    }
+
+    // College events logic continues below
     // Get selected sport, university, and date range
     const sportSelect = document.getElementById('sportSelect');
     const universitySelect = document.getElementById('universitySelect');
@@ -764,6 +1105,9 @@ async function doSearchByCity(city, state, distanceInput) {
     showLoading();
 
     try {
+        // Get selected event type first
+        const eventType = document.querySelector('input[name="eventType"]:checked')?.value || 'college';
+        
         // Get coordinates for the city/state using getCityCoords (async)
         const cityCoords = await getCityCoords(city, state);
         
@@ -772,6 +1116,156 @@ async function doSearchByCity(city, state, distanceInput) {
             showError(`Sorry, we don't have location data for ${city}, ${state}. Please try a different city or use ZIP code search.`);
             return;
         }
+
+        if (eventType === 'nfl') {
+            // NFL search for city
+            await doNFLCitySearch(city, state, cityCoords, distanceInput);
+        } else {
+            // College search for city  
+            await doCollegeCitySearch(city, state, cityCoords, distanceInput);
+        }
+        
+    } catch (error) {
+        console.error('City search error:', error);
+        showError('Failed to search by city. Please check your input and try again.');
+    } finally {
+        hideLoading();
+    }
+}
+
+// NFL city search function
+async function doNFLCitySearch(city, state, cityCoords, distanceInput) {
+    try {
+        const distance = parseInt(distanceInput.value) || 50;
+        const selectedTeam = document.getElementById('nflTeamSelect')?.value || 'all';
+        
+        console.log(`🏈 Searching for NFL games near ${city}, ${state}`);
+        
+        // Create local ticketmaster instance
+        const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
+        
+        // Use coordinate-based search instead of ZIP conversion
+        const nflEvents = await ticketmaster.searchNFLGamesByCoordinates(cityCoords.lat, cityCoords.lon, {
+            radius: distance,
+            size: 200
+        });
+        
+        let allEvents = [];
+        
+        if (nflEvents && nflEvents.events) {
+            console.log(`Found ${nflEvents.events.length} NFL events`);
+            // Events are already in the correct format
+            allEvents = nflEvents.events;
+        }
+        
+        // Filter by selected team if not "all"
+        if (selectedTeam !== 'all') {
+            allEvents = allEvents.filter(event => {
+                const eventName = event.title.toLowerCase();
+                const teamName = selectedTeam.toLowerCase();
+                return eventName.includes(teamName) || 
+                       eventName.includes(teamName.split(' ').pop());
+            });
+            console.log(`Filtered to ${allEvents.length} events for ${selectedTeam}`);
+        }
+        
+        // Filter events based on date criteria
+        const startDateInput = document.getElementById('startDate');
+        const endDateInput = document.getElementById('endDate');
+        const startDate = startDateInput && startDateInput.value ? startDateInput.value : null;
+        const endDate = endDateInput && endDateInput.value ? endDateInput.value : null;
+        
+        allEvents = allEvents.filter(event => {
+            // Apply date filtering if start or end date is specified
+            console.log('NFL city date filtering check:', { 
+                startDate, 
+                endDate, 
+                eventName: event.title, 
+                eventDate: event.date 
+            });
+            
+            // If no dates specified, include all events
+            if ((!startDate || startDate === '') && (!endDate || endDate === '')) {
+                console.log('No date filters applied - including event');
+                return true;
+            }
+            
+            const eventDate = event.date;
+            if (!eventDate || eventDate === 'TBD') {
+                console.log('Event has no date or TBD - including event');
+                return true; // Include events with unknown dates
+            }
+            
+            const eventDateObj = parseEventDate(eventDate);
+            if (!eventDateObj) {
+                console.log('Event has invalid date - including event');
+                return true; // Include events with invalid dates
+            }
+            
+            console.log('Parsed event date:', { original: eventDate, parsed: eventDateObj });
+            
+            // Check if event date is within range
+            if (startDate && startDate !== '') {
+                const startDateObj = new Date(startDate);
+                console.log('Checking start date:', { eventDate: eventDateObj, startDate: startDateObj, passes: eventDateObj >= startDateObj });
+                if (eventDateObj < startDateObj) return false;
+            }
+            
+            if (endDate && endDate !== '') {
+                const endDateObj = new Date(endDate);
+                console.log('Checking end date:', { eventDate: eventDateObj, endDate: endDateObj, passes: eventDateObj <= endDateObj });
+                if (eventDateObj > endDateObj) return false;
+            }
+            
+            console.log('Event passed all date filters');
+            return true;
+        });
+        
+        if (allEvents.length === 0) {
+            hideLoading();
+            showNoResults();
+            return;
+        }
+        
+        // Calculate distances for NFL events
+        const eventsWithDistance = allEvents.map(event => {
+            if (!event.latitude || !event.longitude) {
+                console.warn('Event missing coordinates:', event.title);
+                return null; // Skip events without coordinates
+            }
+            
+            const eventDistance = calculateDistance(
+                cityCoords.lat,
+                cityCoords.lon, // City coordinates use 'lon' not 'lng'
+                event.latitude,
+                event.longitude
+            );
+            
+            return { 
+                ...event, 
+                distance: eventDistance
+            };
+        }).filter(event => event !== null) // Remove events without coordinates
+        .sort((a, b) => a.distance - b.distance);
+        
+        // Ensure coordinates are in the correct format for map display
+        const mapCoordinates = {
+            lat: cityCoords.lat,
+            lng: cityCoords.lon, 
+            lon: cityCoords.lon
+        };
+        displayEventsWithMap(eventsWithDistance, mapCoordinates);
+        
+    } catch (error) {
+        console.error('NFL city search error:', error);
+        showError('Failed to search for NFL games. Please try again.');
+    }
+}
+
+// College city search function
+async function doCollegeCitySearch(city, state, cityCoords, distanceInput) {
+    try {
+        const distance = parseInt(distanceInput.value) || 50;
 
         // Get selected sport, university, and date range
         const sportSelect = document.getElementById('sportSelect');
@@ -1050,11 +1544,72 @@ function init() {
         toggleCustomUniversityInput();
     });
 
+    // Add event listeners for College/NFL toggle
+    const eventTypeRadios = document.querySelectorAll('input[name="eventType"]');
+    eventTypeRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            updateToggleButtonStyles();
+            updateUIForEventType();
+        });
+    });
+
+    // Initialize toggle button styles and UI
+    updateToggleButtonStyles();
+    updateUIForEventType();
+
     // Initialize custom university input visibility based on current selection
     toggleCustomUniversityInput();
 
     // Focus on ZIP code input when page loads (default mode)
     zipCodeInput.focus();
+}
+
+// Update toggle button visual styles
+function updateToggleButtonStyles() {
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    toggleBtns.forEach(btn => btn.classList.remove('active'));
+    
+    const activeRadio = document.querySelector('input[name="eventType"]:checked');
+    if (activeRadio) {
+        const activeLabel = document.querySelector(`label[for="${activeRadio.id}"]`);
+        if (activeLabel) {
+            activeLabel.classList.add('active');
+        }
+    }
+}
+
+// Update UI based on selected event type
+function updateUIForEventType() {
+    const eventType = document.querySelector('input[name="eventType"]:checked')?.value;
+    const universitySection = document.querySelector('.search-university');
+    const sportSection = document.querySelector('.search-sport');
+    const nflTeamSection = document.querySelector('.search-nfl-team');
+    
+    if (eventType === 'nfl') {
+        // Hide university and sport selection for NFL, show team selection
+        universitySection.style.display = 'none';
+        sportSection.style.display = 'none';
+        nflTeamSection.style.display = 'block';
+    } else {
+        // Show university and sport selection for college, hide team selection
+        universitySection.style.display = 'block';
+        sportSection.style.display = 'block';
+        nflTeamSection.style.display = 'none';
+    }
+}
+
+// Helper function to get ZIP code from coordinates (reverse geocoding)
+async function getZipCodeFromCoordinates(lat, lon) {
+    try {
+        const response = await fetch(`https://api.zippopotam.us/us/${Math.round(lat * 100) / 100}/${Math.round(lon * 100) / 100}`);
+        if (response.ok) {
+            const data = await response.json();
+            return data.places?.[0]?.['post code'] || '10001'; // Default to NYC if not found
+        }
+    } catch (error) {
+        console.warn('Reverse geocoding failed:', error);
+    }
+    return '10001'; // Default ZIP if reverse geocoding fails
 }
 
 // Start the application when DOM is loaded

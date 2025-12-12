@@ -97,6 +97,95 @@ class TicketmasterAPI {
   }
 
   /**
+   * Search for NFL games by ZIP code
+   */
+  async searchNFLGames(zipCode, options = {}) {
+    const {
+      radius = 50,           // miles
+      size = 20,            // number of results
+      page = 0,             // page number
+      sort = 'date,asc',    // sort order
+      startDateTime = null, // ISO date string
+      endDateTime = null    // ISO date string
+    } = options;
+
+    console.log(`🏈 Searching for NFL games near ZIP ${zipCode}...`);
+
+    // Build search parameters for NFL
+    const params = {
+      keyword: 'NFL',
+      classificationName: 'Sports',
+      segmentName: 'Sports',
+      postalCode: zipCode,
+      radius: radius,
+      unit: 'miles',
+      size: size,
+      page: page,
+      sort: sort,
+      countryCode: 'US'
+    };
+
+    // Add date filters if provided
+    if (startDateTime) {
+      params.startDateTime = startDateTime;
+    }
+    if (endDateTime) {
+      params.endDateTime = endDateTime;
+    }
+
+    try {
+      const response = await this.makeAPIRequest('/events.json', params);
+      
+      if (response._embedded?.events) {
+        // Filter to only include NFL games
+        const nflEvents = response._embedded.events.filter(event => 
+          event.name && (
+            event.name.toLowerCase().includes('nfl') ||
+            event.classifications?.some(c => 
+              c.segment?.name?.toLowerCase().includes('sports') &&
+              c.genre?.name?.toLowerCase().includes('football')
+            ) ||
+            this.isNFLTeam(event.name)
+          )
+        );
+        
+        console.log(`✅ Found ${nflEvents.length} NFL events`);
+        return this.formatSportingEvents(nflEvents, response.page);
+      } else {
+        console.log('❌ No NFL events found');
+        return {
+          events: [],
+          totalElements: 0,
+          totalPages: 0,
+          currentPage: page
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error searching NFL games:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Check if event name contains NFL team names
+   */
+  isNFLTeam(eventName) {
+    const nflTeams = [
+      'Cardinals', 'Falcons', 'Ravens', 'Bills', 'Panthers', 'Bears', 'Bengals', 'Browns',
+      'Cowboys', 'Broncos', 'Lions', 'Packers', 'Texans', 'Colts', 'Jaguars', 'Chiefs',
+      'Raiders', 'Chargers', 'Rams', 'Dolphins', 'Vikings', 'Patriots', 'Saints', 'Giants',
+      'Jets', 'Eagles', 'Steelers', '49ers', 'Seahawks', 'Buccaneers', 'Titans', 'Commanders'
+    ];
+    
+    const lowerEventName = eventName.toLowerCase();
+    return nflTeams.some(team => 
+      lowerEventName.includes(team.toLowerCase()) ||
+      lowerEventName.includes('vs ' + team.toLowerCase()) ||
+      lowerEventName.includes(team.toLowerCase() + ' vs')
+    );
+  }
+
+  /**
    * Search for sporting events by university name and ZIP code
    */
   async searchUniversitySports(universityName, zipCode, options = {}) {

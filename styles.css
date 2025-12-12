@@ -85,6 +85,62 @@ main {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+/* Event Type Toggle */
+.event-type-toggle {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.event-type-toggle label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.toggle-buttons {
+    display: inline-flex;
+    gap: 0;
+    margin-top: 5px;
+}
+
+.toggle-buttons input[type="radio"] {
+    display: none;
+}
+
+.toggle-btn {
+    padding: 8px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.toggle-btn:first-of-type {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-right: none;
+}
+
+.toggle-btn:last-of-type {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: none;
+}
+
+.toggle-btn:hover {
+    background-color: #e6f3ff;
+}
+
+.toggle-btn.active,
+.toggle-buttons input[type="radio"]:checked + .toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
 /* Unified filter section styling */
 .filters > div {
     text-align: center;
