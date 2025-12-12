@@ -8,16 +8,23 @@ class TicketmasterAPI {
     }
 
     async searchUniversitySports(universityName, zipCode, radius = 50) {
+        // Convert ZIP to coordinates first
+        const coordinates = getCoordinatesForZip(zipCode);
+        if (!coordinates) {
+            console.error(`No coordinates found for ZIP: ${zipCode}`);
+            return [];
+        }
+        
         // Handle city searches (when universityName is 'all') differently
         if (universityName === 'all') {
-            return this.searchGeneralSports(zipCode, radius);
+            return this.searchGeneralSportsByCoordinates(coordinates.lat, coordinates.lng, radius);
         }
         
         // Try multiple search variations for better results
         const searchTerms = this.generateSearchTerms(universityName);
         
         console.log(`🏈 Starting Ticketmaster search for university: ${universityName}`);
-        console.log(`📍 Search parameters: ZIP ${zipCode}, ${radius} mile radius`);
+        console.log(`📍 Search parameters: ZIP ${zipCode} -> lat ${coordinates.lat}, lng ${coordinates.lng}, ${radius} mile radius`);
         
         for (let i = 0; i < searchTerms.length; i++) {
             const searchTerm = searchTerms[i];
@@ -26,7 +33,7 @@ class TicketmasterAPI {
             const params = new URLSearchParams({
                 keyword: searchTerm,
                 classificationName: 'Sports',
-                postalCode: zipCode,
+                latlong: `${coordinates.lat},${coordinates.lng}`,
                 radius: radius,
                 unit: 'miles',
                 size: 200,
@@ -70,14 +77,25 @@ class TicketmasterAPI {
     }
 
     async searchGeneralSports(zipCode, radius) {
-        console.log(`🏟️ Starting general sports search for area`);
-        console.log(`📍 Search parameters: ZIP ${zipCode}, ${radius} mile radius`);
+        // Convert ZIP to coordinates first
+        const coordinates = getCoordinatesForZip(zipCode);
+        if (!coordinates) {
+            console.error(`No coordinates found for ZIP: ${zipCode}`);
+            return [];
+        }
+        
+        return this.searchGeneralSportsByCoordinates(coordinates.lat, coordinates.lng, radius);
+    }
+    
+    async searchGeneralSportsByCoordinates(lat, lng, radius) {
+        console.log(`🏟️ Starting general sports coordinate search`);
+        console.log(`📍 Search parameters: lat ${lat}, lng ${lng}, ${radius} mile radius`);
         
         // Search with empty keyword to find all sports events (this works better than no keyword)
         const params = new URLSearchParams({
             keyword: '', // Empty keyword works better than no keyword parameter
             classificationName: 'Sports',
-            postalCode: zipCode,
+            latlong: `${lat},${lng}`,
             radius: radius,
             unit: 'miles',
             size: 200,
@@ -113,6 +131,77 @@ class TicketmasterAPI {
             return [];
         }
     }
+
+    async searchUniversitySportsByCity(universityName, city, stateCode, radius = 50) {
+        // Convert city/state to coordinates first
+        const coordinates = await getCityCoords(city, stateCode);
+        if (!coordinates) {
+            console.error(`No coordinates found for city: ${city}, ${stateCode}`);
+            return [];
+        }
+        
+        // Handle city searches (when universityName is 'all') differently
+        if (universityName === 'all') {
+            return this.searchGeneralSportsByCoordinates(coordinates.lat, coordinates.lon, radius);
+        }
+        
+        // Try multiple search variations for better results
+        const searchTerms = this.generateSearchTerms(universityName);
+        
+        console.log(`🏈 Starting Ticketmaster city search for university: ${universityName}`);
+        console.log(`📍 Search parameters: ${city}, ${stateCode} -> lat ${coordinates.lat}, lng ${coordinates.lon}, ${radius} mile radius`);
+        
+        for (let i = 0; i < searchTerms.length; i++) {
+            const searchTerm = searchTerms[i];
+            console.log(`🔍 [${i + 1}/${searchTerms.length}] Searching for: "${searchTerm}"`);
+            
+            const params = new URLSearchParams({
+                keyword: searchTerm,
+                classificationName: 'Sports',
+                latlong: `${coordinates.lat},${coordinates.lon}`,
+                radius: radius,
+                unit: 'miles',
+                size: 200,
+                sort: 'date,asc',
+                countryCode: 'US',
+                apikey: this.apiKey
+            });
+
+            try {
+                const response = await fetch(`${this.baseURL}/events.json?${params}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                console.log(`📊 City API Response for "${searchTerm}":`, {
+                    totalElements: data.page?.totalElements || 0,
+                    totalPages: data.page?.totalPages || 0,
+                    hasEvents: !!data._embedded?.events
+                });
+                
+                const events = this.formatTicketmasterEvents(data._embedded?.events || []);
+                
+                if (events.length > 0) {
+                    console.log(`✅ SUCCESS! Found ${events.length} events for "${searchTerm}" via city search`);
+                    return events;
+                }
+                console.log(`❌ No events found for "${searchTerm}" via city search`);
+                
+                // Add small delay between searches to be respectful to the API
+                if (i < searchTerms.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            } catch (error) {
+                console.error(`💥 Error searching for "${searchTerm}" via city search:`, error);
+            }
+        }
+        
+        console.log(`🚫 No events found for any search term for ${universityName} via city search`);
+        return []; // Return empty array if no search terms yielded results
+    }
+
+
 
     async debugGeneralSportsSearch(zipCode, radius) {
         console.log(`🔍 DEBUG: Checking for ANY sports events in ${zipCode} within ${radius} miles...`);
@@ -232,18 +321,25 @@ class TicketmasterAPI {
 
     // NFL search methods
     async searchNFLGames(zipCode, options = {}) {
+        // Convert ZIP to coordinates first
+        const coordinates = getCoordinatesForZip(zipCode);
+        if (!coordinates) {
+            console.error(`No coordinates found for ZIP: ${zipCode}`);
+            return { events: [], totalElements: 0, totalPages: 0, currentPage: 0 };
+        }
+        
         const {
             radius = 50,
             size = 200,
             sort = 'date,asc'
         } = options;
 
-        console.log(`🏈 Searching for NFL games near ZIP ${zipCode}...`);
+        console.log(`🏈 Searching for NFL games near ZIP ${zipCode} -> lat ${coordinates.lat}, lng ${coordinates.lng}...`);
 
         const params = new URLSearchParams({
             keyword: 'NFL',
             classificationName: 'Sports',
-            postalCode: zipCode,
+            latlong: `${coordinates.lat},${coordinates.lng}`,
             radius: radius,
             unit: 'miles',
             size: size,
@@ -664,6 +760,66 @@ async function getEventDataFiles(selectedUniversity, zipCode = null, radius = 50
             try {
                 const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
                 const ticketmasterEvents = await ticketmaster.searchUniversitySports(customUniversity, zipCode, radius);
+                events.push(...ticketmasterEvents);
+            } catch (error) {
+                console.error(`Error fetching Ticketmaster events for ${customUniversity}:`, error);
+            }
+        }
+    }
+    
+    return { dataFiles, events };
+}
+
+// Get appropriate data files based on university selection for city searches
+async function getEventDataFilesForCity(selectedUniversity, city, stateCode, radius = 50) {
+    const dataFiles = [];
+    const events = [];
+
+    // Generate current date for filename
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+
+    // Generate yesterday's date for fallback
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayYyyy = yesterday.getFullYear();
+    const yesterdayMm = String(yesterday.getMonth() + 1).padStart(2, '0');
+    const yesterdayDd = String(yesterday.getDate()).padStart(2, '0');
+
+    const BYUfileName = `BYUSports${yyyy}-${mm}-${dd}.json`;
+    const BYUfilePath = `sportsData/${BYUfileName}`;
+    const BYUYesterdayFileName = `BYUSports${yesterdayYyyy}-${yesterdayMm}-${yesterdayDd}.json`;
+    const BYUYesterdayFilePath = `sportsData/${BYUYesterdayFileName}`;
+
+    const BSUfileName = `BSUSports${yyyy}-${mm}-${dd}.json`;
+    const BSUfilePath = `sportsData/${BSUfileName}`;
+    const BSUYesterdayFileName = `BSUSports${yesterdayYyyy}-${yesterdayMm}-${yesterdayDd}.json`;
+    const BSUYesterdayFilePath = `sportsData/${BSUYesterdayFileName}`;
+
+    // Handle specific universities
+    if (selectedUniversity === 'BYU') {
+        await triggerBYUScraper();
+        dataFiles.push({ primary: BYUfilePath, fallback: BYUYesterdayFilePath, type: 'BYU' });
+    } else if (selectedUniversity === 'Boise State') {
+        dataFiles.push({ primary: BSUfilePath, fallback: BSUYesterdayFilePath, type: 'BSU' });
+    } else if (selectedUniversity !== 'other' && city && stateCode) {
+        // For other universities or general 'all' search, use Ticketmaster API with city search
+        try {
+            const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
+            const ticketmasterEvents = await ticketmaster.searchUniversitySportsByCity(selectedUniversity, city, stateCode, radius);
+            events.push(...ticketmasterEvents);
+        } catch (error) {
+            console.error(`Error fetching Ticketmaster events for ${selectedUniversity}:`, error);
+        }
+    } else if (selectedUniversity === 'other' && city && stateCode) {
+        // For custom university input
+        const customUniversity = document.getElementById('customUniversityInput')?.value;
+        if (customUniversity) {
+            try {
+                const ticketmaster = new TicketmasterAPI('BMHyV7S1mxGcjdcNizEYY5JpxQGJLlZF');
+                const ticketmasterEvents = await ticketmaster.searchUniversitySportsByCity(customUniversity, city, stateCode, radius);
                 events.push(...ticketmasterEvents);
             } catch (error) {
                 console.error(`Error fetching Ticketmaster events for ${customUniversity}:`, error);
@@ -1280,32 +1436,11 @@ async function doCollegeCitySearch(city, state, cityCoords, distanceInput) {
         
         console.log('City search date filtering:', { startDate, endDate });
 
-        // Look up ZIP code from the city using uszips.csv data
-        let zipCode = await getCityZip(city, state);
-        if (!zipCode) {
-            // If no ZIP found, try common city variations
-            const cityVariations = [
-                city.replace(' city', ''),
-                city.replace('saint ', 'st. '),
-                city.replace('st. ', 'saint ')
-            ];
-            
-            for (const variation of cityVariations) {
-                zipCode = await getCityZip(variation, state);
-                if (zipCode) break;
-            }
-        }
-        
-        // Final fallback to a default ZIP if still not found
-        if (!zipCode) {
-            zipCode = '90210';
-            console.warn(`⚠️ No ZIP code found for ${city}, ${state}. Using fallback ZIP ${zipCode}`);
-        } else {
-            console.log(`🏙️ City search: ${city}, ${state} -> Found ZIP ${zipCode}`);
-        }
+        // Use direct city-based search instead of converting to ZIP
+        console.log(`🏙️ College city search: ${city}, ${state} - direct city search`);
 
-        // Get appropriate data files and events (including Ticketmaster)
-        const { dataFiles, events } = await getEventDataFiles(selectedUniversity, zipCode, distanceInput.value || 50);
+        // Get appropriate data files and events (including Ticketmaster) using city search
+        const { dataFiles, events } = await getEventDataFilesForCity(selectedUniversity, city, state, distance);
         let allEvents = [...events]; // Start with Ticketmaster events
         
         // Load file-based events (BYU/BSU) with fallback mechanism
@@ -1375,7 +1510,7 @@ async function doCollegeCitySearch(city, state, cityCoords, distanceInput) {
                 );
                 return { ...event, distance };
             })
-            .filter(event => event.distance <= (distanceInput.value || 50)) // Default 50 mile radius
+            .filter(event => event.distance <= distance) // Use the parsed distance variable
             .filter(event => selectedSport === 'all' || event.sport === selectedSport)
             .filter(event => {
                 // Apply date filtering if start or end date is specified
