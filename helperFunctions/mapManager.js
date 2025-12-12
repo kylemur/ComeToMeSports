@@ -17,10 +17,13 @@ class MapManager {
         // Center of continental US as default
         this.map = L.map('eventsMap').setView([centerLat, centerLon], zoom);
 
-        // Add tile layer (OpenStreetMap)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        // Add tile layer (OpenStreetMap) with offline fallback
+        this.tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19
+            maxZoom: 19,
+            // Add error handling for offline scenarios
+            errorTileUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChAGA5wjbTgAAAABJRU5ErkJggg==',
+            keepBuffer: 4 // Keep more tiles in memory
         }).addTo(this.map);
 
         // Initialize marker group
@@ -28,6 +31,9 @@ class MapManager {
 
         // Add map controls
         this.setupMapControls();
+        
+        // Add offline status indicator
+        this.setupOfflineIndicator();
     }
 
     /**
@@ -35,10 +41,153 @@ class MapManager {
      */
     setupMapControls() {
         const fitBoundsBtn = document.getElementById('fitMapBounds');
+        const prepareOfflineBtn = document.getElementById('prepareOffline');
 
         if (fitBoundsBtn) {
             fitBoundsBtn.addEventListener('click', () => this.fitMapToMarkers());
         }
+
+        if (prepareOfflineBtn) {
+            prepareOfflineBtn.addEventListener('click', () => this.prepareForOfflineUse());
+        }
+    }
+
+    /**
+     * Setup offline status indicator
+     */
+    setupOfflineIndicator() {
+        const offlineIndicator = document.createElement('div');
+        offlineIndicator.id = 'offline-indicator';
+        offlineIndicator.style.cssText = `
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4444;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+        `;
+        offlineIndicator.textContent = 'Offline Mode - Limited Map Data';
+        
+        const mapContainer = document.getElementById('eventsMap');
+        if (mapContainer) {
+            mapContainer.appendChild(offlineIndicator);
+        }
+
+        // Monitor online/offline status
+        window.addEventListener('online', () => {
+            offlineIndicator.style.display = 'none';
+        });
+
+        window.addEventListener('offline', () => {
+            offlineIndicator.style.display = 'block';
+        });
+
+        // Initial check
+        if (!navigator.onLine) {
+            offlineIndicator.style.display = 'block';
+        }
+    }
+
+    /**
+     * Preload tiles for a specific area (useful for offline preparation)
+     */
+    preloadTilesForArea(bounds, minZoom = 8, maxZoom = 12) {
+        console.log('Preloading tiles for offline use...');
+        
+        for (let zoom = minZoom; zoom <= maxZoom; zoom++) {
+            const tileCoords = this.getTileCoordsFromBounds(bounds, zoom);
+            
+            tileCoords.forEach(coord => {
+                const url = `https://a.tile.openstreetmap.org/${zoom}/${coord.x}/${coord.y}.png`;
+                
+                // Preload by creating image elements
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                img.onload = () => {
+                    // Store in cache via service worker
+                    if ('caches' in window) {
+                        caches.open('map-tiles-v1').then(cache => {
+                            cache.add(url).catch(e => console.log('Cache add failed:', e));
+                        });
+                    }
+                };
+                img.src = url;
+            });
+        }
+    }
+
+    /**
+     * Calculate tile coordinates from bounds
+     */
+    getTileCoordsFromBounds(bounds, zoom) {
+        const coords = [];
+        const tileSize = 256;
+        const earthCircum = 40075016.686; // Earth's circumference in meters
+        
+        const deg2rad = (deg) => deg * (Math.PI / 180);
+        const rad2deg = (rad) => rad * (180 / Math.PI);
+        
+        // Convert bounds to tile coordinates
+        const nwTile = this.latLonToTile(bounds.getNorthWest().lat, bounds.getNorthWest().lng, zoom);
+        const seTile = this.latLonToTile(bounds.getSouthEast().lat, bounds.getSouthEast().lng, zoom);
+        
+        for (let x = nwTile.x; x <= seTile.x; x++) {
+            for (let y = nwTile.y; y <= seTile.y; y++) {
+                coords.push({ x, y });
+            }
+        }
+        
+        return coords;
+    }
+
+    /**
+     * Convert lat/lon to tile coordinates
+     */
+    latLonToTile(lat, lon, zoom) {
+        const x = Math.floor((lon + 180) / 360 * Math.pow(2, zoom));
+        const y = Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom));
+        return { x, y };
+    }
+
+    /**
+     * Prepare map for offline use by caching current view
+     */
+    prepareForOfflineUse() {
+        if (!this.map) return;
+
+        // Check if user is online
+        if (!navigator.onLine) {
+            alert('Cannot prepare for offline use while you are already offline. Please connect to the internet and try again.');
+            return;
+        }
+
+        // Trigger flash effect
+        this.triggerMapFlash();
+
+        const button = document.getElementById('prepareOffline');
+        const originalText = button.textContent;
+        button.textContent = 'Caching tiles...';
+        button.disabled = true;
+
+        const bounds = this.map.getBounds();
+        const currentZoom = this.map.getZoom();
+        const maxZoom = Math.min(currentZoom + 2, 15); // Don't go too detailed to avoid too many requests
+        const minZoom = Math.max(currentZoom - 1, 8);
+
+        console.log(`Preparing offline tiles for zoom levels ${minZoom}-${maxZoom}`);
+        
+        this.preloadTilesForArea(bounds, minZoom, maxZoom);
+
+        // Reset button after a delay
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+            alert('Map tiles cached for offline use in current view area.');
+        }, 3000);
     }
 
     /**
@@ -238,6 +387,30 @@ class MapManager {
         if (this.map) {
             this.map.setView([lat, lon], zoom);
         }
+    }
+
+    /**
+     * Trigger white flash effect on map (like screenshot flash)
+     */
+    triggerMapFlash() {
+        console.log('Triggering map flash effect for offline caching...');
+        const mapContainer = document.getElementById('eventsMap');
+        let flashOverlay = mapContainer.querySelector('.map-flash-overlay');
+        
+        // Create overlay if it doesn't exist
+        if (!flashOverlay) {
+            flashOverlay = document.createElement('div');
+            flashOverlay.className = 'map-flash-overlay';
+            mapContainer.appendChild(flashOverlay);
+        }
+        
+        // Trigger flash animation
+        flashOverlay.classList.add('flash');
+        
+        // Remove flash after animation
+        setTimeout(() => {
+            flashOverlay.classList.remove('flash');
+        }, 200); // Flash duration
     }
 
     /**

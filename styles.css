@@ -539,9 +539,101 @@ footer {
     background: #545b62;
 }
 
+/* Tooltip Container */
+.tooltip-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Info icon styling */
+.tooltip-icon {
+    font-size: 16px;
+    cursor: pointer;
+    color: #007bff;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background-color 0.2s, transform 0.2s;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.tooltip-icon:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.tooltip-icon:active {
+    transform: scale(0.95);
+}
+
+/* Tooltip Styling */
+.tooltip {
+    visibility: hidden;
+    width: 180px;
+    max-width: calc(100vw - 40px); /* More conservative margin to prevent overflow */
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 10px;
+    position: absolute;
+    z-index: 1000;
+    top: 110%; /* Position below the button instead of above */
+    left: 0; /* Align to left edge of button container */
+    margin-right: 20px; /* Ensure space from right edge */
+    font-size: 0.85rem;
+    line-height: 1.3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Arrow at top of tooltip (pointing up to button) */
+    left: 50px; /* Position arrow to point toward button */
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;
+}
+
+/* Show tooltip on hover or when has .show class */
+.tooltip-container:hover .tooltip,
+.tooltip.show {
+    visibility: visible;
+    opacity: 1;
+}
+
 #eventsMap {
     height: 500px;
     width: 100%;
+    position: relative;
+}
+
+/* Flash effect overlay for offline preparation */
+.map-flash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2000;
+    transition: opacity 0.1s ease-in;
+}
+
+.map-flash-overlay.flash {
+    opacity: 0.8;
 }
 
 /* Custom Leaflet Popup Styles */

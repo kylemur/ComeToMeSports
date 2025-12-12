@@ -16,6 +16,21 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
          crossorigin=""></script>
+    
+    <!-- Register Service Worker for offline maps -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
     <meta name="description" content="ComeToMeSports helps you find sporting events near you based on your location and sport preferences.">
     <meta property="og:description" content="ComeToMeSports helps you find sporting events near you based on your location and sport preferences.">
     <meta property="og:title" content="ComeToMeSports - Find Sporting Events Near You">
@@ -222,6 +237,14 @@
             <div id="mapSection" style="display: none;">
                 <div class="map-controls">
                     <button id="fitMapBounds" class="map-control-btn">Fit All Events</button>
+                    <div class="tooltip-container">
+                        <button id="prepareOffline" class="map-control-btn">Prepare for Offline</button>
+                        <span class="tooltip-icon" id="tooltipIcon" title="Click for info">ℹ️</span>
+                        <div class="tooltip" id="offlineTooltip">
+                            Downloads map tiles for the current view area so the map works when you're offline. 
+                            Best used when you have good internet connection.
+                        </div>
+                    </div>
                 </div>
                 <div id="eventsMap"></div>
             </div>
@@ -257,6 +280,21 @@
             } else {
                 customDiv.style.display = 'none';
                 document.getElementById('customUniversityInput').value = '';
+            }
+        });
+
+        // Handle tooltip icon click
+        document.getElementById('tooltipIcon').addEventListener('click', function() {
+            const tooltip = document.getElementById('offlineTooltip');
+            tooltip.classList.toggle('show');
+        });
+
+        // Hide tooltip when clicking outside
+        document.addEventListener('click', function(event) {
+            const tooltipContainer = document.querySelector('.tooltip-container');
+            const tooltip = document.getElementById('offlineTooltip');
+            if (!tooltipContainer.contains(event.target)) {
+                tooltip.classList.remove('show');
             }
         });
     </script>
