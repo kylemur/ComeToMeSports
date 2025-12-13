@@ -536,6 +536,76 @@ function isValidZipCode(zipCode) {
     return zipRegex.test(zipCode);
 }
 
+// Helper function to check if event sport matches selected sport filter
+function doesSportMatch(eventSport, selectedSport) {
+    if (selectedSport === 'all') {
+        return true;
+    }
+    
+    if (!eventSport) {
+        return false;
+    }
+    
+    // Exact match first
+    if (eventSport === selectedSport) {
+        return true;
+    }
+    
+    // Gender-neutral sports should match specific gendered versions
+    // Define gender-neutral sports that should match their gendered counterparts
+    const genderNeutralSports = [
+        'Basketball', 'Soccer', 'Hockey', 'Lacrosse', 'Tennis', 'Golf', 
+        'Swimming & Diving', 'Track & Field', 'Cross Country', 'Gymnastics',
+        'Skiing', 'Rowing', 'Water Polo', 'Fencing', 'Rugby', 'Volleyball'
+    ];
+    
+    // If selected sport is gender-neutral, check if event sport contains it
+    if (genderNeutralSports.includes(selectedSport)) {
+        const eventSportLower = eventSport.toLowerCase();
+        const selectedSportLower = selectedSport.toLowerCase();
+        
+        // Check if the event sport contains the gender-neutral sport name
+        return eventSportLower.includes(selectedSportLower);
+    }
+    
+    return false;
+}
+
+// Helper function to check if event sport matches selected sport filter
+function doesSportMatch(eventSport, selectedSport) {
+    if (selectedSport === 'all') {
+        return true;
+    }
+    
+    if (!eventSport) {
+        return false;
+    }
+    
+    // Exact match first
+    if (eventSport === selectedSport) {
+        return true;
+    }
+    
+    // Gender-neutral sports should match specific gendered versions
+    // Define gender-neutral sports that should match their gendered counterparts
+    const genderNeutralSports = [
+        'Basketball', 'Soccer', 'Hockey', 'Lacrosse', 'Tennis', 'Golf', 
+        'Swimming & Diving', 'Track & Field', 'Cross Country', 'Gymnastics',
+        'Skiing', 'Rowing', 'Water Polo', 'Fencing', 'Rugby', 'Volleyball'
+    ];
+    
+    // If selected sport is gender-neutral, check if event sport contains it
+    if (genderNeutralSports.includes(selectedSport)) {
+        const eventSportLower = eventSport.toLowerCase();
+        const selectedSportLower = selectedSport.toLowerCase();
+        
+        // Check if the event sport contains the gender-neutral sport name
+        return eventSportLower.includes(selectedSportLower);
+    }
+    
+    return false;
+}
+
 // getCoordinatesForZip is now defined in zipCoords.js
 
 // Find events near a ZIP code
@@ -655,7 +725,7 @@ async function findEventsNearZip(zipCode, maxDistance, selectedSport = 'all', se
                 return { ...event, distance };
             })
             .filter(event => event.distance <= maxDistance)
-            .filter(event => selectedSport === 'all' || event.sport === selectedSport)
+            .filter(event => doesSportMatch(event.sport, selectedSport))
             .filter(event => {
                 // Apply date filtering if start or end date is specified
                 console.log('Date filtering check:', { 
@@ -1511,7 +1581,7 @@ async function doCollegeCitySearch(city, state, cityCoords, distanceInput) {
                 return { ...event, distance };
             })
             .filter(event => event.distance <= distance) // Use the parsed distance variable
-            .filter(event => selectedSport === 'all' || event.sport === selectedSport)
+            .filter(event => doesSportMatch(event.sport, selectedSport))
             .filter(event => {
                 // Apply date filtering if start or end date is specified
                 console.log('City search date filtering check:', { 
