@@ -39,6 +39,11 @@
 <body>
     <div class="container">
         <header>
+            <div style="position: relative;">
+                <button id="settingsBtn" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.2); border: none; color: white; padding: 8px 12px; border-radius: 20px; cursor: pointer; font-size: 14px; backdrop-filter: blur(10px);">
+                    ⚙️ Settings
+                </button>
+            </div>
             <img src="images/CTMS_ComeToMeSports_crop.png" alt="ComeToMeSports Logo">
             <p class="emoji-banner">
                 🏌️‍♂️⛹️‍♂️🤾‍♂️🥎🏐🏈🏉🎳🥍🏓🎱🏒🏇🏄‍♂️🏊‍♂️🚴‍♂️🚵‍♂️🛼⛳🎣🏂🤽‍♂️🎾🏏🏑🎿🏹
@@ -237,14 +242,12 @@
                 </div>
             </div>
             <div class="search-mode-toggle">
-                <label class="radio-option">
+                <div class="search-toggle-buttons">
                     <input type="radio" name="searchMode" value="zip" id="searchModeZip" checked>
-                    <span class="radio-label">Search by ZIP Code</span>
-                </label>
-                <label class="radio-option">
+                    <label for="searchModeZip" class="search-toggle-btn active">Search by ZIP Code</label>
                     <input type="radio" name="searchMode" value="city" id="searchModeCity">
-                    <span class="radio-label">Search by City, State</span>
-                </label>
+                    <label for="searchModeCity" class="search-toggle-btn">Search by City, State</label>
+                </div>
             </div>
             <div class="search-section">
                 <form id="searchForm" class="search-form">
@@ -313,12 +316,224 @@
         </footer>
     </div>
 
+    <!-- Settings Modal -->
+    <div id="settingsModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px);">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 5% auto; padding: 20px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; color: white;">
+            <span id="closeSettings" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer;">&times;</span>
+            <h2 style="margin-top: 0; text-align: center;">User Preferences</h2>
+            
+            <div style="margin: 20px 0;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Default ZIP Code:</label>
+                <input type="text" id="defaultZip" placeholder="e.g., 90210" maxlength="5" style="width: 100%; padding: 10px; border: none; border-radius: 10px; font-size: 16px;">
+            </div>
+
+            <div style="margin: 20px 0;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Default City, State:</label>
+                <input type="text" id="defaultCity" placeholder="e.g., Los Angeles, CA" style="width: 100%; padding: 10px; border: none; border-radius: 10px; font-size: 16px;">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Favorite University:</label>
+                <select id="defaultUniversity" style="width: 100%; padding: 10px; border: none; border-radius: 10px; font-size: 16px;">
+                    <option value="">Select a university...</option>
+                    <option value="BYU">Brigham Young University</option>
+                    <option value="Alabama">University of Alabama</option>
+                    <option value="Auburn">Auburn University</option>
+                    <option value="Arizona">University of Arizona</option>
+                    <option value="Arizona State">Arizona State University</option>
+                    <option value="Boise State">Boise State University</option>
+                    <option value="UCLA">University of California, Los Angeles</option>
+                    <option value="USC">University of Southern California</option>
+                    <option value="Stanford">Stanford University</option>
+                    <option value="Utah">University of Utah</option>
+                </select>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Default Search Radius:</label>
+                <select id="defaultRadius" style="width: 100%; padding: 10px; border: none; border-radius: 10px; font-size: 16px;">
+                    <option value="25">25 miles</option>
+                    <option value="50" selected>50 miles</option>
+                    <option value="100">100 miles</option>
+                    <option value="250">250 miles</option>
+                    <option value="500">500 miles</option>
+                </select>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Preferred Event Type:</label>
+                <select id="defaultEventType" style="width: 100%; padding: 10px; border: none; border-radius: 10px; font-size: 16px;">
+                    <option value="college">College Sports</option>
+                    <option value="nfl">NFL</option>
+                </select>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Preferred Search Mode:</label>
+                <select id="defaultSearchMode" style="width: 100%; padding: 10px; border: none; border-radius: 10px; font-size: 16px;">
+                    <option value="zip">Search by ZIP Code</option>
+                    <option value="city">Search by City, State</option>
+                </select>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button id="saveSettings" style="background: white; color: #667eea; border: none; padding: 12px 30px; border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer; margin-right: 10px;">Save Preferences</button>
+                <button id="resetSettings" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 12px 30px; border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer;">Reset to Defaults</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="helperFunctions/zipCoords.js"></script>
     <script src="helperFunctions/cityCoords.js"></script>
     <script src="helperFunctions/mapManager.js"></script>
     <script src="app.js"></script>
     <script>
+        // User Preferences Management
+        const UserPreferences = {
+            // Default preferences
+            defaults: {
+                defaultZip: '',
+                defaultCity: '',
+                defaultUniversity: '',
+                defaultRadius: '50',
+                defaultEventType: 'college',
+                defaultSearchMode: 'zip'
+            },
+
+            // Load preferences from localStorage
+            load: function() {
+                const saved = localStorage.getItem('comeToMeSportsPrefs');
+                return saved ? { ...this.defaults, ...JSON.parse(saved) } : this.defaults;
+            },
+
+            // Save preferences to localStorage
+            save: function(prefs) {
+                localStorage.setItem('comeToMeSportsPrefs', JSON.stringify(prefs));
+                console.log('✅ Preferences saved:', prefs);
+            },
+
+            // Apply preferences to the UI
+            apply: function(prefs) {
+                // Apply default ZIP code
+                if (prefs.defaultZip) {
+                    document.getElementById('zipCode').value = prefs.defaultZip;
+                }
+
+                // Apply default city
+                if (prefs.defaultCity) {
+                    document.getElementById('cityInput').value = prefs.defaultCity;
+                }
+
+                // Apply default university
+                if (prefs.defaultUniversity) {
+                    const universitySelect = document.getElementById('universitySelect');
+                    if (universitySelect) {
+                        universitySelect.value = prefs.defaultUniversity;
+                        // Trigger change event to handle any dependent UI updates
+                        universitySelect.dispatchEvent(new Event('change'));
+                    }
+                }
+
+                // Apply default radius
+                if (prefs.defaultRadius) {
+                    const radiusInput = document.getElementById('distanceInput');
+                    if (radiusInput) {
+                        radiusInput.value = prefs.defaultRadius;
+                    }
+                }
+
+                // Apply default event type
+                if (prefs.defaultEventType) {
+                    const eventTypeRadio = document.querySelector(`input[name="eventType"][value="${prefs.defaultEventType}"]`);
+                    if (eventTypeRadio) {
+                        eventTypeRadio.checked = true;
+                        eventTypeRadio.dispatchEvent(new Event('change'));
+                    }
+                }
+
+                // Apply default search mode
+                if (prefs.defaultSearchMode) {
+                    const searchModeRadio = document.querySelector(`input[name="searchMode"][value="${prefs.defaultSearchMode}"]`);
+                    if (searchModeRadio) {
+                        searchModeRadio.checked = true;
+                        searchModeRadio.dispatchEvent(new Event('change'));
+                    }
+                }
+
+                console.log('✅ Preferences applied to UI:', prefs);
+            },
+
+            // Load preferences into settings modal
+            loadIntoModal: function(prefs) {
+                document.getElementById('defaultZip').value = prefs.defaultZip || '';
+                document.getElementById('defaultCity').value = prefs.defaultCity || '';
+                document.getElementById('defaultUniversity').value = prefs.defaultUniversity || '';
+                document.getElementById('defaultRadius').value = prefs.defaultRadius || '50';
+                document.getElementById('defaultEventType').value = prefs.defaultEventType || 'college';
+                document.getElementById('defaultSearchMode').value = prefs.defaultSearchMode || 'zip';
+            },
+
+            // Get preferences from settings modal
+            getFromModal: function() {
+                return {
+                    defaultZip: document.getElementById('defaultZip').value,
+                    defaultCity: document.getElementById('defaultCity').value,
+                    defaultUniversity: document.getElementById('defaultUniversity').value,
+                    defaultRadius: document.getElementById('defaultRadius').value,
+                    defaultEventType: document.getElementById('defaultEventType').value,
+                    defaultSearchMode: document.getElementById('defaultSearchMode').value
+                };
+            }
+        };
+
+        // Initialize preferences when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedPrefs = UserPreferences.load();
+            UserPreferences.apply(savedPrefs);
+            console.log('🎯 User preferences loaded and applied on page load');
+        });
+
+        // Settings modal functionality
+        document.getElementById('settingsBtn').addEventListener('click', function() {
+            const modal = document.getElementById('settingsModal');
+            const currentPrefs = UserPreferences.load();
+            UserPreferences.loadIntoModal(currentPrefs);
+            modal.style.display = 'block';
+        });
+
+        document.getElementById('closeSettings').addEventListener('click', function() {
+            document.getElementById('settingsModal').style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('settingsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+        // Save preferences
+        document.getElementById('saveSettings').addEventListener('click', function() {
+            const newPrefs = UserPreferences.getFromModal();
+            UserPreferences.save(newPrefs);
+            UserPreferences.apply(newPrefs);
+            document.getElementById('settingsModal').style.display = 'none';
+            
+            // Show confirmation
+            alert('✅ Preferences saved successfully! Your settings will be remembered when you reload the app.');
+        });
+
+        // Reset preferences
+        document.getElementById('resetSettings').addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset all preferences to defaults?')) {
+                localStorage.removeItem('comeToMeSportsPrefs');
+                UserPreferences.loadIntoModal(UserPreferences.defaults);
+                UserPreferences.apply(UserPreferences.defaults);
+                alert('✅ Preferences reset to defaults!');
+            }
+        });
+
         // Show/hide custom university input based on dropdown selection
         document.getElementById('universitySelect').addEventListener('change', function() {
             const customDiv = document.getElementById('customUniversityDiv');
@@ -334,6 +549,24 @@
         document.getElementById('tooltipIcon').addEventListener('click', function() {
             const tooltip = document.getElementById('offlineTooltip');
             tooltip.classList.toggle('show');
+        });
+
+        // Handle search mode toggle active states
+        document.querySelectorAll('input[name="searchMode"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Remove active class from all toggle buttons
+                document.querySelectorAll('.search-toggle-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to the selected button's label
+                if (this.checked) {
+                    const label = document.querySelector(`label[for="${this.id}"]`);
+                    if (label) {
+                        label.classList.add('active');
+                    }
+                }
+            });
         });
 
         // Hide tooltip when clicking outside
