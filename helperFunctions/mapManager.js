@@ -238,14 +238,60 @@ class MapManager {
         
         if (event.sport) {
             const sport = event.sport.toLowerCase();
+            // Team Sports
             if (sport.includes('football')) iconHtml = '🏈';
             else if (sport.includes('basketball')) iconHtml = '🏀';
             else if (sport.includes('baseball')) iconHtml = '⚾';
+            else if (sport.includes('softball')) iconHtml = '🥎';
             else if (sport.includes('soccer')) iconHtml = '⚽';
+            else if (sport.includes('hockey')) iconHtml = '🏒';
+            else if (sport.includes('lacrosse')) iconHtml = '🥍';
+            else if (sport.includes('volleyball')) iconHtml = '🏐';
+            
+            // Individual Sports
             else if (sport.includes('tennis')) iconHtml = '🎾';
             else if (sport.includes('golf')) iconHtml = '⛳';
             else if (sport.includes('swimming')) iconHtml = '🏊';
             else if (sport.includes('track') || sport.includes('cross country')) iconHtml = '🏃';
+            else if (sport.includes('wrestling')) iconHtml = '🤼';
+            else if (sport.includes('gymnastics')) iconHtml = '🤸';
+            
+            // Combat & Strength Sports
+            else if (sport.includes('boxing')) iconHtml = '🥊';
+            else if (sport.includes('martial arts') || sport.includes('mma') || sport.includes('ufc')) iconHtml = '🥋';
+            else if (sport.includes('weightlifting') || sport.includes('powerlifting')) iconHtml = '🏋️';
+            
+            // Winter Sports
+            else if (sport.includes('skiing')) iconHtml = '⛷️';
+            else if (sport.includes('figure skating') || sport.includes('speed skating')) iconHtml = '⛸️';
+            else if (sport.includes('curling')) iconHtml = '🥌';
+            
+            // Water Sports
+            else if (sport.includes('water polo')) iconHtml = '🤽';
+            else if (sport.includes('rowing')) iconHtml = '🚣';
+            else if (sport.includes('sailing')) iconHtml = '⛵';
+            
+            // Other Sports
+            else if (sport.includes('equestrian')) iconHtml = '🏇';
+            else if (sport.includes('fencing')) iconHtml = '🤺';
+            else if (sport.includes('archery')) iconHtml = '🏹';
+            else if (sport.includes('badminton') || sport.includes('table tennis')) iconHtml = '🏓';
+            else if (sport.includes('squash') || sport.includes('racquet')) iconHtml = '🎾';
+            else if (sport.includes('rugby')) iconHtml = '🏉';
+            else if (sport.includes('cricket')) iconHtml = '🏏';
+            else if (sport.includes('triathlon')) iconHtml = '🏃‍♂️';
+            else if (sport.includes('cycling')) iconHtml = '🚴';
+            else if (sport.includes('climbing')) iconHtml = '🧗';
+            
+            // Professional Leagues
+            else if (sport.includes('nfl')) iconHtml = '🏈';
+            else if (sport.includes('nba') || sport.includes('wnba')) iconHtml = '🏀';
+            else if (sport.includes('mlb')) iconHtml = '⚾';
+            else if (sport.includes('nhl')) iconHtml = '🏒';
+            else if (sport.includes('mls') || sport.includes('nwsl')) iconHtml = '⚽';
+            else if (sport.includes('pga') || sport.includes('lpga')) iconHtml = '⛳';
+            else if (sport.includes('atp') || sport.includes('wta')) iconHtml = '🎾';
+            else if (sport.includes('nascar') || sport.includes('formula 1')) iconHtml = '🏎️';
         }
 
         const marker = L.marker([event.latitude, event.longitude], {

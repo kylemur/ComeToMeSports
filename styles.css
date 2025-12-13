@@ -526,6 +526,50 @@ footer {
     }
 }
 
+/* Settings Button Styling */
+#settingsBtn {
+    background: rgba(255,255,255,0.2) !important;
+    border: none !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    backdrop-filter: blur(10px) !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    z-index: 100 !important;
+    transition: all 0.3s ease !important;
+}
+
+#settingsBtn:hover {
+    background: rgba(255,255,255,0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Mobile responsive settings button */
+@media (max-width: 768px) {
+    #settingsBtn {
+        position: static !important;
+        display: block !important;
+        margin: 0 auto 15px auto !important;
+        top: auto !important;
+        right: auto !important;
+    }
+    
+    header div[style*="position: relative"] {
+        position: static !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #settingsBtn {
+        font-size: 12px !important;
+        padding: 6px 10px !important;
+    }
+}
+
 /* Search Mode Toggle - Match Event Type Toggle Style */
 .search-mode-toggle {
     margin-bottom: 1rem;

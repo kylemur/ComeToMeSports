@@ -152,19 +152,84 @@
                     <label for="sportSelect">Select Sport:</label>
                     <select id="sportSelect" name="sportSelect">
                         <option value="all">All Sports</option>
+                        
+                        <!-- Major Team Sports -->
                         <option value="Football">Football</option>
+                        <option value="Basketball">Basketball</option>
                         <option value="Men's Basketball">Men's Basketball</option>
-                        <option value="Men's Cross Country">Men's Cross Country</option>
-                        <option value="Men's Golf">Men's Golf</option>
-                        <option value="Men's Swimming & Diving">Men's Swimming & Diving</option>
-                        <option value="Men's Tennis">Men's Tennis</option>
                         <option value="Women's Basketball">Women's Basketball</option>
-                        <option value="Women's Cross Country">Women's Cross Country</option>
-                        <option value="Women's Gymnastics">Women's Gymnastics</option>
+                        <option value="Baseball">Baseball</option>
+                        <option value="Softball">Softball</option>
+                        <option value="Soccer">Soccer</option>
+                        <option value="Men's Soccer">Men's Soccer</option>
                         <option value="Women's Soccer">Women's Soccer</option>
-                        <option value="Women's Swimming & Diving">Women's Swimming & Diving</option>
-                        <option value="Women's Tennis">Women's Tennis</option>
+                        <option value="Hockey">Hockey</option>
+                        <option value="Men's Hockey">Men's Hockey</option>
+                        <option value="Women's Hockey">Women's Hockey</option>
+                        <option value="Lacrosse">Lacrosse</option>
+                        <option value="Men's Lacrosse">Men's Lacrosse</option>
+                        <option value="Women's Lacrosse">Women's Lacrosse</option>
+                        <option value="Volleyball">Volleyball</option>
                         <option value="Women's Volleyball">Women's Volleyball</option>
+                        <option value="Men's Volleyball">Men's Volleyball</option>
+                        
+                        <!-- Individual Sports -->
+                        <option value="Tennis">Tennis</option>
+                        <option value="Men's Tennis">Men's Tennis</option>
+                        <option value="Women's Tennis">Women's Tennis</option>
+                        <option value="Golf">Golf</option>
+                        <option value="Men's Golf">Men's Golf</option>
+                        <option value="Women's Golf">Women's Golf</option>
+                        <option value="Swimming & Diving">Swimming & Diving</option>
+                        <option value="Men's Swimming & Diving">Men's Swimming & Diving</option>
+                        <option value="Women's Swimming & Diving">Women's Swimming & Diving</option>
+                        <option value="Track & Field">Track & Field</option>
+                        <option value="Men's Track & Field">Men's Track & Field</option>
+                        <option value="Women's Track & Field">Women's Track & Field</option>
+                        <option value="Cross Country">Cross Country</option>
+                        <option value="Men's Cross Country">Men's Cross Country</option>
+                        <option value="Women's Cross Country">Women's Cross Country</option>
+                        <option value="Wrestling">Wrestling</option>
+                        <option value="Gymnastics">Gymnastics</option>
+                        <option value="Women's Gymnastics">Women's Gymnastics</option>
+                        <option value="Men's Gymnastics">Men's Gymnastics</option>
+                        
+                        <!-- Other Sports -->
+                        <option value="Bowling">Bowling</option>
+                        <option value="Fencing">Fencing</option>
+                        <option value="Field Hockey">Field Hockey</option>
+                        <option value="Rowing">Rowing</option>
+                        <option value="Sailing">Sailing</option>
+                        <option value="Skiing">Skiing</option>
+                        <option value="Water Polo">Water Polo</option>
+                        <option value="Beach Volleyball">Beach Volleyball</option>
+                        <option value="Rifle">Rifle</option>
+                        <option value="Squash">Squash</option>
+                        <option value="Badminton">Badminton</option>
+                        <option value="Table Tennis">Table Tennis</option>
+                        <option value="Equestrian">Equestrian</option>
+                        <option value="Triathlon">Triathlon</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="Martial Arts">Martial Arts</option>
+                        <option value="Rock Climbing">Rock Climbing</option>
+                        
+                        <!-- Professional Sports Leagues 
+                        <option value="NFL">NFL</option>
+                        <option value="NBA">NBA</option>
+                        <option value="WNBA">WNBA</option>
+                        <option value="MLB">MLB</option>
+                        <option value="NHL">NHL</option>
+                        <option value="MLS">MLS</option>
+                        <option value="NWSL">NWSL</option>
+                        <option value="PGA Tour">PGA Tour</option>
+                        <option value="LPGA">LPGA</option>
+                        <option value="ATP">ATP Tennis</option>
+                        <option value="WTA">WTA Tennis</option>
+                        <option value="NASCAR">NASCAR</option>
+                        <option value="Formula 1">Formula 1</option>
+                        <option value="UFC">UFC</option>
+                        <option value="Boxing">Boxing</option>
+                        <option value="Mixed Martial Arts">Mixed Martial Arts</option> -->
                     </select>
                 </div>
                 <div class="search-nfl-team" style="display: none;">
@@ -492,7 +557,95 @@
             const savedPrefs = UserPreferences.load();
             UserPreferences.apply(savedPrefs);
             console.log('🎯 User preferences loaded and applied on page load');
+            
+            // Initialize date inputs
+            initializeDateInputs();
         });
+        
+        // Date initialization and validation functions
+        function initializeDateInputs() {
+            const startDateInput = document.getElementById('startDate');
+            const endDateInput = document.getElementById('endDate');
+            
+            // Set default dates (start date one day before current to fix timezone issues)
+            const today = new Date();
+            const yesterday = new Date(today);
+            yesterday.setDate(yesterday.getDate() - 1);
+            const yesterdayStr = yesterday.toISOString().split('T')[0];
+            
+            // Calculate 3 months from yesterday
+            const threeMonthsLater = new Date(yesterday);
+            threeMonthsLater.setMonth(threeMonthsLater.getMonth() + 3);
+            const threeMonthsLaterStr = threeMonthsLater.toISOString().split('T')[0];
+            
+            // Set default values
+            startDateInput.value = yesterdayStr;
+            endDateInput.value = threeMonthsLaterStr;
+            
+            // Set minimum date for start date to yesterday
+            startDateInput.min = yesterdayStr;
+            
+            // Add event listeners for validation
+            startDateInput.addEventListener('change', validateDates);
+            endDateInput.addEventListener('change', validateDates);
+            
+            console.log('📅 Date inputs initialized with defaults and validation');
+        }
+        
+        function validateDates() {
+            const startDateInput = document.getElementById('startDate');
+            const endDateInput = document.getElementById('endDate');
+            
+            const startDate = new Date(startDateInput.value);
+            const endDate = new Date(endDateInput.value);
+            
+            // Update end date minimum to match start date
+            if (startDateInput.value) {
+                endDateInput.min = startDateInput.value;
+                
+                // If end date is before start date, adjust it
+                if (endDateInput.value && endDate < startDate) {
+                    // Set end date to 1 day after start date
+                    const oneDayLater = new Date(startDate);
+                    oneDayLater.setDate(oneDayLater.getDate() + 1);
+                    endDateInput.value = oneDayLater.toISOString().split('T')[0];
+                    
+                    // Show user feedback
+                    showDateValidationMessage('End date adjusted to be after start date');
+                }
+            }
+        }
+        
+        function showDateValidationMessage(message) {
+            // Create temporary notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4CAF50;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 5px;
+                z-index: 1000;
+                font-size: 14px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                transition: opacity 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
 
         // Settings modal functionality
         document.getElementById('settingsBtn').addEventListener('click', function() {
