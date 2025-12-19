@@ -1,0 +1,1002 @@
+[
+  {
+    "title": "BYU vs. Abilene Christian",
+    "sport": "Men's Basketball",
+    "date": "Dec. 19, 2026",
+    "time": "7:30 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at UCF",
+    "sport": "Women's Basketball",
+    "date": "Dec. 20, 2025",
+    "time": "12:00 PM MST",
+    "location": "Orlando, Florida",
+    "venue": "Addition Financial Arena",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs. Eastern Washington",
+    "sport": "Men's Basketball",
+    "date": "Dec. 22, 2025",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Georgia Tech",
+    "sport": "Football",
+    "date": "Dec. 27, 2025",
+    "time": "1:30 PM MST",
+    "location": "Orlando, Florida",
+    "venue": "Camping World Stadium",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs. No. 8 TCU",
+    "sport": "Women's Basketball",
+    "date": "Dec. 31, 2025",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Hawaii",
+    "sport": "Men's Swimming & Diving",
+    "date": "Jan. 3, 2026",
+    "time": "TBA",
+    "location": "Honolulu, Hawaii",
+    "venue": "Duke Kahanamoku Aquatic Complex",
+    "latitude": 21.31628,
+    "longitude": -157.84359
+  },
+  {
+    "title": "BYU at Kansas State",
+    "sport": "Men's Basketball",
+    "date": "Jan. 3, 2026",
+    "time": "11:30 AM MST",
+    "location": "Manhattan, Kansas",
+    "venue": "Bramlage Coliseum",
+    "latitude": 39.14146,
+    "longitude": -96.52906
+  },
+  {
+    "title": "BYU at Hawaii",
+    "sport": "Women's Swimming & Diving",
+    "date": "Jan. 3, 2026",
+    "time": "TBA",
+    "location": "Honolulu, Hawaii",
+    "venue": "Duke Kahanamoku Aquatic Complex",
+    "latitude": 21.31628,
+    "longitude": -157.84359
+  },
+  {
+    "title": "BYU vs. Arizona State",
+    "sport": "Women's Basketball",
+    "date": "Jan. 3, 2026",
+    "time": "2:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Arizona",
+    "sport": "Women's Basketball",
+    "date": "Jan. 6, 2026",
+    "time": "6:00 PM MST",
+    "location": "Tucson, Arizona",
+    "venue": "McKale Center",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU vs. Arizona State",
+    "sport": "Men's Basketball",
+    "date": "Jan. 7, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Weber State Indoor Invitational",
+    "sport": "Women's Track & Field",
+    "date": "Jan. 9, 2026",
+    "time": "All Day",
+    "location": "Ogden, Utah",
+    "venue": "Stromberg Center Indoor Track",
+    "latitude": 41.21962,
+    "longitude": -112.03352
+  },
+  {
+    "title": "BYU at Weber State Indoor Invitational",
+    "sport": "Men's Track & Field",
+    "date": "Jan. 9, 2026",
+    "time": "All Day",
+    "location": "Ogden, UT",
+    "venue": "Stromberg Center",
+    "latitude": 41.21962,
+    "longitude": -112.03352
+  },
+  {
+    "title": "BYU vs. Saint Francis",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 9, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Oregon State",
+    "sport": "Women's Gymnastics",
+    "date": "Jan. 9, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Dual at Denver",
+    "sport": "Men's Swimming & Diving",
+    "date": "Jan. 10, 2026",
+    "time": "TBA",
+    "location": "Denver, Colorado",
+    "venue": "El Pomar Natatorium",
+    "latitude": 39.75156,
+    "longitude": -104.99768
+  },
+  {
+    "title": "BYU at Dual at Denver",
+    "sport": "Women's Swimming & Diving",
+    "date": "Jan. 10, 2026",
+    "time": "TBA",
+    "location": "Denver, Colorado",
+    "venue": "El Pomar Natatorium",
+    "latitude": 39.75156,
+    "longitude": -104.99768
+  },
+  {
+    "title": "BYU at Houston",
+    "sport": "Women's Basketball",
+    "date": "Jan. 10, 2026",
+    "time": "1:00 PM MST",
+    "location": "Houston, Texas",
+    "venue": "Fertitta Center",
+    "latitude": 29.75635,
+    "longitude": -95.36538
+  },
+  {
+    "title": "BYU vs. Saint Francis",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 10, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Utah",
+    "sport": "Men's Basketball",
+    "date": "Jan. 10, 2026",
+    "time": "8:00 PM MST",
+    "location": "Salt Lake City, Utah",
+    "venue": "Huntsman Center",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU vs. Utah State",
+    "sport": "Women's Gymnastics",
+    "date": "Jan. 12, 2026",
+    "time": "7:00 PM MST",
+    "location": "West Valley City, Utah",
+    "venue": "Maverik Center",
+    "latitude": 40.70289,
+    "longitude": -111.94591
+  },
+  {
+    "title": "BYU vs. Utah",
+    "sport": "Women's Gymnastics",
+    "date": "Jan. 12, 2026",
+    "time": "7:00 PM MST",
+    "location": "West Valley City, Utah",
+    "venue": "Maverik Center",
+    "latitude": 40.70289,
+    "longitude": -111.94591
+  },
+  {
+    "title": "BYU vs. Southern Utah",
+    "sport": "Women's Gymnastics",
+    "date": "Jan. 12, 2026",
+    "time": "7:00 PM MST",
+    "location": "West Valley City, Utah",
+    "venue": "Maverik Center",
+    "latitude": 40.70289,
+    "longitude": -111.94591
+  },
+  {
+    "title": "BYU vs. TCU",
+    "sport": "Men's Basketball",
+    "date": "Jan. 14, 2026",
+    "time": "9:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Snake River Open",
+    "sport": "Women's Track & Field",
+    "date": "Jan. 15, 2026",
+    "time": "All Day",
+    "location": "Pocatello, Idaho",
+    "venue": "ICCU Dome",
+    "latitude": 42.88949,
+    "longitude": -112.38324
+  },
+  {
+    "title": "BYU at Snake River Open",
+    "sport": "Men's Track & Field",
+    "date": "Jan. 15, 2026",
+    "time": "All Day",
+    "location": "Pocatello, ID",
+    "venue": "ICCU Dome",
+    "latitude": 42.88949,
+    "longitude": -112.38324
+  },
+  {
+    "title": "BYU vs. Big 12 - Duel in the West",
+    "sport": "Men's Swimming & Diving",
+    "date": "Jan. 16, 2026",
+    "time": "TBA",
+    "location": "Tempe, Arizona",
+    "venue": "",
+    "latitude": 33.42805,
+    "longitude": -111.93157
+  },
+  {
+    "title": "BYU at Big 12 - Duel in the West",
+    "sport": "Women's Swimming & Diving",
+    "date": "Jan. 16, 2026",
+    "time": "TBA",
+    "location": "Tempe, Arizona",
+    "venue": "",
+    "latitude": 33.42805,
+    "longitude": -111.93157
+  },
+  {
+    "title": "BYU vs. UC San Diego",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 16, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Boise State",
+    "sport": "Women's Gymnastics",
+    "date": "Jan. 16, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Utah Tech",
+    "sport": "Women's Tennis",
+    "date": "Jan. 17, 2026",
+    "time": "10:00 AM MST",
+    "location": "St. George, UT",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs. Weber State",
+    "sport": "Men's Tennis",
+    "date": "Jan. 17, 2026",
+    "time": "12:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Indoor Tennis Courts",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. No. 14. Baylor",
+    "sport": "Women's Basketball",
+    "date": "Jan. 17, 2026",
+    "time": "2:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Utah Tech",
+    "sport": "Women's Tennis",
+    "date": "Jan. 17, 2026",
+    "time": "3:00 PM MST",
+    "location": "St. George, UT",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU at No. 19 Texas Tech",
+    "sport": "Men's Basketball",
+    "date": "Jan. 17, 2026",
+    "time": "6:00 PM MST",
+    "location": "Lubbock, Texas",
+    "venue": "United Supermarkets Arena",
+    "latitude": 33.58683,
+    "longitude": -101.85179
+  },
+  {
+    "title": "BYU vs. UC San Diego",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 17, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Texas Tech",
+    "sport": "Women's Basketball",
+    "date": "Jan. 21, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Penn Elite",
+    "sport": "Women's Track & Field",
+    "date": "Jan. 23, 2026",
+    "time": "8:00 AM MST",
+    "location": "Philadelphia, Pennsylvania",
+    "venue": "The Ott Center",
+    "latitude": 39.95301,
+    "longitude": -75.16544
+  },
+  {
+    "title": "BYU vs. Air Force and CMU Double Dual",
+    "sport": "Men's Swimming & Diving",
+    "date": "Jan. 23, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Richards Building Pool",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Arizona State",
+    "sport": "Women's Gymnastics",
+    "date": "Jan. 23, 2026",
+    "time": "TBA",
+    "location": "Tempe, Arizona",
+    "venue": "Mullett Arena",
+    "latitude": 33.42805,
+    "longitude": -111.93157
+  },
+  {
+    "title": "BYU vs. Air Force and CMU Double Dual",
+    "sport": "Women's Swimming & Diving",
+    "date": "Jan. 23, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Richards Building Pool",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at San Diego",
+    "sport": "Women's Tennis",
+    "date": "Jan. 23, 2026",
+    "time": "1:00 PM MST",
+    "location": "San Diego, CA",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "BYU at Penn Elite",
+    "sport": "Men's Track & Field",
+    "date": "Jan. 23, 2026",
+    "time": "All Day",
+    "location": "Philadelphia, PA",
+    "venue": "The Ott Center",
+    "latitude": 39.95301,
+    "longitude": -75.16544
+  },
+  {
+    "title": "BYU vs. UC Irvine",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 23, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Cal Poly",
+    "sport": "Women's Tennis",
+    "date": "Jan. 24, 2026",
+    "time": "1:00 PM MST",
+    "location": "San Diego, CA",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "BYU vs. Utah",
+    "sport": "Men's Basketball",
+    "date": "Jan. 24, 2026",
+    "time": "3:30 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. UC Irvine",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 24, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. No. 25 West Virginia",
+    "sport": "Women's Basketball",
+    "date": "Jan. 24, 2026",
+    "time": "7:30 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Arizona N.I.T",
+    "sport": "Men's Golf",
+    "date": "Jan. 26, 2026",
+    "time": "8:00 AM MST",
+    "location": "Tucson, AZ",
+    "venue": "Omni Tucson National Resort",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU vs. No. 1 Arizona",
+    "sport": "Men's Basketball",
+    "date": "Jan. 26, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Air Force Invite (Diving)",
+    "sport": "Men's Swimming & Diving",
+    "date": "Jan. 28, 2026",
+    "time": "TBA",
+    "location": "Colorado Springs, Colorado",
+    "venue": "Cadet Natatorium",
+    "latitude": 38.68683,
+    "longitude": -104.8127
+  },
+  {
+    "title": "BYU at Air Force Invite (Diving)",
+    "sport": "Women's Swimming & Diving",
+    "date": "Jan. 28, 2026",
+    "time": "TBA",
+    "location": "Colorado Springs, Colorado",
+    "venue": "Cadet Natatorium",
+    "latitude": 38.68683,
+    "longitude": -104.8127
+  },
+  {
+    "title": "BYU at No. 24 Oklahoma State",
+    "sport": "Women's Basketball",
+    "date": "Jan. 28, 2026",
+    "time": "5:30 PM MST",
+    "location": "Stillwater, Oklahoma",
+    "venue": "Gallagher-Iba Arena",
+    "latitude": 36.07832,
+    "longitude": -97.06452
+  },
+  {
+    "title": "BYU vs. Portland",
+    "sport": "Men's Tennis",
+    "date": "Jan. 29, 2026",
+    "time": "TBA",
+    "location": "Honolulu, Hawaii",
+    "venue": "UH Tennis Complex",
+    "latitude": 21.31628,
+    "longitude": -157.84359
+  },
+  {
+    "title": "BYU at UC Santa Barbara",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 29, 2026",
+    "time": "8:00 PM MST",
+    "location": "Santa Barbara, California",
+    "venue": "Robertson Gym",
+    "latitude": 34.41925,
+    "longitude": -119.70808
+  },
+  {
+    "title": "BYU at Collegiate Invitational at Guadalajara",
+    "sport": "Women's Golf",
+    "date": "Jan. 30, 2026",
+    "time": "8:00 AM MST",
+    "location": "Guadalajara, Mexico",
+    "venue": "Guadalajara Country Club",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU at John Thomas Terrier Classic",
+    "sport": "Women's Track & Field",
+    "date": "Jan. 30, 2026",
+    "time": "8:00 AM MST",
+    "location": "Boston, Massachusetts",
+    "venue": "Track and Tennis Center",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "BYU at Boise State",
+    "sport": "Women's Tennis",
+    "date": "Jan. 30, 2026",
+    "time": "11:00 AM MST",
+    "location": "Boise, ID",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "BYU at John Thomas Terrier Classic",
+    "sport": "Men's Track & Field",
+    "date": "Jan. 30, 2026",
+    "time": "All Day",
+    "location": "Boston, MA",
+    "venue": "Track and Tennis Center",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "BYU vs. Arizona",
+    "sport": "Women's Gymnastics",
+    "date": "Jan. 30, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at UC Santa Barbara",
+    "sport": "Men's Volleyball",
+    "date": "Jan. 30, 2026",
+    "time": "8:00 PM MST",
+    "location": "Santa Barbara, California",
+    "venue": "Thunderdome",
+    "latitude": 34.41925,
+    "longitude": -119.70808
+  },
+  {
+    "title": "BYU at Hawai'i",
+    "sport": "Men's Tennis",
+    "date": "Jan. 31, 2026",
+    "time": "TBA",
+    "location": "Honolulu, Hawaii",
+    "venue": "UH Tennis Complex",
+    "latitude": 21.31628,
+    "longitude": -157.84359
+  },
+  {
+    "title": "BYU at Roman Ruiz Speed and Power Invitational",
+    "sport": "Women's Track & Field",
+    "date": "Jan. 31, 2026",
+    "time": "All Day",
+    "location": "Logan, Utah",
+    "venue": "Stan Laub Indoor Training Center",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "BYU vs. Idaho State",
+    "sport": "Women's Tennis",
+    "date": "Jan. 31, 2026",
+    "time": "11:00 AM MST",
+    "location": "Pocatello, ID",
+    "venue": "",
+    "latitude": 42.88949,
+    "longitude": -112.38324
+  },
+  {
+    "title": "BYU at Utah State Indoor Invitational",
+    "sport": "Men's Track & Field",
+    "date": "Jan. 31, 2026",
+    "time": "All Day",
+    "location": "Logan, UT",
+    "venue": "George Nelson Fieldhouse",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "BYU vs. Utah",
+    "sport": "Women's Basketball",
+    "date": "Jan. 31, 2026",
+    "time": "2:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at No. 17 Kansas",
+    "sport": "Men's Basketball",
+    "date": "Jan. 31, 2026",
+    "time": "2 or 2:30 p.m. MST",
+    "location": "Lawrence, Kansas",
+    "venue": "Allen Fieldhouse",
+    "latitude": 39.03187,
+    "longitude": -95.20991
+  },
+  {
+    "title": "BYU at Kansas",
+    "sport": "Women's Basketball",
+    "date": "Feb. 4, 2026",
+    "time": "5:30 PM MST",
+    "location": "Lawrence, Kansas",
+    "venue": "Allen Fieldhouse",
+    "latitude": 39.03187,
+    "longitude": -95.20991
+  },
+  {
+    "title": "BYU at Oklahoma State",
+    "sport": "Men's Basketball",
+    "date": "Feb. 4, 2026",
+    "time": "7:00 PM MST",
+    "location": "Stillwater, Oklahoma",
+    "venue": "Gallagher-Iba Arena",
+    "latitude": 36.07832,
+    "longitude": -97.06452
+  },
+  {
+    "title": "BYU vs. Tennessee",
+    "sport": "Softball",
+    "date": "Feb. 5, 2026",
+    "time": "5:00 PM MST",
+    "location": "Clearwater, Florida",
+    "venue": "Eddie C. Moore Complex",
+    "latitude": 27.9793,
+    "longitude": -82.78007
+  },
+  {
+    "title": "BYU vs. Montana State University-Bozeman",
+    "sport": "Men's Tennis",
+    "date": "Feb. 5, 2026",
+    "time": "5:30 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Indoor Tennis Courts",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Arkansas State University",
+    "sport": "Women's Tennis",
+    "date": "Feb. 6, 2026",
+    "time": "11:00 AM MST",
+    "location": "Memphis, TN",
+    "venue": "",
+    "latitude": 35.15308,
+    "longitude": -90.05518
+  },
+  {
+    "title": "BYU at Lincoln Memorial",
+    "sport": "Men's Volleyball",
+    "date": "Feb. 6, 2026",
+    "time": "2:00 PM MST",
+    "location": "Cambridge, Massachusetts",
+    "venue": "Malkin Athletic Center",
+    "latitude": 42.37997,
+    "longitude": -71.13446
+  },
+  {
+    "title": "BYU vs. Michigan State",
+    "sport": "Softball",
+    "date": "Feb. 6, 2026",
+    "time": "3:00 PM MST",
+    "location": "Clearwater, Florida",
+    "venue": "Eddie C. Moore Complex",
+    "latitude": 27.9793,
+    "longitude": -82.78007
+  },
+  {
+    "title": "BYU vs. Utah",
+    "sport": "Men's Swimming & Diving",
+    "date": "Feb. 6, 2026",
+    "time": "6:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Richards Building Pool",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Notre Dame",
+    "sport": "Softball",
+    "date": "Feb. 6, 2026",
+    "time": "6:00 PM MST",
+    "location": "Clearwater, Florida",
+    "venue": "Eddie C. Moore Complex",
+    "latitude": 27.9793,
+    "longitude": -82.78007
+  },
+  {
+    "title": "BYU vs. Utah",
+    "sport": "Women's Swimming & Diving",
+    "date": "Feb. 6, 2026",
+    "time": "6:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Richards Pool Building",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Southern Utah",
+    "sport": "Women's Gymnastics",
+    "date": "Feb. 6, 2026",
+    "time": "6:30 PM MST",
+    "location": "Cedar City, Utah",
+    "venue": "America First Event Center",
+    "latitude": 37.55477,
+    "longitude": -113.25665
+  },
+  {
+    "title": "BYU at Memphis",
+    "sport": "Women's Tennis",
+    "date": "Feb. 7, 2026",
+    "time": "11:00 AM MST",
+    "location": "Memphis, TN",
+    "venue": "",
+    "latitude": 35.15308,
+    "longitude": -90.05518
+  },
+  {
+    "title": "BYU vs. Penn State",
+    "sport": "Softball",
+    "date": "Feb. 7, 2026",
+    "time": "1:00 PM MST",
+    "location": "Clearwater, Florida",
+    "venue": "Eddie C. Moore Complex",
+    "latitude": 27.9793,
+    "longitude": -82.78007
+  },
+  {
+    "title": "BYU at Kansas State",
+    "sport": "Women's Basketball",
+    "date": "Feb. 7, 2026",
+    "time": "3:00 PM MST",
+    "location": "Manhatten, Kansas",
+    "venue": "Bramlage Coliseum",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs. Missouri",
+    "sport": "Softball",
+    "date": "Feb. 7, 2026",
+    "time": "4:00 PM MST",
+    "location": "Clearwater, Florida",
+    "venue": "Eddie C. Moore Complex",
+    "latitude": 27.9793,
+    "longitude": -82.78007
+  },
+  {
+    "title": "BYU at Harvard",
+    "sport": "Men's Volleyball",
+    "date": "Feb. 7, 2026",
+    "time": "5:00 PM MST",
+    "location": "Cambridge, Massachusetts",
+    "venue": "Malkin Athletic Center",
+    "latitude": 42.37997,
+    "longitude": -71.13446
+  },
+  {
+    "title": "BYU vs. No. 8 Houston",
+    "sport": "Men's Basketball",
+    "date": "Feb. 7, 2026",
+    "time": "8:30 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Thunderbird Intercollegiate",
+    "sport": "Women's Golf",
+    "date": "Feb. 9, 2026",
+    "time": "8:00 AM MST",
+    "location": "Tucson, AZ",
+    "venue": "Tucson Country Club",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU at Merrimack",
+    "sport": "Men's Volleyball",
+    "date": "Feb. 9, 2026",
+    "time": "4:00 PM MST",
+    "location": "North Andover, Massachusetts",
+    "venue": "Neil Cary Arena",
+    "latitude": 42.67132,
+    "longitude": -71.08669
+  },
+  {
+    "title": "BYU at Baylor",
+    "sport": "Men's Basketball",
+    "date": "Feb. 10, 2026",
+    "time": "5:00 PM MST",
+    "location": "Waco, Texas",
+    "venue": "Foster Pavilion",
+    "latitude": 31.55201,
+    "longitude": -97.13852
+  },
+  {
+    "title": "BYU vs. No. 10 Iowa State",
+    "sport": "Women's Basketball",
+    "date": "Feb. 10, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "Marriott Center",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Boston University",
+    "sport": "Men's Tennis",
+    "date": "Feb. 11, 2026",
+    "time": "6:00 PM MST",
+    "location": "Boston, Massachusetts",
+    "venue": "",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "BYU at John A. Burns Intercollegiate",
+    "sport": "Men's Golf",
+    "date": "Feb. 12, 2026",
+    "time": "8:00 AM MST",
+    "location": "Lihue, HI",
+    "venue": "Ocean Course at Hokuala",
+    "latitude": 22.00556,
+    "longitude": -159.41931
+  },
+  {
+    "title": "BYU at Incarnate Word",
+    "sport": "Softball",
+    "date": "Feb. 12, 2026",
+    "time": "11:00 AM MST",
+    "location": "San Antonio, Texas",
+    "venue": "H-E-B Field",
+    "latitude": 29.46901,
+    "longitude": -98.52861
+  },
+  {
+    "title": "BYU at Holy Cross",
+    "sport": "Men's Tennis",
+    "date": "Feb. 12, 2026",
+    "time": "TBA",
+    "location": "Boston, Massachusetts",
+    "venue": "",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "BYU at David Hemery Valentine Invitational",
+    "sport": "Women's Track & Field",
+    "date": "Feb. 13, 2026",
+    "time": "All Day",
+    "location": "Boston, Massachusetts",
+    "venue": "Track and Tennis Center",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "BYU at Don Kirby Invitational",
+    "sport": "Women's Track & Field",
+    "date": "Feb. 13, 2026",
+    "time": "All Day",
+    "location": "Albuquerque, New Mexico",
+    "venue": "Albuquerque Convention Center",
+    "latitude": 35.09669,
+    "longitude": -106.64339
+  },
+  {
+    "title": "BYU at Don Kirby Indoor Invitational",
+    "sport": "Men's Track & Field",
+    "date": "Feb. 13, 2026",
+    "time": "All Day",
+    "location": "Albuquerque, NM",
+    "venue": "Albuquerque Convention Center",
+    "latitude": 35.09669,
+    "longitude": -106.64339
+  },
+  {
+    "title": "BYU at Davin Hemery Valentine Invitational",
+    "sport": "Men's Track & Field",
+    "date": "Feb. 13, 2026",
+    "time": "All Day",
+    "location": "Boston, MA",
+    "venue": "Track and Tennis Center",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  },
+  {
+    "title": "BYU at Western Kentucky",
+    "sport": "Baseball",
+    "date": "Feb. 13, 2026",
+    "time": "TBA",
+    "location": "Bowling Green, Kentucky",
+    "venue": "Nick Denes Field",
+    "latitude": 37.06552,
+    "longitude": -86.47809
+  },
+  {
+    "title": "BYU vs. Washington State",
+    "sport": "Women's Tennis",
+    "date": "Feb. 13, 2026",
+    "time": "12:00 PM MST",
+    "location": "Provo, UT",
+    "venue": "Indoor Tennis Courts",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Texas State",
+    "sport": "Softball",
+    "date": "Feb. 13, 2026",
+    "time": "1:30 PM MST",
+    "location": "San Marcos, Texas",
+    "venue": "Bobcat Softball Stadium",
+    "latitude": 29.8826,
+    "longitude": -97.97974
+  },
+  {
+    "title": "BYU at Boston College",
+    "sport": "Men's Tennis",
+    "date": "Feb. 13, 2026",
+    "time": "TBA",
+    "location": "Boston, Massachusetts",
+    "venue": "",
+    "latitude": 42.35657,
+    "longitude": -71.06516
+  }
+]
