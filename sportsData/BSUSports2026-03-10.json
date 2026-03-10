@@ -1,0 +1,1902 @@
+[
+  {
+    "title": "Boise State vs. (V) St. Thomas vs Weber State (H)",
+    "sport": "Softball",
+    "date": "Sunday, March 8, 2026",
+    "time": "10 a.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Weber State",
+    "sport": "Softball",
+    "date": "Sunday, March 8, 2026",
+    "time": "1:30 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. #4 New Mexico",
+    "sport": "Women's Basketball",
+    "date": "Sunday, March 8, 2026",
+    "time": "3:30 p.m. MT",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Juli Inkster Invitational",
+    "sport": "Women's Golf",
+    "date": "Monday, March 9, 2026",
+    "time": "",
+    "location": "San Francisco, Calif. (Harding Park Golf Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Cleveland Golf Palmetto Intercollegiate",
+    "sport": "Men's Golf",
+    "date": "Monday, March 9, 2026",
+    "time": "",
+    "location": "Aiken S.C. (Palmetto GC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. #9 Air Force",
+    "sport": "Women's Basketball",
+    "date": "Monday, March 9, 2026",
+    "time": "6 p.m. MT",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. UNLV (Overwatch)",
+    "sport": "Esports",
+    "date": "Monday, March 9, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Juli Inkster Invitational",
+    "sport": "Women's Golf",
+    "date": "Tuesday, March 10, 2026",
+    "time": "",
+    "location": "San Francisco, Calif. (Harding Park Golf Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Cleveland Golf Palmetto Intercollegiate",
+    "sport": "Men's Golf",
+    "date": "Tuesday, March 10, 2026",
+    "time": "",
+    "location": "Aiken S.C. (Palmetto GC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Nevada (Valorant)",
+    "sport": "Esports",
+    "date": "Tuesday, March 10, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Wyoming (Overwatch)",
+    "sport": "Esports",
+    "date": "Tuesday, March 10, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. #11 San José State",
+    "sport": "Men's Basketball",
+    "date": "Wednesday, March 11, 2026",
+    "time": "9:30 PM",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Northwest Nazarene",
+    "sport": "Women's Soccer",
+    "date": "Thursday, March 12, 2026",
+    "time": "8 p.m.",
+    "location": "Nampa, Idaho",
+    "venue": "",
+    "latitude": 43.58438,
+    "longitude": -116.62884
+  },
+  {
+    "title": "Boise State vs. NCAA Indoor Championships",
+    "sport": "Track & Field",
+    "date": "Friday, March 13, 2026",
+    "time": "",
+    "location": "Fayetteville, Ark.",
+    "venue": "",
+    "latitude": 35.9873,
+    "longitude": -94.08179
+  },
+  {
+    "title": "Boise State vs. #20 South Carolina",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, March 13, 2026",
+    "time": "9 a.m. MT",
+    "location": "Columbia, S.C.",
+    "venue": "",
+    "latitude": 33.98381,
+    "longitude": -81.02829
+  },
+  {
+    "title": "Boise State vs. #67 Cal Poly",
+    "sport": "Men's Tennis",
+    "date": "Friday, March 13, 2026",
+    "time": "10 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Women's Tennis",
+    "date": "Friday, March 13, 2026",
+    "time": "1 p.m. MT",
+    "location": "Fort Collins, Colo.",
+    "venue": "",
+    "latitude": 40.59372,
+    "longitude": -105.1268
+  },
+  {
+    "title": "Boise State vs. UNC Wilmington",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, March 13, 2026",
+    "time": "1 p.m. MT",
+    "location": "Columbia, S.C.",
+    "venue": "",
+    "latitude": 33.98381,
+    "longitude": -81.02829
+  },
+  {
+    "title": "Boise State vs. Montana State",
+    "sport": "Men's Tennis",
+    "date": "Friday, March 13, 2026",
+    "time": "5 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Southern Utah",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, March 13, 2026",
+    "time": "6 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Softball",
+    "date": "Friday, March 13, 2026",
+    "time": "6 p.m.",
+    "location": "Reno, Nev.",
+    "venue": "",
+    "latitude": 39.52602,
+    "longitude": -119.81262
+  },
+  {
+    "title": "Boise State vs. NCAA Indoor Championships",
+    "sport": "Track & Field",
+    "date": "Saturday, March 14, 2026",
+    "time": "",
+    "location": "Fayetteville, Ark.",
+    "venue": "",
+    "latitude": 35.9873,
+    "longitude": -94.08179
+  },
+  {
+    "title": "Boise State vs. Nighthawks Opener",
+    "sport": "Track & Field",
+    "date": "Saturday, March 14, 2026",
+    "time": "",
+    "location": "Nampa, Idaho",
+    "venue": "",
+    "latitude": 43.58438,
+    "longitude": -116.62884
+  },
+  {
+    "title": "Boise State vs. Jacksonville",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, March 14, 2026",
+    "time": "7 a.m. MT",
+    "location": "Columbia, S.C.",
+    "venue": "",
+    "latitude": 33.98381,
+    "longitude": -81.02829
+  },
+  {
+    "title": "Boise State vs. College of Charleston",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, March 14, 2026",
+    "time": "9 a.m. MT",
+    "location": "Columbia, S.C.",
+    "venue": "",
+    "latitude": 33.98381,
+    "longitude": -81.02829
+  },
+  {
+    "title": "Boise State vs. #38 Santa Clara",
+    "sport": "Men's Tennis",
+    "date": "Saturday, March 14, 2026",
+    "time": "10 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Softball",
+    "date": "Saturday, March 14, 2026",
+    "time": "4 p.m.",
+    "location": "Reno, Nev.",
+    "venue": "",
+    "latitude": 39.52602,
+    "longitude": -119.81262
+  },
+  {
+    "title": "Boise State vs. DePaul",
+    "sport": "Men's Tennis",
+    "date": "Saturday, March 14, 2026",
+    "time": "6 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Wyoming",
+    "sport": "Women's Tennis",
+    "date": "Sunday, March 15, 2026",
+    "time": "11 a.m. MT",
+    "location": "Laramie, Wyo.",
+    "venue": "",
+    "latitude": 41.21404,
+    "longitude": -105.85037
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Softball",
+    "date": "Sunday, March 15, 2026",
+    "time": "1 p.m.",
+    "location": "Reno, Nev.",
+    "venue": "",
+    "latitude": 39.52602,
+    "longitude": -119.81262
+  },
+  {
+    "title": "Boise State vs. Stanford",
+    "sport": "Women's Gymnastics",
+    "date": "Sunday, March 15, 2026",
+    "time": "3 p.m. MT",
+    "location": "Stanford, CA",
+    "venue": "",
+    "latitude": 37.41623,
+    "longitude": -122.17069
+  },
+  {
+    "title": "Boise State vs. Wyoming",
+    "sport": "Women's Tennis",
+    "date": "Sunday, March 15, 2026",
+    "time": "11 a.m. MT",
+    "location": "Laramie, Wyo.",
+    "venue": "",
+    "latitude": 41.21404,
+    "longitude": -105.85037
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Softball",
+    "date": "Sunday, March 15, 2026",
+    "time": "1 p.m.",
+    "location": "Reno, Nev.",
+    "venue": "",
+    "latitude": 39.52602,
+    "longitude": -119.81262
+  },
+  {
+    "title": "Boise State vs. Stanford",
+    "sport": "Women's Gymnastics",
+    "date": "Sunday, March 15, 2026",
+    "time": "3 p.m. MT",
+    "location": "Stanford, CA",
+    "venue": "",
+    "latitude": 37.41623,
+    "longitude": -122.17069
+  },
+  {
+    "title": "Boise State vs. Betsy Rawls Invitational",
+    "sport": "Women's Golf",
+    "date": "Monday, March 16, 2026",
+    "time": "",
+    "location": "Austin, Texas (The University of Texas Golf Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Betsy Rawls Invitational",
+    "sport": "Women's Golf",
+    "date": "Tuesday, March 17, 2026",
+    "time": "",
+    "location": "Austin, Texas (The University of Texas Golf Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Sacramento State",
+    "sport": "Softball",
+    "date": "Tuesday, March 17, 2026",
+    "time": "2 p.m.",
+    "location": "Sacramento, Calif.",
+    "venue": "",
+    "latitude": 38.58761,
+    "longitude": -121.49077
+  },
+  {
+    "title": "Boise State vs. Sacramento State",
+    "sport": "Softball",
+    "date": "Tuesday, March 17, 2026",
+    "time": "TBA",
+    "location": "Sacramento, Calif.",
+    "venue": "",
+    "latitude": 38.58761,
+    "longitude": -121.49077
+  },
+  {
+    "title": "Boise State vs. #10 California",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, March 20, 2026",
+    "time": "8:15 a.m. MT",
+    "location": "Baton Rouge, La.",
+    "venue": "",
+    "latitude": 30.44954,
+    "longitude": -91.18608
+  },
+  {
+    "title": "Boise State vs. Grand Canyon",
+    "sport": "Women's Tennis",
+    "date": "Friday, March 20, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. (RV) Georgia State",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, March 20, 2026",
+    "time": "1:15 p.m. MT",
+    "location": "Baton Rouge, La.",
+    "venue": "",
+    "latitude": 30.44954,
+    "longitude": -91.18608
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Men's Tennis",
+    "date": "Friday, March 20, 2026",
+    "time": "5 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Fresno State",
+    "sport": "Softball",
+    "date": "Friday, March 20, 2026",
+    "time": "6 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. #7 Florida State",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, March 21, 2026",
+    "time": "7 a.m. MT",
+    "location": "Baton Rouge, La.",
+    "venue": "",
+    "latitude": 30.44954,
+    "longitude": -91.18608
+  },
+  {
+    "title": "Boise State vs. #13 LSU",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, March 21, 2026",
+    "time": "10:45 a.m. MT",
+    "location": "Baton Rouge, La.",
+    "venue": "",
+    "latitude": 30.44954,
+    "longitude": -91.18608
+  },
+  {
+    "title": "Boise State vs. Grand Canyon (Valorant)",
+    "sport": "Esports",
+    "date": "Saturday, March 21, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Grand Canyon (Valorant)",
+    "sport": "Esports",
+    "date": "Saturday, March 21, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Fresno State",
+    "sport": "Softball",
+    "date": "Saturday, March 21, 2026",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Women's Gymnastics",
+    "date": "Saturday, March 21, 2026",
+    "time": "6 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San José State",
+    "sport": "Women's Gymnastics",
+    "date": "Saturday, March 21, 2026",
+    "time": "6 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Women's Gymnastics",
+    "date": "Saturday, March 21, 2026",
+    "time": "6 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nevada (Overwatch)",
+    "sport": "Esports",
+    "date": "Saturday, March 21, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Nevada (Overwatch)",
+    "sport": "Esports",
+    "date": "Saturday, March 21, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Women's Tennis",
+    "date": "Sunday, March 22, 2026",
+    "time": "10 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Fresno State",
+    "sport": "Softball",
+    "date": "Sunday, March 22, 2026",
+    "time": "Noon",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. UC Irvine",
+    "sport": "Men's Tennis",
+    "date": "Sunday, March 22, 2026",
+    "time": "1 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Women's Tennis",
+    "date": "Sunday, March 22, 2026",
+    "time": "10 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Fresno State",
+    "sport": "Softball",
+    "date": "Sunday, March 22, 2026",
+    "time": "Noon",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. UC Irvine",
+    "sport": "Men's Tennis",
+    "date": "Sunday, March 22, 2026",
+    "time": "1 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Oregon Duck Invitational",
+    "sport": "Men's Golf",
+    "date": "Monday, March 23, 2026",
+    "time": "",
+    "location": "Eugene, Ore. (Eugene CC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Oregon Duck Invitational",
+    "sport": "Men's Golf",
+    "date": "Tuesday, March 24, 2026",
+    "time": "",
+    "location": "Eugene, Ore. (Eugene CC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. The Goodwin",
+    "sport": "Men's Golf",
+    "date": "Thursday, March 26, 2026",
+    "time": "",
+    "location": "Palo Alto, Calif. (Stanford, GC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. The Goodwin",
+    "sport": "Men's Golf",
+    "date": "Friday, March 27, 2026",
+    "time": "",
+    "location": "Palo Alto, Calif. (Stanford, GC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. #19 Arizona",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, March 27, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. #8 Arizona State",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, March 27, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. Nevada",
+    "sport": "Women's Tennis",
+    "date": "Friday, March 27, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Softball",
+    "date": "Friday, March 27, 2026",
+    "time": "4 p.m.",
+    "location": "Fort Collins, Colo.",
+    "venue": "",
+    "latitude": 40.59372,
+    "longitude": -105.1268
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Men's Tennis",
+    "date": "Friday, March 27, 2026",
+    "time": "5 p.m. MT",
+    "location": "USAFA, Colo.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. The Goodwin",
+    "sport": "Men's Golf",
+    "date": "Saturday, March 28, 2026",
+    "time": "",
+    "location": "Palo Alto, Calif. (Stanford, GC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. #7 Florida State",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, March 28, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. #20 South Carolina",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, March 28, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. #6 TCU",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, March 28, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Softball",
+    "date": "Saturday, March 28, 2026",
+    "time": "1 p.m.",
+    "location": "Fort Collins, Colo.",
+    "venue": "",
+    "latitude": 40.59372,
+    "longitude": -105.1268
+  },
+  {
+    "title": "Boise State vs. Utah State (Overwatch)",
+    "sport": "Esports",
+    "date": "Saturday, March 28, 2026",
+    "time": "",
+    "location": "Boise State Esports Arena",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Men's Tennis",
+    "date": "Sunday, March 29, 2026",
+    "time": "11 a.m. MT",
+    "location": "Albuquerque, N.M.",
+    "venue": "",
+    "latitude": 35.09669,
+    "longitude": -106.64339
+  },
+  {
+    "title": "Boise State vs. UNLV",
+    "sport": "Women's Tennis",
+    "date": "Sunday, March 29, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Softball",
+    "date": "Sunday, March 29, 2026",
+    "time": "Noon",
+    "location": "Fort Collins, Colo.",
+    "venue": "",
+    "latitude": 40.59372,
+    "longitude": -105.1268
+  },
+  {
+    "title": "Boise State vs. UNLV",
+    "sport": "Women's Tennis",
+    "date": "Sunday, March 29, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Men's Tennis",
+    "date": "Sunday, March 29, 2026",
+    "time": "11 a.m. MT",
+    "location": "Albuquerque, N.M.",
+    "venue": "",
+    "latitude": 35.09669,
+    "longitude": -106.64339
+  },
+  {
+    "title": "Boise State vs. Colorado State",
+    "sport": "Softball",
+    "date": "Sunday, March 29, 2026",
+    "time": "Noon",
+    "location": "Fort Collins, Colo.",
+    "venue": "",
+    "latitude": 40.59372,
+    "longitude": -105.1268
+  },
+  {
+    "title": "Boise State vs. NCAA Regionals",
+    "sport": "Women's Gymnastics",
+    "date": "Wednesday, April 1, 2026",
+    "time": "TBA",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. NCAA Regionals",
+    "sport": "Women's Gymnastics",
+    "date": "Thursday, April 2, 2026",
+    "time": "TBA",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Boise State vs. Idaho Duel",
+    "sport": "Women's Golf",
+    "date": "Thursday, April 2, 2026",
+    "time": "",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San José State",
+    "sport": "Women's Tennis",
+    "date": "Thursday, April 2, 2026",
+    "time": "TBA",
+    "location": "San Jose, Calif.",
+    "venue": "",
+    "latitude": 37.34656,
+    "longitude": -121.9097
+  },
+  {
+    "title": "Boise State vs. Mike Fanelli Track Classic",
+    "sport": "Track & Field",
+    "date": "Thursday, April 2, 2026",
+    "time": "",
+    "location": "San Francisco, Calif.",
+    "venue": "",
+    "latitude": 37.77956,
+    "longitude": -122.41931
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Softball",
+    "date": "Thursday, April 2, 2026",
+    "time": "6 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Regionals",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, April 3, 2026",
+    "time": "TBA",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. UNLV Rebel ELITE",
+    "sport": "Track & Field",
+    "date": "Friday, April 3, 2026",
+    "time": "",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Stanford Invitational",
+    "sport": "Track & Field",
+    "date": "Friday, April 3, 2026",
+    "time": "",
+    "location": "Stanford, Calif.",
+    "venue": "",
+    "latitude": 37.41623,
+    "longitude": -122.17069
+  },
+  {
+    "title": "Boise State vs. CSUN vs. Oregon",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 3, 2026",
+    "time": "9 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Santa Clara vs. UTEP",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 3, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Oregon",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 3, 2026",
+    "time": "1 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. CSUN vs. UTEP",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 3, 2026",
+    "time": "3 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. (RV) Santa Clara",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 3, 2026",
+    "time": "5 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Softball",
+    "date": "Friday, April 3, 2026",
+    "time": "6 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Regionals",
+    "sport": "Women's Gymnastics",
+    "date": "Saturday, April 4, 2026",
+    "time": "TBA",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Oregon vs. UTEP",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 4, 2026",
+    "time": "8:30 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. CSUN vs. Santa Clara",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 4, 2026",
+    "time": "10:30 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. BYU",
+    "sport": "Women's Soccer",
+    "date": "Saturday, April 4, 2026",
+    "time": "11 a.m.",
+    "location": "",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Softball",
+    "date": "Saturday, April 4, 2026",
+    "time": "Noon",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Fresno State",
+    "sport": "Women's Tennis",
+    "date": "Saturday, April 4, 2026",
+    "time": "Noon MT",
+    "location": "Fresno, Calif.",
+    "venue": "",
+    "latitude": 36.84026,
+    "longitude": -119.80038
+  },
+  {
+    "title": "Boise State vs. UTEP",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 4, 2026",
+    "time": "12:30 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Men's Tennis",
+    "date": "Saturday, April 4, 2026",
+    "time": "1 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Oregon vs. Santa Clara",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 4, 2026",
+    "time": "2:30 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. CSUN",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 4, 2026",
+    "time": "4:30 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Regionals",
+    "sport": "Women's Gymnastics",
+    "date": "Sunday, April 5, 2026",
+    "time": "TBA",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. NCAA Regionals",
+    "sport": "Women's Gymnastics",
+    "date": "Sunday, April 5, 2026",
+    "time": "TBA",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. UC Santa Barbara Intercollegiate",
+    "sport": "Men's Golf",
+    "date": "Monday, April 6, 2026",
+    "time": "",
+    "location": "Santa Barbara, Calif. (Sandpiper, GC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. UC Santa Barbara Intercollegiate",
+    "sport": "Men's Golf",
+    "date": "Tuesday, April 7, 2026",
+    "time": "",
+    "location": "Santa Barbara, Calif. (Sandpiper, GC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Cowgirl Classic",
+    "sport": "Women's Golf",
+    "date": "Tuesday, April 7, 2026",
+    "time": "",
+    "location": "Maricopa, Ariz. (Ak-Chin Southern Dunes Golf Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Cowgirl Classic",
+    "sport": "Women's Golf",
+    "date": "Wednesday, April 8, 2026",
+    "time": "",
+    "location": "Maricopa, Ariz. (Ak-Chin Southern Dunes Golf Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Softball",
+    "date": "Wednesday, April 8, 2026",
+    "time": "Noon",
+    "location": "Logan, Utah",
+    "venue": "",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Softball",
+    "date": "Wednesday, April 8, 2026",
+    "time": "TBA",
+    "location": "Logan, Utah",
+    "venue": "",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "Boise State vs. Texas A&M 44 Farms Team Invitational",
+    "sport": "Track & Field",
+    "date": "Thursday, April 9, 2026",
+    "time": "",
+    "location": "College Station, Texas",
+    "venue": "",
+    "latitude": 30.6115,
+    "longitude": -96.32332
+  },
+  {
+    "title": "Boise State vs. Texas A&M 44 Farms Team Invitational",
+    "sport": "Track & Field",
+    "date": "Friday, April 10, 2026",
+    "time": "",
+    "location": "College Station, Texas",
+    "venue": "",
+    "latitude": 30.6115,
+    "longitude": -96.32332
+  },
+  {
+    "title": "Boise State vs. South Florida vs. Washington",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 10, 2026",
+    "time": "9 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Air Force",
+    "sport": "Women's Tennis",
+    "date": "Friday, April 10, 2026",
+    "time": "10 a.m. MT",
+    "location": "USAFA, Colo.",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Florida International vs. Grand Canyon",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 10, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. South Florida",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 10, 2026",
+    "time": "1 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Grand Canyon vs. Washington",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 10, 2026",
+    "time": "3 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Florida International",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 10, 2026",
+    "time": "5 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Grand Canyon",
+    "sport": "Softball",
+    "date": "Friday, April 10, 2026",
+    "time": "8 p.m.",
+    "location": "Phoenix, Ariz.",
+    "venue": "",
+    "latitude": 33.45059,
+    "longitude": -112.07833
+  },
+  {
+    "title": "Boise State vs. Texas A&M 44 Farms Team Invitational",
+    "sport": "Track & Field",
+    "date": "Saturday, April 11, 2026",
+    "time": "",
+    "location": "College Station, Texas",
+    "venue": "",
+    "latitude": 30.6115,
+    "longitude": -96.32332
+  },
+  {
+    "title": "Boise State vs. NNU Open",
+    "sport": "Track & Field",
+    "date": "Saturday, April 11, 2026",
+    "time": "",
+    "location": "Nampa, Idaho",
+    "venue": "",
+    "latitude": 43.58438,
+    "longitude": -116.62884
+  },
+  {
+    "title": "Boise State vs. Grand Canyon vs. South Florida",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 11, 2026",
+    "time": "8:30 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Florida International vs. Washington",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 11, 2026",
+    "time": "10:30 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. #68 Utah State",
+    "sport": "Men's Tennis",
+    "date": "Saturday, April 11, 2026",
+    "time": "11 a.m. MT",
+    "location": "Logan, Utah",
+    "venue": "",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "Boise State vs. #16 Grand Canyon",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 11, 2026",
+    "time": "12:30 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Grand Canyon",
+    "sport": "Softball",
+    "date": "Saturday, April 11, 2026",
+    "time": "2 p.m.",
+    "location": "Phoenix, Ariz.",
+    "venue": "",
+    "latitude": 33.45059,
+    "longitude": -112.07833
+  },
+  {
+    "title": "Boise State vs. Florida International vs. South Florida",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 11, 2026",
+    "time": "2:30 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. #18 Washington",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 11, 2026",
+    "time": "4:30 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Women's Tennis",
+    "date": "Sunday, April 12, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. New Mexico",
+    "sport": "Women's Tennis",
+    "date": "Sunday, April 12, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Idaho State",
+    "sport": "Softball",
+    "date": "Tuesday, April 14, 2026",
+    "time": "4 p.m.",
+    "location": "Pocatello, Idaho",
+    "venue": "",
+    "latitude": 42.88949,
+    "longitude": -112.38324
+  },
+  {
+    "title": "Boise State vs. Bryan Clay Invitational",
+    "sport": "Track & Field",
+    "date": "Thursday, April 16, 2026",
+    "time": "",
+    "location": "Azusa, Calif.",
+    "venue": "",
+    "latitude": 34.24129,
+    "longitude": -117.82614
+  },
+  {
+    "title": "Boise State vs. NCAA Championships",
+    "sport": "Women's Gymnastics",
+    "date": "Thursday, April 16, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. NCAA Championships",
+    "sport": "Women's Gymnastics",
+    "date": "Friday, April 17, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. Utah State",
+    "sport": "Women's Tennis",
+    "date": "Friday, April 17, 2026",
+    "time": "TBA",
+    "location": "Logan, Utah",
+    "venue": "",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "Boise State vs. Portland",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 17, 2026",
+    "time": "11 a.m. MT",
+    "location": "Seattle, Wash.",
+    "venue": "",
+    "latitude": 47.61119,
+    "longitude": -122.33454
+  },
+  {
+    "title": "Boise State vs. Oregon",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 17, 2026",
+    "time": "12:45 p.m. MT",
+    "location": "Seattle, Wash.",
+    "venue": "",
+    "latitude": 47.61119,
+    "longitude": -122.33454
+  },
+  {
+    "title": "Boise State vs. UNLV",
+    "sport": "Softball",
+    "date": "Friday, April 17, 2026",
+    "time": "6 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA Championships",
+    "sport": "Women's Gymnastics",
+    "date": "Saturday, April 18, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "Boise State vs. #60 UNLV",
+    "sport": "Men's Tennis",
+    "date": "Saturday, April 18, 2026",
+    "time": "11 a.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Snow College",
+    "sport": "Women's Soccer",
+    "date": "Saturday, April 18, 2026",
+    "time": "Noon",
+    "location": "",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. #18 Washington",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 18, 2026",
+    "time": "12:15 p.m. MT",
+    "location": "Seattle, Wash.",
+    "venue": "",
+    "latitude": 47.61119,
+    "longitude": -122.33454
+  },
+  {
+    "title": "Boise State vs. UNLV",
+    "sport": "Softball",
+    "date": "Saturday, April 18, 2026",
+    "time": "2 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. #15 Florida Atlantic",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, April 18, 2026",
+    "time": "2:45 p.m. MT",
+    "location": "Seattle, Wash.",
+    "venue": "",
+    "latitude": 47.61119,
+    "longitude": -122.33454
+  },
+  {
+    "title": "Boise State vs. Third Annual Battle of Idaho",
+    "sport": "Men's Golf",
+    "date": "Sunday, April 19, 2026",
+    "time": "",
+    "location": "Boise, Idaho (Hillcrest CC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. UNLV",
+    "sport": "Softball",
+    "date": "Sunday, April 19, 2026",
+    "time": "Noon",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Third Annual Battle of Idaho",
+    "sport": "Men's Golf",
+    "date": "Sunday, April 19, 2026",
+    "time": "",
+    "location": "Boise, Idaho (Hillcrest CC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. UNLV",
+    "sport": "Softball",
+    "date": "Sunday, April 19, 2026",
+    "time": "Noon",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. Third Annual Battle of Idaho",
+    "sport": "Men's Golf",
+    "date": "Monday, April 20, 2026",
+    "time": "",
+    "location": "Boise, Idaho (Hillcrest CC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Third Annual Battle of Idaho",
+    "sport": "Men's Golf",
+    "date": "Tuesday, April 21, 2026",
+    "time": "",
+    "location": "Boise, Idaho (Hillcrest CC)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Mountain West Championships",
+    "sport": "Women's Golf",
+    "date": "Tuesday, April 21, 2026",
+    "time": "",
+    "location": "Rancho Mirage, Calif. (Mission Hills Country Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Mountain West Championships",
+    "sport": "Women's Golf",
+    "date": "Wednesday, April 22, 2026",
+    "time": "",
+    "location": "Rancho Mirage, Calif. (Mission Hills Country Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Big 12 Conference Championship",
+    "sport": "Women's Beach Volleyball",
+    "date": "Wednesday, April 22, 2026",
+    "time": "TBA",
+    "location": "Tucson, Ariz.",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Mountain West Conference",
+    "sport": "Women's Tennis",
+    "date": "Wednesday, April 22, 2026",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Mountain West Championships",
+    "sport": "Women's Golf",
+    "date": "Thursday, April 23, 2026",
+    "time": "",
+    "location": "Rancho Mirage, Calif. (Mission Hills Country Club)",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "Boise State vs. Big 12 Conference Championship",
+    "sport": "Women's Beach Volleyball",
+    "date": "Thursday, April 23, 2026",
+    "time": "TBA",
+    "location": "Tucson, Ariz.",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Mountain West Conference",
+    "sport": "Women's Tennis",
+    "date": "Thursday, April 23, 2026",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Mountain West Championship",
+    "sport": "Men's Tennis",
+    "date": "Thursday, April 23, 2026",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Big 12 Conference Championship",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, April 24, 2026",
+    "time": "TBA",
+    "location": "Tucson, Ariz.",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Mountain West Conference",
+    "sport": "Women's Tennis",
+    "date": "Friday, April 24, 2026",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Mountain West Championship",
+    "sport": "Men's Tennis",
+    "date": "Friday, April 24, 2026",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Ed Jacoby Invitational",
+    "sport": "Track & Field",
+    "date": "Friday, April 24, 2026",
+    "time": "",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Softball",
+    "date": "Friday, April 24, 2026",
+    "time": "7 p.m.",
+    "location": "San Diego, Calif.",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "Boise State vs. Mountain West Conference",
+    "sport": "Women's Tennis",
+    "date": "Saturday, April 25, 2026",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Mountain West Championship",
+    "sport": "Men's Tennis",
+    "date": "Saturday, April 25, 2026",
+    "time": "TBA",
+    "location": "Las Vegas, Nev.",
+    "venue": "",
+    "latitude": 36.17279,
+    "longitude": -115.12234
+  },
+  {
+    "title": "Boise State vs. Spring Game",
+    "sport": "Football",
+    "date": "Saturday, April 25, 2026",
+    "time": "1:30 p.m. MT",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Softball",
+    "date": "Saturday, April 25, 2026",
+    "time": "5 p.m.",
+    "location": "San Diego, Calif.",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Softball",
+    "date": "Sunday, April 26, 2026",
+    "time": "1 p.m.",
+    "location": "San Diego, Calif.",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "Boise State vs. San Diego State",
+    "sport": "Softball",
+    "date": "Sunday, April 26, 2026",
+    "time": "1 p.m.",
+    "location": "San Diego, Calif.",
+    "venue": "",
+    "latitude": 32.7162,
+    "longitude": -117.18589
+  },
+  {
+    "title": "Boise State vs. San José State",
+    "sport": "Softball",
+    "date": "Thursday, April 30, 2026",
+    "time": "6 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA National Beach Volleyball Championship",
+    "sport": "Women's Beach Volleyball",
+    "date": "Friday, May 1, 2026",
+    "time": "TBA",
+    "location": "Gulf Shores, Ala.",
+    "venue": "",
+    "latitude": 30.27683,
+    "longitude": -87.73867
+  },
+  {
+    "title": "Boise State vs. San José State",
+    "sport": "Softball",
+    "date": "Friday, May 1, 2026",
+    "time": "3 p.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA National Beach Volleyball Championship",
+    "sport": "Women's Beach Volleyball",
+    "date": "Saturday, May 2, 2026",
+    "time": "TBA",
+    "location": "Gulf Shores, Ala.",
+    "venue": "",
+    "latitude": 30.27683,
+    "longitude": -87.73867
+  },
+  {
+    "title": "Boise State vs. Desert Heat Invitational",
+    "sport": "Track & Field",
+    "date": "Saturday, May 2, 2026",
+    "time": "",
+    "location": "Tucson, Ariz.",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. San José State",
+    "sport": "Softball",
+    "date": "Saturday, May 2, 2026",
+    "time": "11 a.m.",
+    "location": "Boise, Idaho",
+    "venue": "",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "Boise State vs. NCAA National Beach Volleyball Championship",
+    "sport": "Women's Beach Volleyball",
+    "date": "Sunday, May 3, 2026",
+    "time": "TBA",
+    "location": "Gulf Shores, Ala.",
+    "venue": "",
+    "latitude": 30.27683,
+    "longitude": -87.73867
+  },
+  {
+    "title": "Boise State vs. Mountain West Championship",
+    "sport": "Men's Golf",
+    "date": "Sunday, May 3, 2026",
+    "time": "",
+    "location": "Omni Tucson (Tucson, Ariz.)",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. NCAA National Beach Volleyball Championship",
+    "sport": "Women's Beach Volleyball",
+    "date": "Sunday, May 3, 2026",
+    "time": "TBA",
+    "location": "Gulf Shores, Ala.",
+    "venue": "",
+    "latitude": 30.27683,
+    "longitude": -87.73867
+  },
+  {
+    "title": "Boise State vs. Mountain West Championship",
+    "sport": "Men's Golf",
+    "date": "Sunday, May 3, 2026",
+    "time": "",
+    "location": "Omni Tucson (Tucson, Ariz.)",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Mountain West Championship",
+    "sport": "Men's Golf",
+    "date": "Monday, May 4, 2026",
+    "time": "",
+    "location": "Omni Tucson (Tucson, Ariz.)",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Mountain West Championship",
+    "sport": "Men's Golf",
+    "date": "Tuesday, May 5, 2026",
+    "time": "",
+    "location": "Omni Tucson (Tucson, Ariz.)",
+    "venue": "",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "Boise State vs. Portland Twilight",
+    "sport": "Track & Field",
+    "date": "Saturday, May 9, 2026",
+    "time": "",
+    "location": "Portland, Ore.",
+    "venue": "",
+    "latitude": 45.50796,
+    "longitude": -122.68959
+  },
+  {
+    "title": "Boise State vs. Mountain West Outdoor Championships",
+    "sport": "Track & Field",
+    "date": "Thursday, May 14, 2026",
+    "time": "",
+    "location": "Fresno, Calif.",
+    "venue": "",
+    "latitude": 36.84026,
+    "longitude": -119.80038
+  },
+  {
+    "title": "Boise State vs. NCAA Prelims",
+    "sport": "Track & Field",
+    "date": "Wednesday, May 27, 2026",
+    "time": "",
+    "location": "Fayetteville, Ark.",
+    "venue": "",
+    "latitude": 35.9873,
+    "longitude": -94.08179
+  },
+  {
+    "title": "Boise State vs. NCAA Prelims",
+    "sport": "Track & Field",
+    "date": "Thursday, May 28, 2026",
+    "time": "",
+    "location": "Fayetteville, Ark.",
+    "venue": "",
+    "latitude": 35.9873,
+    "longitude": -94.08179
+  },
+  {
+    "title": "Boise State vs. NCAA Prelims",
+    "sport": "Track & Field",
+    "date": "Friday, May 29, 2026",
+    "time": "",
+    "location": "Fayetteville, Ark.",
+    "venue": "",
+    "latitude": 35.9873,
+    "longitude": -94.08179
+  },
+  {
+    "title": "Boise State vs. NCAA Prelims",
+    "sport": "Track & Field",
+    "date": "Saturday, May 30, 2026",
+    "time": "",
+    "location": "Fayetteville, Ark.",
+    "venue": "",
+    "latitude": 35.9873,
+    "longitude": -94.08179
+  }
+]
