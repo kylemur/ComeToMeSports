@@ -1,0 +1,662 @@
+[
+  {
+    "title": "BYU  Cosmo in the Park (Spanish Fork)",
+    "sport": "BYU Fan Event",
+    "date": "Jun. 17, 2027",
+    "time": "10:00 AM MDT",
+    "location": "Spanish Fork Sports Park",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU  Cosmo in the Park (Orem)",
+    "sport": "BYU Fan Event",
+    "date": "Jul. 1, 2026",
+    "time": "10:00 AM MDT",
+    "location": "Hillcrest Park",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU  Cosmo in the Park (American Fork)",
+    "sport": "BYU Fan Event",
+    "date": "Jul. 15, 2026",
+    "time": "10:00 AM MDT",
+    "location": "Art Dye Park",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU  Cosmo in the Park (Vineyard)",
+    "sport": "BYU Fan Event",
+    "date": "Jul. 29, 2026",
+    "time": "10:00 AM MDT",
+    "location": "Grove Park",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs. Blue/White",
+    "sport": "Women's Soccer",
+    "date": "Aug. 1, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Idaho State",
+    "sport": "Women's Soccer",
+    "date": "Aug. 8, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at UCLA",
+    "sport": "Women's Soccer",
+    "date": "Aug. 12, 2026",
+    "time": "8:00 PM MDT",
+    "location": "Los Angeles, California",
+    "venue": "Wallis Annenberg Stadium",
+    "latitude": 33.97365,
+    "longitude": -118.24904
+  },
+  {
+    "title": "BYU at Wisconsin",
+    "sport": "Women's Soccer",
+    "date": "Aug. 19, 2026",
+    "time": "6:00 PM MDT",
+    "location": "Madison, Wisconsin",
+    "venue": "Dan McClimon Memorial Soccer Complex",
+    "latitude": 43.07981,
+    "longitude": -89.37734
+  },
+  {
+    "title": "BYU vs. Utah Tech",
+    "sport": "Women's Volleyball",
+    "date": "Aug. 22, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. USC",
+    "sport": "Women's Soccer",
+    "date": "Aug. 22, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Minnesota",
+    "sport": "Women's Soccer",
+    "date": "Aug. 27, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Florida Gulf Coast",
+    "sport": "Women's Volleyball",
+    "date": "Aug. 28, 2026",
+    "time": "TBA",
+    "location": "Fort Myers, Florida",
+    "venue": "Alico Arena",
+    "latitude": 26.62304,
+    "longitude": -81.88228
+  },
+  {
+    "title": "BYU vs. Florida State",
+    "sport": "Women's Volleyball",
+    "date": "Aug. 29, 2026",
+    "time": "TBA",
+    "location": "Fort Myers, Florida",
+    "venue": "Alico Arena",
+    "latitude": 26.62304,
+    "longitude": -81.88228
+  },
+  {
+    "title": "BYU at Utah Valley",
+    "sport": "Women's Soccer",
+    "date": "Aug. 31, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Orem, Utah",
+    "venue": "UCCU Stadium",
+    "latitude": 40.31427,
+    "longitude": -111.70948
+  },
+  {
+    "title": "BYU vs. Eastern Illinois",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 3, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Colorado State",
+    "sport": "Women's Soccer",
+    "date": "Sep. 3, 2026",
+    "time": "7:30 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Pittsburgh",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 4, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Oklahoma",
+    "sport": "Women's Soccer",
+    "date": "Sep. 5, 2026",
+    "time": "2:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Utah Tech",
+    "sport": "Football",
+    "date": "Sep. 5, 2026",
+    "time": "6:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Boise State",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 8, 2026",
+    "time": "TBA",
+    "location": "Boise, Idaho",
+    "venue": "ExtraMile Arena",
+    "latitude": 43.66821,
+    "longitude": -116.16493
+  },
+  {
+    "title": "BYU at Utah State",
+    "sport": "Women's Soccer",
+    "date": "Sep. 10, 2026",
+    "time": "7:30 PM MDT",
+    "location": "Logan, Utah",
+    "venue": "Chuck & Gloria Bell Soccer Field",
+    "latitude": 41.77938,
+    "longitude": -111.68316
+  },
+  {
+    "title": "BYU vs. UCLA",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 11, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Arizona",
+    "sport": "Football",
+    "date": "Sep. 12, 2026",
+    "time": "1:30 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Utah Valley",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 15, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Weber State",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 17, 2026",
+    "time": "TBA",
+    "location": "Ogden, Utah",
+    "venue": "Swenson Gym",
+    "latitude": 41.21962,
+    "longitude": -112.03352
+  },
+  {
+    "title": "BYU at Arizona",
+    "sport": "Women's Soccer",
+    "date": "Sep. 18, 2026",
+    "time": "8:00 PM MDT",
+    "location": "Tucson, Arizona",
+    "venue": "Murphey Field at Mulcahy Stadium",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU at Colorado State",
+    "sport": "Football",
+    "date": "Sep. 19, 2026",
+    "time": "5:30 PM MDT",
+    "location": "Fort Collins, Colorado",
+    "venue": "Canvas Stadium",
+    "latitude": 40.59372,
+    "longitude": -105.1268
+  },
+  {
+    "title": "BYU vs. Utah State",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 19, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. UCF",
+    "sport": "Women's Soccer",
+    "date": "Sep. 24, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Baylor",
+    "sport": "Women's Volleyball",
+    "date": "Sep. 25, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. TCU",
+    "sport": "Women's Soccer",
+    "date": "Sep. 28, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Kansas State",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 1, 2026",
+    "time": "TBA",
+    "location": "Mahattan, Kansas",
+    "venue": "Morgan Family Arena",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU vs. Kansas State",
+    "sport": "Women's Soccer",
+    "date": "Oct. 2, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at TCU",
+    "sport": "Football",
+    "date": "Oct. 3, 2026",
+    "time": "TBA",
+    "location": "Fort Worth, Texas",
+    "venue": "Amon G. Carter Stadium",
+    "latitude": 32.75799,
+    "longitude": -97.32858
+  },
+  {
+    "title": "BYU at Kansas",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 3, 2026",
+    "time": "TBA",
+    "location": "Lawrence, Kansas",
+    "venue": "Horejsi Family Volleyball Arena",
+    "latitude": 39.03187,
+    "longitude": -95.20991
+  },
+  {
+    "title": "BYU at West Virginia",
+    "sport": "Women's Soccer",
+    "date": "Oct. 8, 2026",
+    "time": "5:00 PM MDT",
+    "location": "Morgantown, West Virginia",
+    "venue": "Dick Dlesk Soccer Stadium",
+    "latitude": 39.62872,
+    "longitude": -80.04025
+  },
+  {
+    "title": "BYU at Houston",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 8, 2026",
+    "time": "TBA",
+    "location": "Houston, Texas",
+    "venue": "Fertitta Center",
+    "latitude": 29.75635,
+    "longitude": -95.36538
+  },
+  {
+    "title": "BYU vs. Iowa State",
+    "sport": "Football",
+    "date": "Oct. 9, 2026",
+    "time": "8:15 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. West Virginia",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 10, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Cincinnati",
+    "sport": "Women's Soccer",
+    "date": "Oct. 12, 2026",
+    "time": "5:00 PM MDT",
+    "location": "Cincinnati, Ohio",
+    "venue": "Gettler Stadium",
+    "latitude": 39.10885,
+    "longitude": -84.50243
+  },
+  {
+    "title": "BYU at Utah",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 15, 2026",
+    "time": "TBA",
+    "location": "Salt Lake City, Utah",
+    "venue": "Huntsman Center",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU vs. Texas Tech",
+    "sport": "Women's Soccer",
+    "date": "Oct. 16, 2026",
+    "time": "7:00 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Notre Dame",
+    "sport": "Football",
+    "date": "Oct. 17, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Arizona",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 17, 2026",
+    "time": "TBA",
+    "location": "Tucson, Arizona",
+    "venue": "McKale Center",
+    "latitude": 32.21702,
+    "longitude": -110.97138
+  },
+  {
+    "title": "BYU at Kansas",
+    "sport": "Women's Soccer",
+    "date": "Oct. 22, 2026",
+    "time": "5:00 PM MDT",
+    "location": "Lawrence, Kansas",
+    "venue": "Rock Chalk Park",
+    "latitude": 39.03187,
+    "longitude": -95.20991
+  },
+  {
+    "title": "BYU vs. Colorado",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 22, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at UCF",
+    "sport": "Football",
+    "date": "Oct. 24, 2026",
+    "time": "TBA",
+    "location": "Orlando, Florida",
+    "venue": "Acrisure Bounce House",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs. Arizona State",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 24, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Iowa State",
+    "sport": "Women's Soccer",
+    "date": "Oct. 26, 2026",
+    "time": "5:00 PM MDT",
+    "location": "Ames, Iowa",
+    "venue": "Cyclone Sports Complex",
+    "latitude": 42.03316,
+    "longitude": -93.58761
+  },
+  {
+    "title": "BYU vs. Utah",
+    "sport": "Women's Volleyball",
+    "date": "Oct. 30, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Utah",
+    "sport": "Women's Soccer",
+    "date": "Oct. 30, 2026",
+    "time": "7:30 PM MDT",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Arizona State",
+    "sport": "Football",
+    "date": "Oct. 31, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Colorado",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 5, 2026",
+    "time": "TBA",
+    "location": "Boulder, Colorado",
+    "venue": "CU Events Center",
+    "latitude": 40.04795,
+    "longitude": -105.19876
+  },
+  {
+    "title": "BYU vs. Arizona State",
+    "sport": "Women's Soccer",
+    "date": "Nov. 5, 2026",
+    "time": "7:00 PM MST",
+    "location": "Provo, Utah",
+    "venue": "South Field",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Utah",
+    "sport": "Football",
+    "date": "Nov. 7, 2026",
+    "time": "TBA",
+    "location": "Salt Lake City, Utah",
+    "venue": "Rice-Eccles Stadium",
+    "latitude": 40.75628,
+    "longitude": -111.89996
+  },
+  {
+    "title": "BYU at Iowa State",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 7, 2026",
+    "time": "TBA",
+    "location": "Ames, Iowa",
+    "venue": "Hilton Coliseum",
+    "latitude": 42.03316,
+    "longitude": -93.58761
+  },
+  {
+    "title": "BYU vs. TBA",
+    "sport": "Women's Soccer",
+    "date": "Nov. 9, 2026",
+    "time": "TBA",
+    "location": "TBA",
+    "venue": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "title": "BYU at Baylor",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 12, 2026",
+    "time": "TBA",
+    "location": "Waco, Texas",
+    "venue": "Ferrell Center",
+    "latitude": 31.55201,
+    "longitude": -97.13852
+  },
+  {
+    "title": "BYU vs. Baylor",
+    "sport": "Football",
+    "date": "Nov. 14, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Texas Tech",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 14, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Arizona",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 19, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at Kansas",
+    "sport": "Football",
+    "date": "Nov. 21, 2026",
+    "time": "TBA",
+    "location": "Lawrence, Kansas",
+    "venue": "David Booth Kansas Memorial Stadium",
+    "latitude": 39.03187,
+    "longitude": -95.20991
+  },
+  {
+    "title": "BYU vs. Cincinnati",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 21, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU at UCF",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 25, 2026",
+    "time": "TBA",
+    "location": "Orlando, Florida",
+    "venue": "The Venue",
+    "latitude": 28.542,
+    "longitude": -81.37343
+  },
+  {
+    "title": "BYU vs. TCU",
+    "sport": "Women's Volleyball",
+    "date": "Nov. 27, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "Smith Fieldhouse",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  },
+  {
+    "title": "BYU vs. Cincinnati",
+    "sport": "Football",
+    "date": "Nov. 28, 2026",
+    "time": "TBA",
+    "location": "Provo, Utah",
+    "venue": "LaVell Edwards Stadium",
+    "latitude": 40.22593,
+    "longitude": -111.6955
+  }
+]
